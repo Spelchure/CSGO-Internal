@@ -140,11 +140,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CSGOInternal\D3D9\DummyDevice.cc" />
     <ClCompile Include="CSGOInternal\DllMain.cc" />
+    <ClCompile Include="CSGOInternal\Gateway.cc" />
     <ClCompile Include="CSGOInternal\Hooks\Hooks.cc" />
     <ClCompile Include="CSGOInternal\Hooks\Memory.cc" />
+    <ClCompile Include="CSGOInternal\ImGui\imgui.cpp" />
+    <ClCompile Include="CSGOInternal\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="CSGOInternal\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="CSGOInternal\ImGui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="CSGOInternal\ImGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="CSGOInternal\ImGui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Dependencies\DirectX9SDK\Include\D3DX10math.inl" />
+    <None Include="Dependencies\DirectX9SDK\Include\d3dx9math.inl" />
+    <None Include="Dependencies\DirectX9SDK\Include\D3DX_DXGIFormatConvert.inl" />
+    <None Include="Dependencies\DirectX9SDK\Include\xnamathconvert.inl" />
+    <None Include="Dependencies\DirectX9SDK\Include\xnamathmatrix.inl" />
+    <None Include="Dependencies\DirectX9SDK\Include\xnamathmisc.inl" />
+    <None Include="Dependencies\DirectX9SDK\Include\xnamathvector.inl" />
     <None Include="Docs\html\dir_652ee0fff7656cf5bea923779d35b27f.html" />
     <None Include="Docs\html\doxygen.css" />
     <None Include="Docs\html\dynsections.js" />
@@ -187,11 +202,95 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="CSGOInternal\ImGui\LICENSE.txt" />
     <Text Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CSGOInternal\D3D9\DummyDevice.hpp" />
     <ClInclude Include="CSGOInternal\Hooks\Hooks.hpp" />
     <ClInclude Include="CSGOInternal\Hooks\Memory.hpp" />
+    <ClInclude Include="CSGOInternal\ImGui\imconfig.h" />
+    <ClInclude Include="CSGOInternal\ImGui\imgui.h" />
+    <ClInclude Include="CSGOInternal\ImGui\imgui_impl_dx9.h" />
+    <ClInclude Include="CSGOInternal\ImGui\imgui_impl_win32.h" />
+    <ClInclude Include="CSGOInternal\ImGui\imgui_internal.h" />
+    <ClInclude Include="CSGOInternal\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="CSGOInternal\ImGui\imstb_textedit.h" />
+    <ClInclude Include="CSGOInternal\ImGui\imstb_truetype.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\audiodefs.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\comdecl.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D2D1.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D2D1Helper.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D2DBaseTypes.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D2Derr.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3D10.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3D10effect.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3d10misc.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3d10sdklayers.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3D10shader.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3D10_1.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3D10_1shader.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3D11.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3D11SDKLayers.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3D11Shader.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3d9.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3d9caps.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3d9types.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3Dcommon.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3Dcompiler.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DCSX.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX10.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx10async.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX10core.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX10math.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX10mesh.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX10tex.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX11.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX11async.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX11core.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\D3DX11tex.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9anim.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9core.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9effect.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9math.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9mesh.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9shader.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9shape.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9tex.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\d3dx9xof.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\Dcommon.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\dinput.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\dinputd.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\dsconf.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\dsetup.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\dsound.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\DWrite.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\dxdiag.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\DxErr.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\dxfile.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\DXGI.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\DXGIFormat.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\DXGIType.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\dxsdkver.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\gameux.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\PIXPlugin.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\rmxfguid.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\rmxftmpl.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\rpcsal.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\X3DAudio.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\xact3.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\xact3d3.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\xact3wb.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\XAPO.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\XAPOBase.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\XAPOFX.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\XAudio2.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\XAudio2fx.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\XDSP.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\XInput.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\xma2defs.h" />
+    <ClInclude Include="Dependencies\DirectX9SDK\Include\xnamath.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Docs\html\bc_s.png" />
@@ -216,6 +315,10 @@
     <Image Include="Docs\html\tab_b.png" />
     <Image Include="Docs\html\tab_h.png" />
     <Image Include="Docs\html\tab_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Dependencies\DirectX9SDK\Lib\d3d9.lib" />
+    <Library Include="Dependencies\DirectX9SDK\Lib\d3dx9.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

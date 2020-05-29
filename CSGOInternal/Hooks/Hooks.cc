@@ -23,6 +23,34 @@
 #include "Hooks.hpp"
 
 /**
+ * \brief Middle hooking address <addy>
+ * 
+ * \param addy Address to hook in 32-bits
+ * \param func Our function address in 32-bits
+ * \param size size in bytes
+ */
+void 
+MidFunctionHook::BeginHook(uintptr_t addy, uintptr_t func,const size_t size)
+{
+    originalBytes = new byte_t[size];
+  
+    /*
+        Copy original bytes for dehook process 
+        i.e. in EndScene function hooking these are ->
+            mov edi,[ebp+08]
+            mov ebx,edi
+    */
+    memcpy_s(originalBytes, size, (byte_t*)addy, size); 
+    
+    this->hookJumpBack = addy + 5; // 5 equals size of JMP statement JMP(1byte) <Address>(4bytes)
+
+    hooksDetour((byte_t*)addy, (byte_t*)func, size); // Place jump to our function at addy
+    
+    
+
+}
+
+/**
  * \brief Classic detour hook aka jmp hook 
  *
  * <Detailed description goes here> 
@@ -44,6 +72,10 @@ hooksDetour(byte_t* src, byte_t* dst, const size_t size)
 
     *(byte_t*)(src) = (byte_t)0xE9;   // JMP Statement
     *(uintptr_t*)(src + 1) = relAddy; // JMP What ?
+    
+    // Fill remaning bytes with nopes
+    for (int i = 5; i < (size - 5); i++)
+        src[i] = '\x90';
 
     VirtualProtect(src, size, dwOldProtect, &dwOldProtect);
     return true;

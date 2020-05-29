@@ -1,5 +1,5 @@
 /*****************************************************************//**
- * \file   Hooks.hpp
+ * \file   Gateway.cc
  * \brief  
  * 
  * \author ALPEREN
@@ -19,33 +19,33 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
-#pragma once
-#include "Memory.hpp"
+#include <Windows.h>
+#include "Hooks/Hooks.hpp"
+
+extern MidFunctionHook* pMidHook;
 
 /**
- * \brief Middle function hook instance
+ * \brief Hooked Direct3D EndScene function 
  * 
- * <DetailedDescriptionGoeshere>
  */
-class MidFunctionHook
+__declspec(naked)
+void 
+GatewayFunction(void)
 {
-    byte_t* originalBytes;
-    size_t rsize;
-public:
-    uintptr_t hookJumpBack;
+    __asm pushad // Push all registers to stack 
+    static uintptr_t jmpBack = pMidHook->hookJumpBack;
+                 
+    // Hack stuff
 
-    MidFunctionHook() : hookJumpBack(0), originalBytes(nullptr), rsize(0) {}
-    ~MidFunctionHook() {
-        // Dehook
-        if (originalBytes != nullptr)
-        {
-            memcpy_s((byte_t*)(hookJumpBack - 5), rsize, originalBytes, rsize); // Dehook  remove jump
-        }
+    __asm popad // Pop all
+   
+    /*
+        This instructions must be same pMidHook->originalBytes 
+    */
+    __asm {
+        mov ebx, edi
+        lea eax, [edi + 04]
+        jmp [jmpBack];
     }
-    void BeginHook(uintptr_t addy, uintptr_t func, const size_t size);
-
-};
-
-
-bool hooksDetour(byte_t* src, byte_t* dst, const size_t size); // Classic detour hook
-byte_t* hooksTrampoline(byte_t* src, byte_t* dst, const size_t size); // Trampoline hook (using gateway function)
+    
+}

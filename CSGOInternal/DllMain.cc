@@ -20,8 +20,18 @@
  *********************************************************************/
 #include <Windows.h>
 #include <iostream>
+#include "Hooks/Hooks.hpp"
+
+static_assert(sizeof(uintptr_t) == 4);
 
 #define INVALID_HANDLE(x) (nullptr == (x) || INVALID_HANDLE_VALUE == (x))
+
+void GatewayFunction(void); // Main gateway function EndScene Mid-Function hooking ( look: Gateway.cc)
+
+/* GLOBALS
+   Don't use smart pointers! they are slow 
+*/
+MidFunctionHook* pMidHook;
 
 
 /**
@@ -33,7 +43,11 @@ DWORD
 WINAPI 
 MainThread(HMODULE hDll)
 {
+    pMidHook = new MidFunctionHook();
 
+
+    if (nullptr != pMidHook) 
+        delete pMidHook; // Runs dehook 
 
     FreeLibraryAndExitThread(hDll, 0); // We are done
     return TRUE;
