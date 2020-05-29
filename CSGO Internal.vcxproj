@@ -146,18 +146,43 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Docs\html\dir_652ee0fff7656cf5bea923779d35b27f.html" />
+    <None Include="Docs\html\doxygen.css" />
+    <None Include="Docs\html\dynsections.js" />
     <None Include="Docs\html\files.html" />
     <None Include="Docs\html\globals.html" />
     <None Include="Docs\html\globals_func.html" />
+    <None Include="Docs\html\graph_legend.dot" />
     <None Include="Docs\html\graph_legend.html" />
     <None Include="Docs\html\index.html" />
+    <None Include="Docs\html\jquery.js" />
+    <None Include="Docs\html\menu.js" />
+    <None Include="Docs\html\menudata.js" />
     <None Include="Docs\html\search\all_0.html" />
+    <None Include="Docs\html\search\all_0.js" />
     <None Include="Docs\html\search\all_1.html" />
     <None Include="Docs\html\search\files_0.html" />
+    <None Include="Docs\html\search\files_0.js" />
     <None Include="Docs\html\search\functions_0.html" />
+    <None Include="Docs\html\search\functions_0.js" />
     <None Include="Docs\html\search\functions_1.html" />
+    <None Include="Docs\html\search\functions_1.js" />
     <None Include="Docs\html\search\nomatches.html" />
+    <None Include="Docs\html\search\search.css" />
+    <None Include="Docs\html\search\search.js" />
+    <None Include="Docs\html\search\searchdata.js" />
+    <None Include="Docs\html\tabs.css" />
     <None Include="Docs\html\_dll_main_8cc.html" />
+    <None Include="Docs\html\_dll_main_8cc__incl.dot" />
+    <None Include="Docs\latex\doxygen.sty" />
+    <None Include="Docs\latex\files.tex" />
+    <None Include="Docs\latex\longtable_doxygen.sty" />
+    <None Include="Docs\latex\make.bat" />
+    <None Include="Docs\latex\Makefile" />
+    <None Include="Docs\latex\refman.tex" />
+    <None Include="Docs\latex\tabu_doxygen.sty" />
+    <None Include="Docs\latex\_dll_main_8cc.tex" />
+    <None Include="Docs\latex\_dll_main_8cc.tex.tmp" />
+    <None Include="Docs\latex\_dll_main_8cc__incl.dot" />
     <None Include="Doxyfile" />
     <None Include="README.md" />
   </ItemGroup>
@@ -167,6 +192,30 @@
   <ItemGroup>
     <ClInclude Include="CSGOInternal\Hooks\Hooks.hpp" />
     <ClInclude Include="CSGOInternal\Hooks\Memory.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Docs\html\bc_s.png" />
+    <Image Include="Docs\html\bdwn.png" />
+    <Image Include="Docs\html\closed.png" />
+    <Image Include="Docs\html\doc.png" />
+    <Image Include="Docs\html\doxygen.png" />
+    <Image Include="Docs\html\folderclosed.png" />
+    <Image Include="Docs\html\folderopen.png" />
+    <Image Include="Docs\html\nav_f.png" />
+    <Image Include="Docs\html\nav_g.png" />
+    <Image Include="Docs\html\nav_h.png" />
+    <Image Include="Docs\html\open.png" />
+    <Image Include="Docs\html\search\mag_sel.png" />
+    <Image Include="Docs\html\search\search_l.png" />
+    <Image Include="Docs\html\search\search_m.png" />
+    <Image Include="Docs\html\search\search_r.png" />
+    <Image Include="Docs\html\splitbar.png" />
+    <Image Include="Docs\html\sync_off.png" />
+    <Image Include="Docs\html\sync_on.png" />
+    <Image Include="Docs\html\tab_a.png" />
+    <Image Include="Docs\html\tab_b.png" />
+    <Image Include="Docs\html\tab_h.png" />
+    <Image Include="Docs\html\tab_s.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

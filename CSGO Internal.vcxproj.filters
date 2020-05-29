@@ -30,6 +30,33 @@
     <None Include="Docs\html\globals_func.html" />
     <None Include="Docs\html\graph_legend.html" />
     <None Include="Docs\html\index.html" />
+    <None Include="Docs\html\_dll_main_8cc__incl.dot" />
+    <None Include="Docs\html\doxygen.css" />
+    <None Include="Docs\html\dynsections.js" />
+    <None Include="Docs\html\graph_legend.dot" />
+    <None Include="Docs\html\jquery.js" />
+    <None Include="Docs\html\menu.js" />
+    <None Include="Docs\html\menudata.js" />
+    <None Include="Docs\html\tabs.css" />
+    <None Include="Docs\latex\_dll_main_8cc.tex" />
+    <None Include="Docs\latex\_dll_main_8cc.tex.tmp" />
+    <None Include="Docs\latex\_dll_main_8cc__incl.dot" />
+    <None Include="Docs\latex\doxygen.sty" />
+    <None Include="Docs\latex\files.tex" />
+    <None Include="Docs\latex\longtable_doxygen.sty" />
+    <None Include="Docs\latex\make.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Docs\latex\Makefile" />
+    <None Include="Docs\latex\refman.tex" />
+    <None Include="Docs\latex\tabu_doxygen.sty" />
+    <None Include="Docs\html\search\all_0.js" />
+    <None Include="Docs\html\search\files_0.js" />
+    <None Include="Docs\html\search\functions_0.js" />
+    <None Include="Docs\html\search\functions_1.js" />
+    <None Include="Docs\html\search\search.css" />
+    <None Include="Docs\html\search\search.js" />
+    <None Include="Docs\html\search\searchdata.js" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="LICENSE" />
@@ -52,5 +79,73 @@
     <ClInclude Include="CSGOInternal\Hooks\Hooks.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Docs\html\folderclosed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\bc_s.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\bdwn.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\closed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\doc.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\doxygen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\folderopen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\nav_f.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\nav_g.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\nav_h.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\open.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\splitbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\sync_off.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\sync_on.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\tab_a.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\tab_b.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\tab_h.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\tab_s.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\search\mag_sel.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\search\search_l.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\search\search_r.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\search\search_m.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
