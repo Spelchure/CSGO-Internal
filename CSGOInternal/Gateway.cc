@@ -26,7 +26,8 @@ extern MidFunctionHook* pMidHook;
 
 /**
  * \brief Hooked Direct3D EndScene function 
- * 
+ *
+ * __declspec(naked) : we have function's epilogue and prologue. 
  */
 __declspec(naked)
 void 

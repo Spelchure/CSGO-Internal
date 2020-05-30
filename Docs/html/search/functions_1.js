@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['hooksdetour_17',['hooksDetour',['../_hooks_8cc.html#aafcfca63c1c970eb09d534d96d605149',1,'hooksDetour(byte_t *src, byte_t *dst, const size_t size):&#160;Hooks.cc'],['../_hooks_8hpp.html#aafcfca63c1c970eb09d534d96d605149',1,'hooksDetour(byte_t *src, byte_t *dst, const size_t size):&#160;Hooks.cc']]],
-  ['hookstrampoline_18',['hooksTrampoline',['../_hooks_8cc.html#a60adc122e4cca089a025dacf24e85044',1,'hooksTrampoline(byte_t *src, byte_t *dst, const size_t size):&#160;Hooks.cc'],['../_hooks_8hpp.html#a60adc122e4cca089a025dacf24e85044',1,'hooksTrampoline(byte_t *src, byte_t *dst, const size_t size):&#160;Hooks.cc']]]
+  ['beginhook_282',['BeginHook',['../class_mid_function_hook.html#a6a33ec478636f0959d24255f59d151d3',1,'MidFunctionHook']]]
 ];

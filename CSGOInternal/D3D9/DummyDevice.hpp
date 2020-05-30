@@ -20,3 +20,6 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
 #pragma once
+#include <Windows.h>
+
+bool GetD3D9Device(HWND hWind,void** pTable, size_t size);

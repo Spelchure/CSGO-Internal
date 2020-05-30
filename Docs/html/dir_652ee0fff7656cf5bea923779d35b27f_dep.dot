@@ -1,0 +1,13 @@
+digraph "CSGOInternal" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_652ee0fff7656cf5bea923779d35b27f {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_652ee0fff7656cf5bea923779d35b27f.html"];
+    dir_652ee0fff7656cf5bea923779d35b27f [shape=plaintext label="CSGOInternal"];
+    dir_1e006748973fc16ef4f44e750971a4d3 [shape=box label="D3D9" color="black" fillcolor="white" style="filled" URL="dir_1e006748973fc16ef4f44e750971a4d3.html"];
+    dir_67e0c74ca90f2d7d2179fb71192dc88f [shape=box label="Hooks" color="black" fillcolor="white" style="filled" URL="dir_67e0c74ca90f2d7d2179fb71192dc88f.html"];
+    dir_771e702eb1f6761c88a4b8489d8ed8c3 [shape=box label="ImGui" color="black" fillcolor="white" style="filled" URL="dir_771e702eb1f6761c88a4b8489d8ed8c3.html"];
+  }
+  dir_652ee0fff7656cf5bea923779d35b27f->dir_67e0c74ca90f2d7d2179fb71192dc88f [headlabel="2", labeldistance=1.5 headhref="dir_000000_000002.html"];
+}

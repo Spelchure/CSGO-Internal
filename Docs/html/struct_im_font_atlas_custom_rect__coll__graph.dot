@@ -1,0 +1,38 @@
+digraph "ImFontAtlasCustomRect"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ImFontAtlasCustomRect",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" GlyphOffset" ,fontname="Helvetica"];
+  Node2 [label="ImVec2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_vec2.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Font" ,fontname="Helvetica"];
+  Node3 [label="ImFont",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_font.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Glyphs" ,fontname="Helvetica"];
+  Node4 [label="ImVector\< ImFontGlyph \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_vector.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Data" ,fontname="Helvetica"];
+  Node5 [label="ImFontGlyph",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_font_glyph.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DisplayOffset" ,fontname="Helvetica"];
+  Node6 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ConfigData" ,fontname="Helvetica"];
+  Node6 [label="ImFontConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_font_config.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" GlyphExtraSpacing\nGlyphOffset" ,fontname="Helvetica"];
+  Node3 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" DstFont" ,fontname="Helvetica"];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" FallbackGlyph" ,fontname="Helvetica"];
+  Node7 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ContainerAtlas" ,fontname="Helvetica"];
+  Node7 [label="ImFontAtlas",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_font_atlas.html",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Fonts" ,fontname="Helvetica"];
+  Node8 [label="ImVector\< ImFont * \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_vector.html",tooltip=" "];
+  Node3 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Data" ,fontname="Helvetica"];
+  Node2 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" TexUvWhitePixel\nTexUvScale" ,fontname="Helvetica"];
+  Node9 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ConfigData" ,fontname="Helvetica"];
+  Node9 [label="ImVector\< ImFontConfig \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_vector.html",tooltip=" "];
+  Node6 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Data" ,fontname="Helvetica"];
+  Node10 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" CustomRects" ,fontname="Helvetica"];
+  Node10 [label="ImVector\< ImFontAtlasCustom\lRect \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_vector.html",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" Data" ,fontname="Helvetica"];
+  Node11 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" IndexAdvanceX" ,fontname="Helvetica"];
+  Node11 [label="ImVector\< float \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_vector.html",tooltip=" "];
+  Node12 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" IndexLookup" ,fontname="Helvetica"];
+  Node12 [label="ImVector\< ImWchar \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_im_vector.html",tooltip=" "];
+}

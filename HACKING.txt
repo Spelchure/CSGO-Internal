@@ -1,0 +1,31 @@
+
+
+
+
+Important functions
+===================
+
+1.EndScene hook
+---------------
+	file: CSGOInternal/Gateway.cc GatewayFunction
+
+
+For editing default virtual keys:
+=================================
+	file: CSGOInternal/Keys.hpp
+	
+	KEYS_EXIT:		exit key to close hack (default:VK_END)
+	KEYS_TOGGLE:	default key to toggle menu (default:VK_INSERT) 
+	
+Project Tree
+============
+	Dependencies/				: project dependencies currently only Directx9 SDK
+	Docs/						: Docs in multiple formats
+	Docs/html					: HTML documentation
+	
+	CSGOInternal/				: root directory of source
+	CSGOInternal/D3D9/			: Direct3D related functions
+	CSGOInternal/Hooks/			: Hooks definition VMT , Detour, Trampoline hook
+	CSGOInternal/Source SDK/	: Source Engine SDK 2013 (https://github.com/ValveSoftware/source-sdk-2013)
+	CSGOInternal/ImGui			: ImGui sources and implementations (https://github.com/ocornut/imgui)
+

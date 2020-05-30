@@ -11,11 +11,11 @@ CSGO Internal is internal multi-purpose hack. Only windows supported.
 * C++17 compilant compiler 
 * Tested under: MSVC 2019
 
-### Building
+### Building and Running 
 
 * Clone the repo with:
 ```git clone https://github.com/Spelchure/CSGO-Internal.git```
-* Compile using your preferred compiler
+* Compile using your preferred compiler (-std=c++17)
 * Inject your your preferred Dll Injector in Menu 
 * <kbd>Insert</kbd> toogles menu
 

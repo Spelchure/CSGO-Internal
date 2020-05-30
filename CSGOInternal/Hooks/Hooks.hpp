@@ -39,7 +39,10 @@ public:
         // Dehook
         if (originalBytes != nullptr)
         {
+            DWORD dwOldProtect;
+            VirtualProtect((byte_t*)(hookJumpBack - 5), rsize, PAGE_EXECUTE_READWRITE, &dwOldProtect);
             memcpy_s((byte_t*)(hookJumpBack - 5), rsize, originalBytes, rsize); // Dehook  remove jump
+            VirtualProtect((byte_t*)(hookJumpBack - 5), rsize, dwOldProtect, &dwOldProtect);
         }
     }
     void BeginHook(uintptr_t addy, uintptr_t func, const size_t size);

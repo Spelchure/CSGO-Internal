@@ -20,19 +20,23 @@
  *********************************************************************/
 #include <Windows.h>
 #include <iostream>
+#include "Keys.hpp"
 #include "Hooks/Hooks.hpp"
+#include "D3D9/DummyDevice.hpp"
+#include "Source SDK/SDK.hpp"
 
 static_assert(sizeof(uintptr_t) == 4);
 
 #define INVALID_HANDLE(x) (nullptr == (x) || INVALID_HANDLE_VALUE == (x))
 
-void GatewayFunction(void); // Main gateway function EndScene Mid-Function hooking ( look: Gateway.cc)
+void GatewayFunction(void); // Main gateway function EndScene Mid-Function hooking ( Gateway.cc)
+
 
 /* GLOBALS
    Don't use smart pointers! they are slow 
 */
 MidFunctionHook* pMidHook;
-
+void* vTable[119];
 
 /**
  * \brief Application main thread
@@ -43,9 +47,35 @@ DWORD
 WINAPI 
 MainThread(HMODULE hDll)
 {
+     
     pMidHook = new MidFunctionHook();
+     
+    // Find CS:GO Window
+    HWND hValveWindow = FindWindowA(VALVE_WINDOW_CLASS, 0);
+    if(nullptr == hValveWindow){
+        delete pMidHook;
+        FreeLibraryAndExitThread(hDll, 1);
+        return FALSE;
+    }
 
+    // Get d3d9 device for address of EndScene
+    if (!GetD3D9Device(hValveWindow, vTable, sizeof(vTable)))
+    {
+        delete pMidHook;
+        FreeLibraryAndExitThread(hDll, 1);
+        return FALSE;
+    }
 
+    // HOOK! GatewayFunction:Gateway.cc
+    pMidHook->BeginHook((reinterpret_cast<uintptr_t>(vTable[42])+0xF), (uintptr_t)GatewayFunction, 5);
+    
+    while (!GetAsyncKeyState(KEYS_EXIT))
+    {
+        
+        Sleep(20);
+    }
+    
+    
     if (nullptr != pMidHook) 
         delete pMidHook; // Runs dehook 
 
@@ -56,10 +86,6 @@ MainThread(HMODULE hDll)
 /**
  * \brief Dll entry point 
  * 
- * \param hDll
- * \param dwReasonCall
- * \param lpReserved
- * \return 
  */
 BOOL 
 WINAPI 

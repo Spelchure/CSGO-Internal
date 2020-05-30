@@ -33,7 +33,7 @@ void
 MidFunctionHook::BeginHook(uintptr_t addy, uintptr_t func,const size_t size)
 {
     originalBytes = new byte_t[size];
-  
+    this->rsize = size;
     /*
         Copy original bytes for dehook process 
         i.e. in EndScene function hooking these are ->
@@ -47,7 +47,6 @@ MidFunctionHook::BeginHook(uintptr_t addy, uintptr_t func,const size_t size)
     hooksDetour((byte_t*)addy, (byte_t*)func, size); // Place jump to our function at addy
     
     
-
 }
 
 /**

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -48,6 +52,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('files.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -70,25 +90,50 @@ $(function() {
 <div class="textblock">Here is a list of all documented files with brief descriptions:</div><div class="directory">
 <div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span><span onclick="javascript:toggleLevel(3);">3</span>]</div><table class="directory">
 <tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span id="img_0_" class="iconfopen" onclick="toggleFolder('0_')">&#160;</span><a class="el" href="dir_652ee0fff7656cf5bea923779d35b27f.html" target="_self">CSGOInternal</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_0_" class="arrow" onclick="toggleFolder('0_0_')">&#9660;</span><span id="img_0_0_" class="iconfopen" onclick="toggleFolder('0_0_')">&#160;</span><a class="el" href="dir_67e0c74ca90f2d7d2179fb71192dc88f.html" target="_self">Hooks</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_hooks_8cc.html" target="_self">Hooks.cc</a></td><td class="desc"><br  />
+<tr id="row_0_0_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_0_" class="arrow" onclick="toggleFolder('0_0_')">&#9660;</span><span id="img_0_0_" class="iconfopen" onclick="toggleFolder('0_0_')">&#160;</span><a class="el" href="dir_1e006748973fc16ef4f44e750971a4d3.html" target="_self">D3D9</a></td><td class="desc"></td></tr>
+<tr id="row_0_0_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_dummy_device_8cc.html" target="_self">DummyDevice.cc</a></td><td class="desc"><br  />
  </td></tr>
-<tr id="row_0_0_1_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_hooks_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_hooks_8hpp.html" target="_self">Hooks.hpp</a></td><td class="desc"><br  />
+<tr id="row_0_0_1_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_dummy_device_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_dummy_device_8hpp.html" target="_self">DummyDevice.hpp</a></td><td class="desc"><br  />
  </td></tr>
-<tr id="row_0_0_2_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_memory_8cc.html" target="_self">Memory.cc</a></td><td class="desc"><br  />
+<tr id="row_0_1_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_1_" class="arrow" onclick="toggleFolder('0_1_')">&#9660;</span><span id="img_0_1_" class="iconfopen" onclick="toggleFolder('0_1_')">&#160;</span><a class="el" href="dir_67e0c74ca90f2d7d2179fb71192dc88f.html" target="_self">Hooks</a></td><td class="desc"></td></tr>
+<tr id="row_0_1_0_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_hooks_8cc.html" target="_self">Hooks.cc</a></td><td class="desc"><br  />
  </td></tr>
-<tr id="row_0_0_3_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_memory_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_memory_8hpp.html" target="_self">Memory.hpp</a></td><td class="desc"><br  />
+<tr id="row_0_1_1_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_hooks_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_hooks_8hpp.html" target="_self">Hooks.hpp</a></td><td class="desc"><br  />
  </td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_dll_main_8cc.html" target="_self">DllMain.cc</a></td><td class="desc"><br  />
+<tr id="row_0_1_2_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_memory_8cc.html" target="_self">Memory.cc</a></td><td class="desc"><br  />
  </td></tr>
+<tr id="row_0_1_3_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_memory_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_memory_8hpp.html" target="_self">Memory.hpp</a></td><td class="desc"><br  />
+ </td></tr>
+<tr id="row_0_2_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_2_" class="arrow" onclick="toggleFolder('0_2_')">&#9660;</span><span id="img_0_2_" class="iconfopen" onclick="toggleFolder('0_2_')">&#160;</span><a class="el" href="dir_771e702eb1f6761c88a4b8489d8ed8c3.html" target="_self">ImGui</a></td><td class="desc"></td></tr>
+<tr id="row_0_2_0_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="imconfig_8h_source.html"><span class="icondoc"></span></a><b>imconfig.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_2_1_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="imgui_8h_source.html"><span class="icondoc"></span></a><b>imgui.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_2_2_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="imgui__impl__dx9_8h_source.html"><span class="icondoc"></span></a><b>imgui_impl_dx9.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_2_3_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="imgui__impl__win32_8h_source.html"><span class="icondoc"></span></a><b>imgui_impl_win32.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_2_4_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="imgui__internal_8h_source.html"><span class="icondoc"></span></a><b>imgui_internal.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_2_5_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="imstb__rectpack_8h_source.html"><span class="icondoc"></span></a><b>imstb_rectpack.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_2_6_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="imstb__textedit_8h_source.html"><span class="icondoc"></span></a><b>imstb_textedit.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_2_7_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="imstb__truetype_8h_source.html"><span class="icondoc"></span></a><b>imstb_truetype.h</b></td><td class="desc"></td></tr>
+<tr id="row_0_3_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span id="arr_0_3_" class="arrow" onclick="toggleFolder('0_3_')">&#9660;</span><span id="img_0_3_" class="iconfopen" onclick="toggleFolder('0_3_')">&#160;</span><a class="el" href="dir_bf8cfc72051065b9197f5f9eabf14d04.html" target="_self">Source SDK</a></td><td class="desc"></td></tr>
+<tr id="row_0_3_0_"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_s_d_k_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_s_d_k_8hpp.html" target="_self">SDK.hpp</a></td><td class="desc"><br  />
+ </td></tr>
+<tr id="row_0_3_1_" class="even"><td class="entry"><span style="width:48px;display:inline-block;">&#160;</span><a href="_strings_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_strings_8hpp.html" target="_self">Strings.hpp</a></td><td class="desc"><br  />
+ </td></tr>
+<tr id="row_0_4_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_dll_main_8cc.html" target="_self">DllMain.cc</a></td><td class="desc"><br  />
+ </td></tr>
+<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_gateway_8cc.html" target="_self">Gateway.cc</a></td><td class="desc"><br  />
+ </td></tr>
+<tr id="row_0_6_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="_keys_8hpp_source.html"><span class="icondoc"></span></a><a class="el" href="_keys_8hpp.html" target="_self">Keys.hpp</a></td><td class="desc">Virtual key-code definitions </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>
