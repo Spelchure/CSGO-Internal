@@ -1,5 +1,5 @@
 /*****************************************************************//**
- * \file   SDK.hpp
+ * \file   Interfaces.cpp
  * \brief  
  * 
  * \author ALPEREN
@@ -19,8 +19,30 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
-#pragma once
-
-#include "Strings.hpp"
 #include "Interfaces.hpp"
-#include "Netvars.hpp"
+#include <Windows.h>
+
+ /**
+ * Calls cs:go CreateInterface function
+ * 
+ * \param dllName Name of dll (client or engine)
+ * \param interfaceName Name of the interface \sa Strings.hpp
+ * \returns Created interface or nullptr 
+ */
+void* 
+GetInterface(const char* dllName, const char* interfaceName)
+{
+    
+    if (nullptr == dllName || interfaceName == nullptr)
+        return nullptr;
+
+    tCreateInterface pCreateInterface;
+    
+    pCreateInterface = reinterpret_cast<tCreateInterface>(GetProcAddress(GetModuleHandleA(dllName), "CreateInterface"));
+    if (nullptr == pCreateInterface)
+        return nullptr;
+    
+    void* addy = pCreateInterface(interfaceName, nullptr);
+
+    return addy;
+}

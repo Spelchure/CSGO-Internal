@@ -25,3 +25,9 @@
 /* Constants for SDK */
 
 constexpr auto VALVE_WINDOW_CLASS = "Valve001";
+
+constexpr auto DLL_CLIENT = "client_panorama.dll";
+constexpr auto DLL_ENGINE = "engine.dll";
+
+constexpr auto VCLIENTENTITYLIST_INTERFACE_VERSION = "VClientEntityList003";
+constexpr auto CLIENT_DLL_INTERFACE_VERSION = "VClient018";

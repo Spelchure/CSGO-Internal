@@ -1,16 +1,20 @@
-
-
-
-
 Important functions
 ===================
 
 1.EndScene hook
 ---------------
-	file: CSGOInternal/Gateway.cc GatewayFunction
+	file: CSGOInternal/Gateway.cc GatewayFunction()
 
+2.Main hack function
+--------------------
+	file: CSGOInternal/MainLoop.cc MainLoop() called from GatewayFunction()
+	
 
-For editing default virtual keys:
+Some Examples
+==============
+1.Adding new setting
+
+2.Editing default virtual keys:
 =================================
 	file: CSGOInternal/Keys.hpp
 	

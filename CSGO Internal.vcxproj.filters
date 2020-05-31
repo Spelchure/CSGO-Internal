@@ -494,6 +494,7 @@
     <None Include="Docs\html\search\functions_4.js" />
     <None Include="Docs\html\search\functions_3.js" />
     <None Include="Docs\html\search\functions_2.js" />
+    <None Include="CSGOInternal\Settings\SimpleSettings.cfg" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="LICENSE" />
@@ -532,6 +533,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CSGOInternal\ImGui\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGOInternal\Source SDK\Interfaces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGOInternal\Source SDK\Netvars.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGOInternal\MainLoop.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGOInternal\Settings\Settings.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -798,6 +811,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CSGOInternal\Keys.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\Source SDK\Interfaces.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\Source SDK\Netvars.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\Settings\Settings.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

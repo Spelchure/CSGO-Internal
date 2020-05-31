@@ -24,6 +24,8 @@
 
 extern MidFunctionHook* pMidHook;
 
+void MainLoop(void);
+
 /**
  * \brief Hooked Direct3D EndScene function 
  *
@@ -36,7 +38,10 @@ GatewayFunction(void)
     __asm pushad // Push all registers to stack 
     static uintptr_t jmpBack = pMidHook->hookJumpBack;
                  
-    // Hack stuff
+    // Menu drawing 
+
+    // call MainLoop
+    MainLoop();
 
     __asm popad // Pop all
    

@@ -1,5 +1,5 @@
 /*****************************************************************//**
- * \file   SDK.hpp
+ * \file   MainLoop.cc
  * \brief  
  * 
  * \author ALPEREN
@@ -19,8 +19,12 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
-#pragma once
+#include "Settings/Settings.hpp"
 
-#include "Strings.hpp"
-#include "Interfaces.hpp"
-#include "Netvars.hpp"
+extern AppSettings* pSettings;
+
+void 
+MainLoop(void)
+{
+
+}
