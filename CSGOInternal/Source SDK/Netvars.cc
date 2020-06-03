@@ -103,7 +103,7 @@ ReadyNetvarOffsets(void)
     _netvarOffsets[NetvarNames::m_hMyWeapons] = _GetNetVarOffset("DT_BasePlayer", "m_hMyWeapons", allClass);
     _netvarOffsets[NetvarNames::m_flFlashDuration] = _GetNetVarOffset("DT_CSPlayer", "m_flFlashDuration", allClass);
     _netvarOffsets[NetvarNames::m_bIsDefusing] = _GetNetVarOffset("DT_CSPlayer", "m_bIsDefusing", allClass);
-
+    _netvarOffsets[NetvarNames::m_aimPunchAngle] = _GetNetVarOffset("DT_BasePlayer", "m_aimPunchAngle", allClass);
     _netvarOffsets[NetvarNames::m_dwBoneMatrix] = _GetNetVarOffset("DT_BaseAnimating", "m_nForceBone", allClass); 
     _netvarOffsets[NetvarNames::m_dwBoneMatrix] += 28;
 

@@ -24,6 +24,7 @@
 #include <string>
 #include <sstream>
 #include "Keys.hpp"
+#include "MainMenu.hpp"
 #include "Settings/Settings.hpp"
 #include "Hooks/Hooks.hpp"
 #include "D3D9/DummyDevice.hpp"
@@ -44,6 +45,7 @@ constexpr auto SETTINGS_FILE_NAME = "SimpleSettings.cfg";
 */
 MidFunctionHook* pMidHook;
 AppSettings* pSettings;
+MainMenu* pMenu;
 void* vTable[119];
 
 /**
@@ -58,11 +60,14 @@ MainThread(HMODULE hDll)
      
     pMidHook = new MidFunctionHook();
     pSettings = new AppSettings();
+    pMenu = new MainMenu();
 
     // Find CS:GO Window
     HWND hValveWindow = FindWindowA(VALVE_WINDOW_CLASS, 0);
     if(nullptr == hValveWindow){
+        delete pMenu;
         delete pMidHook;
+        delete pSettings;
         FreeLibraryAndExitThread(hDll, 1);
         return FALSE;
     }
@@ -89,14 +94,19 @@ MainThread(HMODULE hDll)
     // Get d3d9 device for address of EndScene
     if (!GetD3D9Device(hValveWindow, vTable, sizeof(vTable)))
     {
+        
+        delete pMenu;
         delete pMidHook;
         delete pSettings;
         FreeLibraryAndExitThread(hDll, 1);
         return FALSE;
     }
 
+
     // Initialize netvar offsets
     if(!ReadyNetvarOffsets()) {
+        
+        delete pMenu;
         delete pMidHook;
         delete pSettings;
         FreeLibraryAndExitThread(hDll, 1);
@@ -105,6 +115,8 @@ MainThread(HMODULE hDll)
     
     // Initialize signatures
     if(!ReadySignatures()) {
+
+        delete pMenu;
         delete pMidHook;
         delete pSettings;
         FreeLibraryAndExitThread(hDll, 1);
@@ -113,29 +125,45 @@ MainThread(HMODULE hDll)
     
     if (!SDK_initInterfaces())
     {
+        delete pMenu;
         delete pMidHook;
         delete pSettings;
         FreeLibraryAndExitThread(hDll, 1);
         return FALSE;
     }
-
+    /*
+    LPDIRECT3DDEVICE9 pDev =
+        reinterpret_cast<LPDIRECT3DDEVICE9>((uintptr_t*)*vTable);
+    if (!pMenu->InitMenu(pDev, hValveWindow)) {
+        delete pMenu;
+        delete pMidHook;
+        delete pSettings;
+        FreeLibraryAndExitThread(hDll, 1);
+        return FALSE;
+    }
+*/
     // HOOK! GatewayFunction:Gateway.cc
     pMidHook->BeginHook((reinterpret_cast<uintptr_t>(vTable[42])+0xF), (uintptr_t)GatewayFunction, 5);
     
     while (!GetAsyncKeyState(KEYS_EXIT))
     {
-        
-        Sleep(20);
+        if (GetAsyncKeyState(KEYS_TOGGLE) & 1)
+            pSettings->toggleBool(pSettings->bMenuShowing);
     }
     
     //Save settings
     pSettings->saveSettings();
-    
+    pSettings->setBool(pSettings->bMenuShowing, false);
+
     if (nullptr != pMidHook) 
         delete pMidHook; // Runs dehook 
 
     if (nullptr != pSettings)
         delete pSettings;
+
+    if (nullptr != pMenu)
+        delete pMenu;
+
 
     FreeLibraryAndExitThread(hDll, 0); // We are done
     return TRUE;

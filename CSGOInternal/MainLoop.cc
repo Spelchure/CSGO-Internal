@@ -28,14 +28,50 @@ constexpr auto ENTITY_MAX_PLAYERS = 32;
 extern AppSettings* pSettings;
 extern IVEngineClient013* iEngineClient13;
 extern IClientEntityList* iEntityList;
+extern IEngineTrace* iTrace;
 
 extern uintptr_t sig_dwClientState;
 extern uint16_t sig_dwClientState_ViewAngles;
+CEntityPlayer* localPlayer;
+
+/**
+ * \brief Checks the enemy is visible for aimbot using TraceRay
+ * 
+ */
+static
+bool  
+enemyIsVisible(CEntityPlayer* enemy)
+{
+    if (nullptr == localPlayer || nullptr == enemy)
+        return false;
+    if (iTrace == nullptr)
+        return false;
+
+    Vector eyepos;
+    localPlayer->GetViewAngles(eyepos);
+    Vector* enemyBone = enemy->GetBonePos(8);
+
+
+    CGameTrace trace;
+    Ray_t ray;
+    CTraceFilter tracefilter;
+
+    tracefilter.pSkip = (void*)localPlayer;
+
+    ray.Init(eyepos, *enemyBone);
+
+    iTrace->TraceRay(ray, MASK_SHOT | CONTENTS_GRATE, &tracefilter, &trace);
+
+    if (enemy == trace.hit_entity)
+        return true;
+
+    return false;
+}
 
 void 
 MainLoop(void)
 {
-    CEntityPlayer* localPlayer = iEntityList->GetClientEntity(iEngineClient13->GetLocalPlayer());
+    localPlayer = iEntityList->GetClientEntity(iEngineClient13->GetLocalPlayer());
     float distmax = FLT_MAX;
     int bestEnemy = -1;
     uintptr_t clientState = 0;
@@ -57,7 +93,9 @@ MainLoop(void)
             continue;
     
 
-        if (*ent->GetHealth() > 0 && *ent->GetTeam() != *localPlayer->GetTeam() && !(*ent->GetDormant())) { // VALID ENEMY
+        if (*ent->GetHealth() > 0 && *ent->GetTeam() != *localPlayer->GetTeam() && !(*ent->GetDormant()) &&  
+            enemyIsVisible(ent) // Visible for us
+            ) { // VALID ENEMY
             if (true) { // IsAimbot open ? 
                 Vector myPos;
                 Vector angles;
@@ -83,11 +121,11 @@ MainLoop(void)
                 if(clientState) {
                     localPlayer->GetViewAngles(myPos);
                     angles = vecCalcAngles(myPos, *enemy->GetBonePos(8));
-                    int enteam = *enemy->GetTeam();
-                    /*
-                    angles.x -= aimPunchAngle.x * 2.f;
-                    angles.y -= aimPunchAngle.y * 2.f; 
-                    */
+                    Vector2* aimPunchAngle = localPlayer->GetAimPunchAngles();
+                    
+                    angles.x -= aimPunchAngle->x * 2.f;
+                    angles.y -= aimPunchAngle->y * 2.f; 
+                                      
                     if(angles.x >= -89.0f && angles.x <= 89.0f && angles.y >= -180.0f && angles.y <= 180.0f) {
                         Vector* viewAngles = (Vector*)(clientState + sig_dwClientState_ViewAngles);
                         //Set my angles...

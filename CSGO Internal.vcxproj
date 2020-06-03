@@ -154,6 +154,7 @@
     <ClCompile Include="CSGOInternal\ImGui\imgui_impl_win32.cpp" />
     <ClCompile Include="CSGOInternal\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="CSGOInternal\MainLoop.cc" />
+    <ClCompile Include="CSGOInternal\MainMenu.cc" />
     <ClCompile Include="CSGOInternal\Settings\Settings.cc" />
     <ClCompile Include="CSGOInternal\Source SDK\Interfaces.cpp" />
     <ClCompile Include="CSGOInternal\Source SDK\Netvars.cc" />
@@ -646,6 +647,7 @@
     <ClInclude Include="CSGOInternal\ImGui\imstb_textedit.h" />
     <ClInclude Include="CSGOInternal\ImGui\imstb_truetype.h" />
     <ClInclude Include="CSGOInternal\Keys.hpp" />
+    <ClInclude Include="CSGOInternal\MainMenu.hpp" />
     <ClInclude Include="CSGOInternal\Settings\Settings.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\EntityPlayer.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Interfaces.hpp" />
@@ -653,6 +655,7 @@
     <ClInclude Include="CSGOInternal\Source SDK\SDK.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Signatures.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Strings.hpp" />
+    <ClInclude Include="CSGOInternal\Source SDK\TraceRay.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Vectors.hpp" />
     <ClInclude Include="Dependencies\DirectX9SDK\Include\audiodefs.h" />
     <ClInclude Include="Dependencies\DirectX9SDK\Include\comdecl.h" />

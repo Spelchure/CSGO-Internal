@@ -79,7 +79,11 @@ public:
             return boolSettings[ind];
         return false;
     }
-
+    void toggleBool(int ind)
+    {
+        if (ind < numberOfBoolSettings)
+            boolSettings[ind] = !boolSettings[ind];
+    }
     void setInt(int ind, int val) {
         if (ind < numberOfIntSettings)
             intSettings[ind] = val;

@@ -21,7 +21,9 @@
  *********************************************************************/
 #include "Interfaces.hpp"
 #include "Strings.hpp"
+#include "TraceRay.hpp"
 #include <Windows.h>
+
 
 /**
  * \brief Interface definitions \sa SDK_initInterfaces()
@@ -29,6 +31,7 @@
 IBaseClientDLL * iClientDll; 
 IClientEntityList* iEntityList;
 IVEngineClient013* iEngineClient13;
+IEngineTrace* iTrace;   // defined in TraceRay.hpp
 
 /**
  * Calls cs:go CreateInterface function
@@ -45,7 +48,6 @@ GetInterface(const char* dllName, const char* interfaceName)
         return nullptr;
 
     tCreateInterface pCreateInterface;
-    
     pCreateInterface = reinterpret_cast<tCreateInterface>(GetProcAddress(GetModuleHandleA(dllName), "CreateInterface"));
     if (nullptr == pCreateInterface)
         return nullptr;
@@ -70,6 +72,10 @@ SDK_initInterfaces(void)
     iEngineClient13 = reinterpret_cast<IVEngineClient013*>(GetInterface(DLL_ENGINE, VENGINE_CLIENT_INTERFACE_VERSION));
     if (nullptr == iEngineClient13)
         return false;
+
+    iTrace = reinterpret_cast<IEngineTrace*>(GetInterface(DLL_ENGINE, ENGINE_TRACE_CLIENT_VERSION));
+    if (nullptr == iTrace)
+        return false;   
 
     return true;
 }

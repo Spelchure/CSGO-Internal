@@ -21,8 +21,11 @@
  *********************************************************************/
 #include <Windows.h>
 #include "Hooks/Hooks.hpp"
-
+#include "Settings/Settings.hpp"
+#include "MainMenu.hpp"
 extern MidFunctionHook* pMidHook;
+extern AppSettings* pSettings;
+extern MainMenu* pMenu;
 
 void MainLoop(void);
 
@@ -39,6 +42,8 @@ GatewayFunction(void)
     static uintptr_t jmpBack = pMidHook->hookJumpBack;
                  
     // Menu drawing 
+    if (pSettings->getBool(pSettings->bMenuShowing)) // Show menu 
+        pMenu->PrintMenu();
 
     // call MainLoop
     MainLoop();

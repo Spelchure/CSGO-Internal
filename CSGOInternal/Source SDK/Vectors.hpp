@@ -22,6 +22,10 @@
 #pragma once
 #include <cmath>
 
+#define DECL_ALIGN(x) __declspec(align(x))
+#define ALIGN16 DECL_ALIGN(16)
+#define ALIGN16_POST DECL_ALIGN(16)
+
 typedef struct _Vector {
     float x, y, z;
     struct _Vector(float x = 0, float y = 0, float z = 0) : x(x), y(y), z(z) {}
@@ -33,12 +37,23 @@ typedef struct _Vector {
         this->z -= another.z;
         return *this;
     }
-    
+    struct _Vector operator-(const struct _Vector &v) const {
+        return struct _Vector(x - v.x, y - v.y, z - v.z);
+    }
     const struct _Vector& operator+(struct _Vector another)
     {
         this->x += another.x;
         this->y += another.y;
         this->z += another.z;
+        return *this;
+    } 
+    struct _Vector operator+(const struct _Vector &v) const {
+        return struct _Vector(x + v.x, y + v.y, z + v.z);
+    }
+    struct _Vector & operator *=(const struct _Vector &v) {
+        x *= v.x;
+        y *= v.y;
+        z *= v.z;
         return *this;
     }
 
@@ -46,7 +61,62 @@ typedef struct _Vector {
         return sqrtf(this->x * this->x + this->y * this->y + this->z * this->z);
     }
 
+    void Init(float ix = 0.0f, float iy = 0.0f, float iz = 0.0f)
+    {
+        x = ix; y = iy; z = iz;
+    }
+
+    float LengthSqr(void) const
+    {
+        return (x * x + y * y + z * z);
+    }
+
+    float& operator[](int i)
+    {
+        return ((float*)this)[i];
+    }
+    float operator[](int i) const
+    {
+        return ((float*)this)[i];
+    }
+
+
 }Vector,Vector3;
+
+typedef struct _Vector2
+{
+    float x, y;
+
+    struct _Vector2(float x = 0, float y = 0) : x(x),y(y) {}
+
+  
+
+}Vector2;
+
+class ALIGN16 VectorAligned : public Vector
+{
+public:
+    inline VectorAligned(void) {};
+
+    inline VectorAligned(Vector X, Vector Y, Vector Z)
+    {
+        //Init(X, Y, Z);
+    }
+
+    explicit VectorAligned(const Vector& vOther)
+    {
+        Init(vOther.x, vOther.y, vOther.z);
+    }
+
+    VectorAligned& operator=(const Vector& vOther)
+    {
+        Init(vOther.x, vOther.y, vOther.z);
+        return *this;
+    }
+
+    float w;	// this space is used anyway
+} ALIGN16_POST;
+
 
 float vecGet3DDistance(Vector source, Vector dest);
 Vector vecCalcAngles(Vector source, Vector dest);

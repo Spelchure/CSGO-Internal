@@ -64,7 +64,9 @@ public:
         bonePos.z = *(float*)(boneMatrix + 0x30 * boneID + 0x2C);
         return &bonePos;
     }
-    
+    Vector2 * GetAimPunchAngles() const {
+        return (Vector2*)((uintptr_t)this + netvar(m_aimPunchAngle));
+    }
     void GetViewAngles(Vector &ang) {
         Vector vecOrigin = *this->GetVecOrigin();
         ang = vecOrigin + *this->GetViewOffset();

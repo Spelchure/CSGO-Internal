@@ -1,10 +1,11 @@
 /*****************************************************************//**
- * \file   SDK.hpp
+ * \file   MainMenu.hpp
  * \brief  
  * 
- * \author ALPEREN
- * \date   May 2020
  * 
+ * \author ALPEREN
+ * \date   June 2020
+ *  
  *  <br>
  *  This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,10 +21,19 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
 #pragma once
+#include "ImGui/imgui.h"
+#include "ImGui/imgui_impl_dx9.h"
+#include "ImGui/imgui_impl_win32.h"
+#include <d3d9.h>
 
-#include "Strings.hpp"
-#include "Interfaces.hpp"
-#include "Netvars.hpp"
-#include "EntityPlayer.hpp"
-#include "Vectors.hpp"
-#include "TraceRay.hpp"
+class MainMenu {
+    LPDIRECT3DDEVICE9 pDevice;
+public:
+    bool InitMenu(LPDIRECT3DDEVICE9 pD3Ddev, HWND hValveWindow);
+    void ReleaseMenu(void);
+    void PrintMenu(void);
+
+    MainMenu() : pDevice(nullptr) {}
+    ~MainMenu() { if(nullptr != pDevice) ReleaseMenu(); }
+};
+

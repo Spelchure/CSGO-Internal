@@ -551,6 +551,9 @@
     <ClCompile Include="CSGOInternal\Source SDK\Vectors.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CSGOInternal\MainMenu.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSGOInternal\Hooks\Memory.hpp">
@@ -833,6 +836,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CSGOInternal\Source SDK\Signatures.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\Source SDK\TraceRay.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\MainMenu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
