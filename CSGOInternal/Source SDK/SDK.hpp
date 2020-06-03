@@ -24,3 +24,5 @@
 #include "Strings.hpp"
 #include "Interfaces.hpp"
 #include "Netvars.hpp"
+#include "EntityPlayer.hpp"
+#include "Vectors.hpp"

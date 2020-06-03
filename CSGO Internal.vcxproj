@@ -157,6 +157,7 @@
     <ClCompile Include="CSGOInternal\Settings\Settings.cc" />
     <ClCompile Include="CSGOInternal\Source SDK\Interfaces.cpp" />
     <ClCompile Include="CSGOInternal\Source SDK\Netvars.cc" />
+    <ClCompile Include="CSGOInternal\Source SDK\Vectors.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CSGOInternal\Settings\SimpleSettings.cfg" />
@@ -630,6 +631,7 @@
     <Text Include="HACKING.txt" />
     <Text Include="CSGOInternal\ImGui\LICENSE.txt" />
     <Text Include="LICENSE" />
+    <Text Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CSGOInternal\D3D9\DummyDevice.hpp" />
@@ -645,10 +647,13 @@
     <ClInclude Include="CSGOInternal\ImGui\imstb_truetype.h" />
     <ClInclude Include="CSGOInternal\Keys.hpp" />
     <ClInclude Include="CSGOInternal\Settings\Settings.hpp" />
+    <ClInclude Include="CSGOInternal\Source SDK\EntityPlayer.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Interfaces.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Netvars.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\SDK.hpp" />
+    <ClInclude Include="CSGOInternal\Source SDK\Signatures.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Strings.hpp" />
+    <ClInclude Include="CSGOInternal\Source SDK\Vectors.hpp" />
     <ClInclude Include="Dependencies\DirectX9SDK\Include\audiodefs.h" />
     <ClInclude Include="Dependencies\DirectX9SDK\Include\comdecl.h" />
     <ClInclude Include="Dependencies\DirectX9SDK\Include\D2D1.h" />

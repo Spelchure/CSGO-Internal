@@ -96,8 +96,12 @@ $(document).ready(function(){initNavTree('_dll_main_8cc.html',''); initResizable
   
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Windows.h&gt;</code><br />
+<code>#include &lt;Shlwapi.h&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
 <code>#include &quot;<a class="el" href="_keys_8hpp_source.html">Keys.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_settings_8hpp_source.html">Settings/Settings.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_hooks_8hpp_source.html">Hooks/Hooks.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_dummy_device_8hpp_source.html">D3D9/DummyDevice.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_s_d_k_8hpp_source.html">Source SDK/SDK.hpp</a>&quot;</code><br />
@@ -122,9 +126,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>GatewayFunction</b> (
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a0556300864824f6acef9f3fbcddb62d8"><td class="memItemLeft" align="right" valign="top"><a id="a0556300864824f6acef9f3fbcddb62d8"></a>
+constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>SETTINGS_FILE_NAME</b> = &quot;SimpleSettings.cfg&quot;</td></tr>
+<tr class="separator:a0556300864824f6acef9f3fbcddb62d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92ea3b36ac03fac3a151282e9aa2c9e8"><td class="memItemLeft" align="right" valign="top"><a id="a92ea3b36ac03fac3a151282e9aa2c9e8"></a>
 <a class="el" href="class_mid_function_hook.html">MidFunctionHook</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pMidHook</b></td></tr>
 <tr class="separator:a92ea3b36ac03fac3a151282e9aa2c9e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb21de73b1ed38e9f8d796196218b90"><td class="memItemLeft" align="right" valign="top"><a id="affb21de73b1ed38e9f8d796196218b90"></a>
+<a class="el" href="class_app_settings.html">AppSettings</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pSettings</b></td></tr>
+<tr class="separator:affb21de73b1ed38e9f8d796196218b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add22de488065e9690c20674b136766d1"><td class="memItemLeft" align="right" valign="top"><a id="add22de488065e9690c20674b136766d1"></a>
 void *&#160;</td><td class="memItemRight" valign="bottom"><b>vTable</b> [119]</td></tr>
 <tr class="separator:add22de488065e9690c20674b136766d1"><td class="memSeparator" colspan="2">&#160;</td></tr>

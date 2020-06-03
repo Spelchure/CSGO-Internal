@@ -1,0 +1,100 @@
+\hypertarget{_memory_8hpp}{}\doxysection{C\+S\+G\+O\+Internal/\+Hooks/\+Memory.hpp File Reference}
+\label{_memory_8hpp}\index{CSGOInternal/Hooks/Memory.hpp@{CSGOInternal/Hooks/Memory.hpp}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include $<$cstdint$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_memory_8hpp_a5cb62e5283553894669a5c5220755682}\label{_memory_8hpp_a5cb62e5283553894669a5c5220755682}} 
+typedef int8\+\_\+t {\bfseries byte\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_memory_8hpp_a07807b5c883976fe33b6baefd80bc7ba}{mem\+Patch}} (byte\+\_\+t $\ast$dst, byte\+\_\+t $\ast$src, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Patch memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_memory_8hpp_aec5a62bf5cc2d27e4a60da2f66319d56}{mem\+Fill\+With\+Nopes}} (byte\+\_\+t $\ast$dst, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Fill specified region to nopes(0x90) \end{DoxyCompactList}\item 
+uintptr\+\_\+t \mbox{\hyperlink{_memory_8hpp_a0fcc567e7b18d82d7313592a73b30386}{mem\+Find\+Pattern}} (const char $\ast$s\+Module, const char $\ast$pattern, const char $\ast$mask)
+\begin{DoxyCompactList}\small\item\em Search pattern in specified module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+A\+L\+P\+E\+R\+EN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2020 ~\newline
+ This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+\end{DoxyDate}
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details.
+
+You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_memory_8hpp_aec5a62bf5cc2d27e4a60da2f66319d56}\label{_memory_8hpp_aec5a62bf5cc2d27e4a60da2f66319d56}} 
+\index{Memory.hpp@{Memory.hpp}!memFillWithNopes@{memFillWithNopes}}
+\index{memFillWithNopes@{memFillWithNopes}!Memory.hpp@{Memory.hpp}}
+\doxysubsubsection{\texorpdfstring{memFillWithNopes()}{memFillWithNopes()}}
+{\footnotesize\ttfamily void mem\+Fill\+With\+Nopes (\begin{DoxyParamCaption}\item[{byte\+\_\+t $\ast$}]{dst,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Fill specified region to nopes(0x90) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Destinition address \\
+\hline
+{\em size} & size in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_memory_8hpp_a0fcc567e7b18d82d7313592a73b30386}\label{_memory_8hpp_a0fcc567e7b18d82d7313592a73b30386}} 
+\index{Memory.hpp@{Memory.hpp}!memFindPattern@{memFindPattern}}
+\index{memFindPattern@{memFindPattern}!Memory.hpp@{Memory.hpp}}
+\doxysubsubsection{\texorpdfstring{memFindPattern()}{memFindPattern()}}
+{\footnotesize\ttfamily uintptr\+\_\+t mem\+Find\+Pattern (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+Module,  }\item[{const char $\ast$}]{pattern,  }\item[{const char $\ast$}]{mask }\end{DoxyParamCaption})}
+
+
+
+Search pattern in specified module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sz\+Module} & Name of module \\
+\hline
+{\em pattern} & Pattern to find \\
+\hline
+{\em mask} & Mask of pattern\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address of pattern if found otherwise 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_memory_8hpp_a07807b5c883976fe33b6baefd80bc7ba}\label{_memory_8hpp_a07807b5c883976fe33b6baefd80bc7ba}} 
+\index{Memory.hpp@{Memory.hpp}!memPatch@{memPatch}}
+\index{memPatch@{memPatch}!Memory.hpp@{Memory.hpp}}
+\doxysubsubsection{\texorpdfstring{memPatch()}{memPatch()}}
+{\footnotesize\ttfamily void mem\+Patch (\begin{DoxyParamCaption}\item[{byte\+\_\+t $\ast$}]{dst,  }\item[{byte\+\_\+t $\ast$}]{src,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Patch memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & Destinition address to patch \\
+\hline
+{\em src} & Source bytes \\
+\hline
+{\em size} & size in bytes \\
+\hline
+\end{DoxyParams}

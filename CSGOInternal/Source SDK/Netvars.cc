@@ -21,12 +21,17 @@
  *********************************************************************/
 #include "Netvars.hpp"
 #include "Interfaces.hpp"
+#include "../Hooks/Memory.hpp"
 #include "Strings.hpp"
+#include <Windows.h>
 #include <string>
 
 
 uintptr_t _netvarOffsets[netvarOffsetsLength] = { 0 };
-
+uintptr_t sig_dwClientState = 0;
+uint16_t sig_dwClientState_MaxPlayers = 0;
+uint16_t sig_dwClientState_ViewAngles = 0;
+uint16_t sig_bDormant = 0;
 
 /**
  * \brief Returns network variable offset
@@ -90,21 +95,68 @@ ReadyNetvarOffsets(void)
 
     
     _netvarOffsets[NetvarNames::m_iHealth] = _GetNetVarOffset("DT_BasePlayer", "m_iHealth", allClass);
+    _netvarOffsets[NetvarNames::m_iTeamNum] = _GetNetVarOffset("DT_BasePlayer", "m_iTeamNum", allClass);
+    _netvarOffsets[NetvarNames::m_vecOrigin] = _GetNetVarOffset("DT_BasePlayer", "m_vecOrigin", allClass);
+    _netvarOffsets[NetvarNames::m_vecVelocity] = _GetNetVarOffset("DT_CSPlayer", "m_vecVelocity[0]", allClass);
+    _netvarOffsets[NetvarNames::m_vecViewOffset] = _GetNetVarOffset("DT_CSPlayer", "m_vecViewOffset[0]", allClass);
+    _netvarOffsets[NetvarNames::m_viewPunchAngle] = _GetNetVarOffset("DT_BasePlayer", "m_viewPunchAngle", allClass);
+    _netvarOffsets[NetvarNames::m_hMyWeapons] = _GetNetVarOffset("DT_BasePlayer", "m_hMyWeapons", allClass);
+    _netvarOffsets[NetvarNames::m_flFlashDuration] = _GetNetVarOffset("DT_CSPlayer", "m_flFlashDuration", allClass);
+    _netvarOffsets[NetvarNames::m_bIsDefusing] = _GetNetVarOffset("DT_CSPlayer", "m_bIsDefusing", allClass);
+
+    _netvarOffsets[NetvarNames::m_dwBoneMatrix] = _GetNetVarOffset("DT_BaseAnimating", "m_nForceBone", allClass); 
+    _netvarOffsets[NetvarNames::m_dwBoneMatrix] += 28;
 
 
     return true;
-
-
 }
 
-/**
- * \brief Returns netvar offset
- * 
- * \param netVar enum NetvarNames
- */
+template <typename T>
 inline
-uintptr_t 
-GetNetvarOffset(uintptr_t netVar)
+T
+read_protected_memory(byte_t* v)
 {
-    return _netvarOffsets[netVar];
+    DWORD dwOldProtect;
+    VirtualProtect(v, sizeof(T), PAGE_EXECUTE_READWRITE, &dwOldProtect);
+    T val = *(T*)(v);
+    VirtualProtect(v, sizeof(T), dwOldProtect, &dwOldProtect);
+    return val;
+}
+
+bool 
+ReadySignatures(void)
+{
+    byte_t* mem;
+    //Currently we are using hazedumper signatures.
+   // return true;
+
+    mem = (byte_t*) memFindPattern(DLL_ENGINE, PATTERN_CLIENTSTATE[0], PATTERN_CLIENTSTATE[1]);
+    if (!mem)
+        return false;
+
+    sig_dwClientState = read_protected_memory<uintptr_t>(++mem);
+
+    mem = (byte_t*) memFindPattern(DLL_ENGINE, PATTERN_CLIENTSTATE_MAXPLAYERS[0], PATTERN_CLIENTSTATE_MAXPLAYERS[1]);
+    if (!mem)
+        return false;
+
+    mem += 7;
+    sig_dwClientState_MaxPlayers = read_protected_memory<uint16_t>(mem);
+
+
+    mem = (byte_t*) memFindPattern(DLL_ENGINE, PATTERN_CLIENTSTATE_VIEWANGLES[0], PATTERN_CLIENTSTATE_VIEWANGLES[1]);
+    if (!mem)
+        return false;
+    mem += 4;
+    sig_dwClientState_ViewAngles = read_protected_memory<uint16_t>(mem);
+
+    
+    mem = (byte_t*) memFindPattern(DLL_CLIENT, PATTERN_BDORMANT[0], PATTERN_BDORMANT[1]);
+    if (!mem)
+        return false;
+    mem += 2;
+    sig_bDormant = read_protected_memory<uint16_t>(mem);
+    sig_bDormant += 8;
+
+    return true;
 }

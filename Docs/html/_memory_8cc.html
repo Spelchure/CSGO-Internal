@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('_memory_8cc.html',''); initResizable()
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_memory_8hpp_source.html">Memory.hpp</a>&quot;</code><br />
 <code>#include &lt;Windows.h&gt;</code><br />
+<code>#include &lt;Psapi.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -104,6 +105,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aec5a62bf5cc2d27e4a60da2f66319d56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_memory_8cc.html#aec5a62bf5cc2d27e4a60da2f66319d56">memFillWithNopes</a> (byte_t *dst, size_t size)</td></tr>
 <tr class="memdesc:aec5a62bf5cc2d27e4a60da2f66319d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill specified region to nopes(0x90)  <a href="_memory_8cc.html#aec5a62bf5cc2d27e4a60da2f66319d56">More...</a><br /></td></tr>
 <tr class="separator:aec5a62bf5cc2d27e4a60da2f66319d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fcc567e7b18d82d7313592a73b30386"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_memory_8cc.html#a0fcc567e7b18d82d7313592a73b30386">memFindPattern</a> (const char *sModule, const char *pattern, const char *mask)</td></tr>
+<tr class="memdesc:a0fcc567e7b18d82d7313592a73b30386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search pattern in specified module.  <a href="_memory_8cc.html#a0fcc567e7b18d82d7313592a73b30386">More...</a><br /></td></tr>
+<tr class="separator:a0fcc567e7b18d82d7313592a73b30386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><br  />
@@ -148,6 +152,51 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a0fcc567e7b18d82d7313592a73b30386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fcc567e7b18d82d7313592a73b30386">&#9670;&nbsp;</a></span>memFindPattern()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uintptr_t memFindPattern </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>sModule</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pattern</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search pattern in specified module. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">szModule</td><td>Name of module </td></tr>
+    <tr><td class="paramname">pattern</td><td>Pattern to find </td></tr>
+    <tr><td class="paramname">mask</td><td>Mask of pattern</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Address of pattern if found otherwise 0 </dd></dl>
 
 </div>
 </div>

@@ -102,6 +102,22 @@ MainThread(HMODULE hDll)
         FreeLibraryAndExitThread(hDll, 1);
         return FALSE;
     }
+    
+    // Initialize signatures
+    if(!ReadySignatures()) {
+        delete pMidHook;
+        delete pSettings;
+        FreeLibraryAndExitThread(hDll, 1);
+        return FALSE;
+    }
+    
+    if (!SDK_initInterfaces())
+    {
+        delete pMidHook;
+        delete pSettings;
+        FreeLibraryAndExitThread(hDll, 1);
+        return FALSE;
+    }
 
     // HOOK! GatewayFunction:Gateway.cc
     pMidHook->BeginHook((reinterpret_cast<uintptr_t>(vTable[42])+0xF), (uintptr_t)GatewayFunction, 5);

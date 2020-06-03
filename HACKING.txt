@@ -1,14 +1,20 @@
 Important functions
 ===================
 
+
+
 1.EndScene hook
 ---------------
-	file: CSGOInternal/Gateway.cc GatewayFunction()
+	file: CSGOInternal/Gateway.cc GatewayFunction() called from MainThread()
 
 2.Main hack function
 --------------------
 	file: CSGOInternal/MainLoop.cc MainLoop() called from GatewayFunction()
 	
+3.Aimbot angle calculation
+--------------------------
+	file: CSGOInternal/Source SDK/Vectors.cc vecCalcAngle()
+
 
 Some Examples
 ==============

@@ -19,12 +19,85 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
+#include <Windows.h>
 #include "Settings/Settings.hpp"
+#include "Source SDK/SDK.hpp"
+
+constexpr auto ENTITY_MAX_PLAYERS = 32;
 
 extern AppSettings* pSettings;
+extern IVEngineClient013* iEngineClient13;
+extern IClientEntityList* iEntityList;
+
+extern uintptr_t sig_dwClientState;
+extern uint16_t sig_dwClientState_ViewAngles;
 
 void 
 MainLoop(void)
 {
+    CEntityPlayer* localPlayer = iEntityList->GetClientEntity(iEngineClient13->GetLocalPlayer());
+    float distmax = FLT_MAX;
+    int bestEnemy = -1;
+    uintptr_t clientState = 0;
 
+    if (localPlayer == nullptr) // We do not need run any hacks
+        return;
+
+    if (sig_dwClientState)
+        clientState = *(uintptr_t*)sig_dwClientState;
+  
+    // Loop in entity list
+    for(int i = 0; i < ENTITY_MAX_PLAYERS; i++) {
+        CEntityPlayer* ent = iEntityList->GetClientEntity(i);
+        
+        if (ent == nullptr) // Reached end of the list
+            break;
+        
+        if (ent == localPlayer) // Skip local player
+            continue;
+    
+
+        if (*ent->GetHealth() > 0 && *ent->GetTeam() != *localPlayer->GetTeam() && !(*ent->GetDormant())) { // VALID ENEMY
+            if (true) { // IsAimbot open ? 
+                Vector myPos;
+                Vector angles;
+
+                localPlayer->GetViewAngles(myPos);
+                angles = vecCalcAngles(myPos, *ent->GetBonePos(8));
+            
+                float dist = vecGet3DDistance(angles, *ent->GetBonePos(8));
+                if (dist < distmax)
+                    bestEnemy = i;
+            }
+        }
+    }
+
+    if (GetAsyncKeyState('C') & 0x8000) { // Aim!! 
+        if(bestEnemy > -1) {
+            //Aim to enemy 
+            Vector myPos, angles;
+            CEntityPlayer* enemy = (CEntityPlayer*)iEntityList->GetClientEntity(bestEnemy);
+            if (nullptr != enemy)
+            {
+                
+                if(clientState) {
+                    localPlayer->GetViewAngles(myPos);
+                    angles = vecCalcAngles(myPos, *enemy->GetBonePos(8));
+                    int enteam = *enemy->GetTeam();
+                    /*
+                    angles.x -= aimPunchAngle.x * 2.f;
+                    angles.y -= aimPunchAngle.y * 2.f; 
+                    */
+                    if(angles.x >= -89.0f && angles.x <= 89.0f && angles.y >= -180.0f && angles.y <= 180.0f) {
+                        Vector* viewAngles = (Vector*)(clientState + sig_dwClientState_ViewAngles);
+                        //Set my angles...
+                        viewAngles->x = angles.x;
+                        viewAngles->y = angles.y;
+                    }
+                    
+                }
+            }
+        }
+
+    }
 }

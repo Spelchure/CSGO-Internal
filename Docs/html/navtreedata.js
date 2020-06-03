@@ -37,7 +37,8 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ]
       ] ]
     ] ]
   ] ]
@@ -46,11 +47,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_dll_main_8cc.html",
-"struct_im_draw_list_splitter.html#ae3a1593ee05bc52e6284943eab3c97a2",
-"struct_im_gui_context.html#a45d87c28d8ea54ea82cb5d26c12c13db",
-"struct_im_gui_input_text_state.html#a8be5f345ea5de89842d5a6716cb19b27",
-"struct_im_gui_text_buffer.html",
-"struct_im_vector.html#a168658df8e0e1df5698ebe7a69946389"
+"class_i_v_engine_client013.html#a8285f4164b2c86a8e3831f8abca9f407",
+"struct_im_draw_list_splitter.html#ac6865e5a2f180419fa282b681bf08c9c",
+"struct_im_gui_context.html#a4134d419bad1e87ca359381b7cfbcd87",
+"struct_im_gui_input_text_state.html#a730a350758ad428d845d895f85770b7f",
+"struct_im_gui_tab_item.html#ac09eeb85bebba09f18ac959bc32b5cef",
+"struct_im_vector.html#a0d795963a9fd9d15833fdf87ba292438"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

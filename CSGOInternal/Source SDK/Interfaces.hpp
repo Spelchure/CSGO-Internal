@@ -20,22 +20,22 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
 #pragma once
-
+#include "EntityPlayer.hpp"
 
 using tCreateInterface = void* (__cdecl*)(const char* interfaceName, int * returnCode);
 
-void* GetInterface(const char *dllName, const char* interfaceName);
 
 typedef void* CBaseHandle;
 typedef void* INetChannel;
 typedef void* IServer;
 typedef void* CGlobalVarsBase;
+typedef int player_info_t;
+typedef char client_textmessage_t;
 
 class ClientClass;
 
-class ClientEntity {
 
-};
+
 
 class IBaseClientDLL
 {
@@ -95,8 +95,8 @@ public:
 
     // NOTE: This function is only a convenience wrapper.
     // It returns GetClientNetworkable( entnum )->GetIClientEntity().
-    virtual ClientEntity* GetClientEntity(int entnum) = 0;
-    virtual ClientEntity* GetClientEntityFromHandle(CBaseHandle hEnt) = 0;
+    virtual CEntityPlayer* GetClientEntity(int entnum) = 0;
+    virtual CEntityPlayer* GetClientEntityFromHandle(CBaseHandle hEnt) = 0;
 
     // Returns number of entities currently in use
     virtual int					NumberOfEntities(bool bIncludeNonNetworkable) = 0;
@@ -109,4 +109,49 @@ public:
     virtual int					GetMaxEntities() = 0;
 };
 
+class IVEngineClient013
+{
+public:
+    // Find the model's surfaces that intersect the given sphere.
+    // Returns the number of surfaces filled in.
+    virtual void fn0(void) = 0;
+    // Get the lighting intensivty for a specified point
+    // If bClamp is specified, the resulting Vector is restricted to the 0.0 to 1.0 for each element
+    virtual void fn1(void) = 0;
+    // Traces the line and reports the material impacted as well as the lighting information for the impact point
+
+    virtual void fn2(void) = 0;
+    // Given an input text buffer data pointer, parses a single token into the variable token and returns the new
+    //  reading position
+    virtual const char*         ParseFile(const char* data, char* token, int maxlen) = 0;
+    virtual bool				CopyLocalFile(const char* source, const char* destination) = 0;
+
+    // Gets the dimensions of the game window
+    virtual void				GetScreenSize(int& width, int& height) = 0;
+
+    // Forwards szCmdString to the server, sent reliably if bReliable is set
+    virtual void				ServerCmd(const char* szCmdString, bool bReliable = true) = 0;
+    // Inserts szCmdString into the command buffer as if it was typed by the client to his/her console.
+    // Note: Calls to this are checked against FCVAR_CLIENTCMD_CAN_EXECUTE (if that bit is not set, then this function can't change it).
+    //       Call ClientCmd_Unrestricted to have access to FCVAR_CLIENTCMD_CAN_EXECUTE vars.
+    virtual void				ClientCmd(const char* szCmdString) = 0;
+
+    // Fill in the player info structure for the specified player index (name, model, etc.)
+    virtual bool				GetPlayerInfo(int ent_num, player_info_t* pinfo) = 0;
+
+    // Retrieve the player entity number for a specified userID
+    virtual int					GetPlayerForUserID(int userID) = 0;
+
+    // Retrieves text message system information for the specified message by name
+    virtual client_textmessage_t* TextMessageGet(const char* pName) = 0;
+
+    // Returns true if the console is visible
+    virtual bool				Con_IsVisible(void) = 0;
+
+    // Get the entity index of the local player
+    virtual int					GetLocalPlayer(void) = 0;
+};
+
+void* GetInterface(const char *dllName, const char* interfaceName);
+bool SDK_initInterfaces(void);
 

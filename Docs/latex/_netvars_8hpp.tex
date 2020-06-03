@@ -1,0 +1,84 @@
+\hypertarget{_netvars_8hpp}{}\doxysection{C\+S\+G\+O\+Internal/\+Source S\+D\+K/\+Netvars.hpp File Reference}
+\label{_netvars_8hpp}\index{CSGOInternal/Source SDK/Netvars.hpp@{CSGOInternal/Source SDK/Netvars.hpp}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include $<$cstdint$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_recv_prop}{Recv\+Prop}}
+\item 
+class \mbox{\hyperlink{class_recv_table}{Recv\+Table}}
+\item 
+class \mbox{\hyperlink{class_client_class}{Client\+Class}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_netvars_8hpp_a8d0a28f7dfbcf80bde8c54057271eac9}\label{_netvars_8hpp_a8d0a28f7dfbcf80bde8c54057271eac9}} 
+enum {\bfseries Netvar\+Names} \{ \newline
+{\bfseries m\+\_\+i\+Health}, 
+{\bfseries m\+\_\+i\+Team\+Num}, 
+{\bfseries m\+\_\+vec\+Origin}, 
+{\bfseries m\+\_\+vec\+Velocity}, 
+\newline
+{\bfseries m\+\_\+vec\+View\+Offset}, 
+{\bfseries m\+\_\+view\+Punch\+Angle}, 
+{\bfseries m\+\_\+h\+My\+Weapons}, 
+{\bfseries m\+\_\+fl\+Flash\+Duration}, 
+\newline
+{\bfseries m\+\_\+b\+Is\+Defusing}, 
+{\bfseries m\+\_\+dw\+Bone\+Matrix}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_netvars_8hpp_a1bf14a31832ac60538563eea60ea187c}\label{_netvars_8hpp_a1bf14a31832ac60538563eea60ea187c}} 
+uintptr\+\_\+t {\bfseries \+\_\+\+Get\+Net\+Var\+Offset} (const char $\ast$table\+Name, const char $\ast$netvar\+Name, \mbox{\hyperlink{class_client_class}{Client\+Class}} $\ast$client\+Class)
+\item 
+bool \mbox{\hyperlink{_netvars_8hpp_a6265f7483fc4df347b28b762b3702f48}{Ready\+Netvar\+Offsets}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize netvars. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_netvars_8hpp_a839442f71abcb92e8dde3fada9161c78}\label{_netvars_8hpp_a839442f71abcb92e8dde3fada9161c78}} 
+bool {\bfseries Ready\+Signatures} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_netvars_8hpp_af10cc19bbb8d7b9530190216ef2b00a3}\label{_netvars_8hpp_af10cc19bbb8d7b9530190216ef2b00a3}} 
+constexpr auto {\bfseries netvar\+Offsets\+Length} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+A\+L\+P\+E\+R\+EN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2020
+\end{DoxyDate}
+~\newline
+ This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details.
+
+You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_netvars_8hpp_a6265f7483fc4df347b28b762b3702f48}\label{_netvars_8hpp_a6265f7483fc4df347b28b762b3702f48}} 
+\index{Netvars.hpp@{Netvars.hpp}!ReadyNetvarOffsets@{ReadyNetvarOffsets}}
+\index{ReadyNetvarOffsets@{ReadyNetvarOffsets}!Netvars.hpp@{Netvars.hpp}}
+\doxysubsubsection{\texorpdfstring{ReadyNetvarOffsets()}{ReadyNetvarOffsets()}}
+{\footnotesize\ttfamily bool Ready\+Netvar\+Offsets (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize netvars. 
+

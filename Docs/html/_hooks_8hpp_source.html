@@ -103,23 +103,22 @@ $(document).ready(function(){initNavTree('_hooks_8hpp_source.html',''); initResi
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// Dehook</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (originalBytes != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            DWORD dwOldProtect;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            VirtualProtect((byte_t*)(hookJumpBack - 5), rsize, PAGE_EXECUTE_READWRITE, &amp;dwOldProtect);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            memcpy_s((byte_t*)(hookJumpBack - 5), rsize, originalBytes, rsize); <span class="comment">// Dehook  remove jump</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            VirtualProtect((byte_t*)(hookJumpBack - 5), rsize, dwOldProtect, &amp;dwOldProtect);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mid_function_hook.html#a6a33ec478636f0959d24255f59d151d3">BeginHook</a>(uintptr_t addy, uintptr_t func, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="_memory_8cc.html#a07807b5c883976fe33b6baefd80bc7ba">memPatch</a>((byte_t*)(hookJumpBack - 5), (byte_t*)originalBytes, rsize);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">delete</span> originalBytes;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mid_function_hook.html#a6a33ec478636f0959d24255f59d151d3">BeginHook</a>(uintptr_t addy, uintptr_t func, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_hooks_8hpp.html#aafcfca63c1c970eb09d534d96d605149">hooksDetour</a>(byte_t* src, byte_t* dst, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size); <span class="comment">// Classic detour hook</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;byte_t* <a class="code" href="_hooks_8hpp.html#a60adc122e4cca089a025dacf24e85044">hooksTrampoline</a>(byte_t* src, byte_t* dst, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size); <span class="comment">// Trampoline hook (using gateway function)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_hooks_8hpp.html#aafcfca63c1c970eb09d534d96d605149">hooksDetour</a>(byte_t* src, byte_t* dst, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size); <span class="comment">// Classic detour hook</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;byte_t* <a class="code" href="_hooks_8hpp.html#a60adc122e4cca089a025dacf24e85044">hooksTrampoline</a>(byte_t* src, byte_t* dst, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size); <span class="comment">// Trampoline hook (using gateway function)</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_hooks_8hpp_html_a60adc122e4cca089a025dacf24e85044"><div class="ttname"><a href="_hooks_8hpp.html#a60adc122e4cca089a025dacf24e85044">hooksTrampoline</a></div><div class="ttdeci">byte_t * hooksTrampoline(byte_t *src, byte_t *dst, const size_t size)</div><div class="ttdoc">Trampoline(Gateway) hook.</div><div class="ttdef"><b>Definition:</b> Hooks.cc:94</div></div>
 <div class="ttc" id="aclass_mid_function_hook_html"><div class="ttname"><a href="class_mid_function_hook.html">MidFunctionHook</a></div><div class="ttdoc">Middle function hook instance.</div><div class="ttdef"><b>Definition:</b> Hooks.hpp:31</div></div>
+<div class="ttc" id="a_memory_8cc_html_a07807b5c883976fe33b6baefd80bc7ba"><div class="ttname"><a href="_memory_8cc.html#a07807b5c883976fe33b6baefd80bc7ba">memPatch</a></div><div class="ttdeci">void memPatch(byte_t *dst, byte_t *src, size_t size)</div><div class="ttdoc">Patch memory.</div><div class="ttdef"><b>Definition:</b> Memory.cc:33</div></div>
 <div class="ttc" id="a_hooks_8hpp_html_aafcfca63c1c970eb09d534d96d605149"><div class="ttname"><a href="_hooks_8hpp.html#aafcfca63c1c970eb09d534d96d605149">hooksDetour</a></div><div class="ttdeci">bool hooksDetour(byte_t *src, byte_t *dst, const size_t size)</div><div class="ttdoc">Classic detour hook aka jmp hook.</div><div class="ttdef"><b>Definition:</b> Hooks.cc:64</div></div>
 <div class="ttc" id="aclass_mid_function_hook_html_a6a33ec478636f0959d24255f59d151d3"><div class="ttname"><a href="class_mid_function_hook.html#a6a33ec478636f0959d24255f59d151d3">MidFunctionHook::BeginHook</a></div><div class="ttdeci">void BeginHook(uintptr_t addy, uintptr_t func, const size_t size)</div><div class="ttdoc">Middle hooking address &lt;addy&gt;</div><div class="ttdef"><b>Definition:</b> Hooks.cc:33</div></div>
 <div class="ttc" id="a_memory_8hpp_html"><div class="ttname"><a href="_memory_8hpp.html">Memory.hpp</a></div></div>

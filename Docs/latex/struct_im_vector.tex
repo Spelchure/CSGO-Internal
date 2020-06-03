@@ -1,0 +1,142 @@
+\hypertarget{struct_im_vector}{}\doxysection{Im\+Vector$<$ T $>$ Struct Template Reference}
+\label{struct_im_vector}\index{ImVector$<$ T $>$@{ImVector$<$ T $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}\label{struct_im_vector_a8bd77e4e7581d8e5f9e98d7c2f3c2a80}} 
+typedef T {\bfseries value\+\_\+type}
+\item 
+\mbox{\Hypertarget{struct_im_vector_a74b5478f1f6fd471cc71219bce483db6}\label{struct_im_vector_a74b5478f1f6fd471cc71219bce483db6}} 
+typedef value\+\_\+type $\ast$ {\bfseries iterator}
+\item 
+\mbox{\Hypertarget{struct_im_vector_aedeac9c5080f9d6ce96ae837768ee4c4}\label{struct_im_vector_aedeac9c5080f9d6ce96ae837768ee4c4}} 
+typedef const value\+\_\+type $\ast$ {\bfseries const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_im_vector_a6e2ee59d8b2fa1583617a2110a56aed4}\label{struct_im_vector_a6e2ee59d8b2fa1583617a2110a56aed4}} 
+{\bfseries Im\+Vector} (const \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&src)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a0d795963a9fd9d15833fdf87ba292438}\label{struct_im_vector_a0d795963a9fd9d15833fdf87ba292438}} 
+\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \& {\bfseries operator=} (const \mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&src)
+\item 
+\mbox{\Hypertarget{struct_im_vector_aa53e48a5272f4bad1099368769514ff1}\label{struct_im_vector_aa53e48a5272f4bad1099368769514ff1}} 
+bool {\bfseries empty} () const
+\item 
+\mbox{\Hypertarget{struct_im_vector_a8c903ecb1aaee0601b6a8ad835a4a435}\label{struct_im_vector_a8c903ecb1aaee0601b6a8ad835a4a435}} 
+int {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{struct_im_vector_ade9f2e937e47b0e0f9970dcfba038204}\label{struct_im_vector_ade9f2e937e47b0e0f9970dcfba038204}} 
+int {\bfseries size\+\_\+in\+\_\+bytes} () const
+\item 
+\mbox{\Hypertarget{struct_im_vector_ac17681baa8b9b5cd97e556da29f9ef73}\label{struct_im_vector_ac17681baa8b9b5cd97e556da29f9ef73}} 
+int {\bfseries capacity} () const
+\item 
+\mbox{\Hypertarget{struct_im_vector_afb61bbfb1be8f3db4586854de04173e1}\label{struct_im_vector_afb61bbfb1be8f3db4586854de04173e1}} 
+T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+\mbox{\Hypertarget{struct_im_vector_af7585c60921f739085229bb8cd78191c}\label{struct_im_vector_af7585c60921f739085229bb8cd78191c}} 
+const T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+\mbox{\Hypertarget{struct_im_vector_ae2d401b4ec5f1113cdb8edb5a61a38f7}\label{struct_im_vector_ae2d401b4ec5f1113cdb8edb5a61a38f7}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{struct_im_vector_a470909b2720bc5cb71ec023439e9c814}\label{struct_im_vector_a470909b2720bc5cb71ec023439e9c814}} 
+T $\ast$ {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{struct_im_vector_a05442a30c96197c24d17e736cd2a68b2}\label{struct_im_vector_a05442a30c96197c24d17e736cd2a68b2}} 
+const T $\ast$ {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{struct_im_vector_aeb429e7d05b6651dfc716ecdb198dde4}\label{struct_im_vector_aeb429e7d05b6651dfc716ecdb198dde4}} 
+T $\ast$ {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{struct_im_vector_a541696299caf4b0477e57b27db70d32c}\label{struct_im_vector_a541696299caf4b0477e57b27db70d32c}} 
+const T $\ast$ {\bfseries end} () const
+\item 
+\mbox{\Hypertarget{struct_im_vector_a34ba855bd3a1ee3e2af215c5ce7d6ddc}\label{struct_im_vector_a34ba855bd3a1ee3e2af215c5ce7d6ddc}} 
+T \& {\bfseries front} ()
+\item 
+\mbox{\Hypertarget{struct_im_vector_a67e0e856307bbd927e4253461d3772c7}\label{struct_im_vector_a67e0e856307bbd927e4253461d3772c7}} 
+const T \& {\bfseries front} () const
+\item 
+\mbox{\Hypertarget{struct_im_vector_a6da15f3c402099ed57078835ab942f8e}\label{struct_im_vector_a6da15f3c402099ed57078835ab942f8e}} 
+T \& {\bfseries back} ()
+\item 
+\mbox{\Hypertarget{struct_im_vector_a480aba1c78064ca5370249b38a5ae207}\label{struct_im_vector_a480aba1c78064ca5370249b38a5ae207}} 
+const T \& {\bfseries back} () const
+\item 
+\mbox{\Hypertarget{struct_im_vector_afcec0d2a1e28aebe412b6efd06f0a77a}\label{struct_im_vector_afcec0d2a1e28aebe412b6efd06f0a77a}} 
+void {\bfseries swap} (\mbox{\hyperlink{struct_im_vector}{Im\+Vector}}$<$ T $>$ \&rhs)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a3a097635d464b1b70dc7d59996a88b28}\label{struct_im_vector_a3a097635d464b1b70dc7d59996a88b28}} 
+int {\bfseries \+\_\+grow\+\_\+capacity} (int sz) const
+\item 
+\mbox{\Hypertarget{struct_im_vector_ac371dd62e56ae486b1a5038cf07eee56}\label{struct_im_vector_ac371dd62e56ae486b1a5038cf07eee56}} 
+void {\bfseries resize} (int new\+\_\+size)
+\item 
+\mbox{\Hypertarget{struct_im_vector_abe7f21776ecfb7d0214963fd8c0689f0}\label{struct_im_vector_abe7f21776ecfb7d0214963fd8c0689f0}} 
+void {\bfseries resize} (int new\+\_\+size, const T \&v)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a8dafcce1e393244890f52ef1aa490876}\label{struct_im_vector_a8dafcce1e393244890f52ef1aa490876}} 
+void {\bfseries shrink} (int new\+\_\+size)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a0f14f5736c3372157856eebb67123b75}\label{struct_im_vector_a0f14f5736c3372157856eebb67123b75}} 
+void {\bfseries reserve} (int new\+\_\+capacity)
+\item 
+\mbox{\Hypertarget{struct_im_vector_aab5df48e0711a48bd12f3206e08c4108}\label{struct_im_vector_aab5df48e0711a48bd12f3206e08c4108}} 
+void {\bfseries push\+\_\+back} (const T \&v)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a3db7ce62d3c429effdb893fbf7148c1c}\label{struct_im_vector_a3db7ce62d3c429effdb893fbf7148c1c}} 
+void {\bfseries pop\+\_\+back} ()
+\item 
+\mbox{\Hypertarget{struct_im_vector_a168658df8e0e1df5698ebe7a69946389}\label{struct_im_vector_a168658df8e0e1df5698ebe7a69946389}} 
+void {\bfseries push\+\_\+front} (const T \&v)
+\item 
+\mbox{\Hypertarget{struct_im_vector_af44d62675eb411f655da9cced5237456}\label{struct_im_vector_af44d62675eb411f655da9cced5237456}} 
+T $\ast$ {\bfseries erase} (const T $\ast$it)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a061554df4aff14deece181d6c46abb9f}\label{struct_im_vector_a061554df4aff14deece181d6c46abb9f}} 
+T $\ast$ {\bfseries erase} (const T $\ast$it, const T $\ast$it\+\_\+last)
+\item 
+\mbox{\Hypertarget{struct_im_vector_af3bb8157615f4d38b1faf04a5e11b96f}\label{struct_im_vector_af3bb8157615f4d38b1faf04a5e11b96f}} 
+T $\ast$ {\bfseries erase\+\_\+unsorted} (const T $\ast$it)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a7859d07f4a90efd2d9fd9ad5c1bf43c6}\label{struct_im_vector_a7859d07f4a90efd2d9fd9ad5c1bf43c6}} 
+T $\ast$ {\bfseries insert} (const T $\ast$it, const T \&v)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a2e7860fbde1c721f168b6262d8f14aec}\label{struct_im_vector_a2e7860fbde1c721f168b6262d8f14aec}} 
+bool {\bfseries contains} (const T \&v) const
+\item 
+\mbox{\Hypertarget{struct_im_vector_a1fd56218ff1441843df8c9f1aef54fdc}\label{struct_im_vector_a1fd56218ff1441843df8c9f1aef54fdc}} 
+T $\ast$ {\bfseries find} (const T \&v)
+\item 
+\mbox{\Hypertarget{struct_im_vector_ada7d8e0e66b8619562cb2fa3830c8f8d}\label{struct_im_vector_ada7d8e0e66b8619562cb2fa3830c8f8d}} 
+const T $\ast$ {\bfseries find} (const T \&v) const
+\item 
+\mbox{\Hypertarget{struct_im_vector_a4e9214ecaa413240f76223500dbed912}\label{struct_im_vector_a4e9214ecaa413240f76223500dbed912}} 
+bool {\bfseries find\+\_\+erase} (const T \&v)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a07f501e40783436616156682ec668327}\label{struct_im_vector_a07f501e40783436616156682ec668327}} 
+bool {\bfseries find\+\_\+erase\+\_\+unsorted} (const T \&v)
+\item 
+\mbox{\Hypertarget{struct_im_vector_a3fd48379f807eeb01fb9da39afa30dc7}\label{struct_im_vector_a3fd48379f807eeb01fb9da39afa30dc7}} 
+int {\bfseries index\+\_\+from\+\_\+ptr} (const T $\ast$it) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_im_vector_abbfd157947f66280d27b21d70a16df8d}\label{struct_im_vector_abbfd157947f66280d27b21d70a16df8d}} 
+int {\bfseries Size}
+\item 
+\mbox{\Hypertarget{struct_im_vector_abd24482b4d30d22e37582e521e5bfb33}\label{struct_im_vector_abd24482b4d30d22e37582e521e5bfb33}} 
+int {\bfseries Capacity}
+\item 
+\mbox{\Hypertarget{struct_im_vector_ac0e46e8b30cb079d93c8f0aad7d7cbd0}\label{struct_im_vector_ac0e46e8b30cb079d93c8f0aad7d7cbd0}} 
+T $\ast$ {\bfseries Data}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+S\+G\+O\+Internal/\+Im\+Gui/imgui.\+h\end{DoxyCompactItemize}

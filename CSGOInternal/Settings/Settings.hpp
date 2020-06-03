@@ -28,8 +28,8 @@ constexpr auto numberOfFloatSettings = 0;
 constexpr auto numberOfIntSettings = 1;
 
 /* Default settings 
-Menu Showing = false;
-
+bMenuShowing = false;
+bAimbot = false;
 */
 
 class AppSettings {
@@ -40,6 +40,7 @@ class AppSettings {
 public:
     enum BoolSettings {
         bMenuShowing,
+        bAimbot, // Is aimbot open
     };
     enum IntSettings {
         iAimbotKey 
@@ -55,6 +56,8 @@ public:
     ~AppSettings() {
         if (nullptr != boolSettings)
             delete[] boolSettings;
+        if (nullptr != intSettings)
+            delete[] intSettings;
         if (nullptr != filePath)
             delete filePath;
     }
@@ -75,6 +78,17 @@ public:
         if (ind < numberOfBoolSettings)
             return boolSettings[ind];
         return false;
+    }
+
+    void setInt(int ind, int val) {
+        if (ind < numberOfIntSettings)
+            intSettings[ind] = val;
+        
+    }
+    int getInt(int ind)
+    {
+        if (ind < numberOfIntSettings)
+            return intSettings[ind]; 
     }
 };
 

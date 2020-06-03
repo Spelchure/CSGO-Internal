@@ -25,6 +25,7 @@ typedef int8_t byte_t;
 
 void memPatch(byte_t* dst, byte_t* src, size_t size);
 void memFillWithNopes(byte_t* dst, size_t size);
+uintptr_t memFindPattern(const char* sModule, const char* pattern, const char* mask);
 // uintptr_t find_multilevel_ptr(uintptr_t ptr, std::vector<uint32_t> offsets); Not required function
 
 // byte_t* find_pattern(byte_t* start, const char* pattern, size_t sPattern, const char* match, size_t mSize); Not required also

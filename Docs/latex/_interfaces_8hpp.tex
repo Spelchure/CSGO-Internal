@@ -1,0 +1,102 @@
+\hypertarget{_interfaces_8hpp}{}\doxysection{C\+S\+G\+O\+Internal/\+Source S\+D\+K/\+Interfaces.hpp File Reference}
+\label{_interfaces_8hpp}\index{CSGOInternal/Source SDK/Interfaces.hpp@{CSGOInternal/Source SDK/Interfaces.hpp}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include \char`\"{}Entity\+Player.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_base_client_d_l_l}{I\+Base\+Client\+D\+LL}}
+\item 
+class \mbox{\hyperlink{class_i_client_entity_list}{I\+Client\+Entity\+List}}
+\item 
+class \mbox{\hyperlink{class_i_v_engine_client013}{I\+V\+Engine\+Client013}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_interfaces_8hpp_af9f7743088bacd58f27ed1951c22bee7}\label{_interfaces_8hpp_af9f7743088bacd58f27ed1951c22bee7}} 
+using {\bfseries t\+Create\+Interface} = void $\ast$(\+\_\+\+\_\+cdecl $\ast$)(const char $\ast$interface\+Name, int $\ast$return\+Code)
+\item 
+\mbox{\Hypertarget{_interfaces_8hpp_a7a246e7f60c6548a80682300bf1f52d5}\label{_interfaces_8hpp_a7a246e7f60c6548a80682300bf1f52d5}} 
+typedef void $\ast$ {\bfseries C\+Base\+Handle}
+\item 
+\mbox{\Hypertarget{_interfaces_8hpp_aa06581387ddacdd4c5198e5736e5b4e0}\label{_interfaces_8hpp_aa06581387ddacdd4c5198e5736e5b4e0}} 
+typedef void $\ast$ {\bfseries I\+Net\+Channel}
+\item 
+\mbox{\Hypertarget{_interfaces_8hpp_a339b05d3acf894cc2f7c1b8b86f80487}\label{_interfaces_8hpp_a339b05d3acf894cc2f7c1b8b86f80487}} 
+typedef void $\ast$ {\bfseries I\+Server}
+\item 
+\mbox{\Hypertarget{_interfaces_8hpp_a80d2bb99924e4a8c06e2709d8a7371ad}\label{_interfaces_8hpp_a80d2bb99924e4a8c06e2709d8a7371ad}} 
+typedef void $\ast$ {\bfseries C\+Global\+Vars\+Base}
+\item 
+\mbox{\Hypertarget{_interfaces_8hpp_a665bcb11ecff5e84ee60dbfbcf37f413}\label{_interfaces_8hpp_a665bcb11ecff5e84ee60dbfbcf37f413}} 
+typedef int {\bfseries player\+\_\+info\+\_\+t}
+\item 
+\mbox{\Hypertarget{_interfaces_8hpp_abace270edec0b74d5b4cdd65f087f1f4}\label{_interfaces_8hpp_abace270edec0b74d5b4cdd65f087f1f4}} 
+typedef char {\bfseries client\+\_\+textmessage\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{_interfaces_8hpp_a555d28e195931005853df3abe7a3233b}{Get\+Interface}} (const char $\ast$dll\+Name, const char $\ast$interface\+Name)
+\item 
+bool \mbox{\hyperlink{_interfaces_8hpp_a3066543a503a10116b6522a964b972b2}{S\+D\+K\+\_\+init\+Interfaces}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+A\+L\+P\+E\+R\+EN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2020
+\end{DoxyDate}
+~\newline
+ This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details.
+
+You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_interfaces_8hpp_a555d28e195931005853df3abe7a3233b}\label{_interfaces_8hpp_a555d28e195931005853df3abe7a3233b}} 
+\index{Interfaces.hpp@{Interfaces.hpp}!GetInterface@{GetInterface}}
+\index{GetInterface@{GetInterface}!Interfaces.hpp@{Interfaces.hpp}}
+\doxysubsubsection{\texorpdfstring{GetInterface()}{GetInterface()}}
+{\footnotesize\ttfamily void$\ast$ Get\+Interface (\begin{DoxyParamCaption}\item[{const char $\ast$}]{dll\+Name,  }\item[{const char $\ast$}]{interface\+Name }\end{DoxyParamCaption})}
+
+Calls cs\+:go Create\+Interface function
+
+
+\begin{DoxyParams}{Parameters}
+{\em dll\+Name} & Name of dll (client or engine) \\
+\hline
+{\em interface\+Name} & Name of the interface \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_strings_8hpp}{Strings.\+hpp}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Created interface or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_interfaces_8hpp_a3066543a503a10116b6522a964b972b2}\label{_interfaces_8hpp_a3066543a503a10116b6522a964b972b2}} 
+\index{Interfaces.hpp@{Interfaces.hpp}!SDK\_initInterfaces@{SDK\_initInterfaces}}
+\index{SDK\_initInterfaces@{SDK\_initInterfaces}!Interfaces.hpp@{Interfaces.hpp}}
+\doxysubsubsection{\texorpdfstring{SDK\_initInterfaces()}{SDK\_initInterfaces()}}
+{\footnotesize\ttfamily bool S\+D\+K\+\_\+init\+Interfaces (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Gets S\+DK interfaces using \mbox{\hyperlink{_interfaces_8cpp_a555d28e195931005853df3abe7a3233b}{Get\+Interface()}} ~\newline
+
+
+\begin{DoxyReturn}{Returns}
+True on success 
+\end{DoxyReturn}

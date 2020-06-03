@@ -40,7 +40,9 @@ AppSettings::parseFile(const char* path)
     std::string line;
 
     const char* regex_[] = {
-        "([0-9]+)\\s*=\\s*([01]);" // Match boolean
+        "([0-9]+)\\s*=\\s*([01]);", // Match boolean
+        "([0-9]+)\\s*=\\s*([0-9\\.]+);", // Match float
+        "([0-9]+)\\s*=\\s*([0-9]+);" // Match integer
     };
     int ind = 0;
     while (std::getline(fStream, line))
@@ -52,18 +54,28 @@ AppSettings::parseFile(const char* path)
             ind = 1;
             continue;
         }
+        else if (!line.compare("[int]")) {
+            ind = 2;
+            continue;
+        }
+
     
         std::regex rg(regex_[ind]); // Regex
         std::smatch match;
         if(regex_search(line,match,rg)) {
             if (match.size() > 2) {
+                int index = std::stoi(match[1].str());
                 if (ind == 0) // Boolean
                 {
                     int val = std::stoi(match[2].str());
-                    this->setBool(std::stoi(match[1].str()), val != 0);
+                    this->setBool(index, val != 0);
                 }
                 else if (ind == 1) { // Float 
-                
+                    //TODO 
+                }
+                else if (ind == 2) { // Integer
+                    int val = std::stoi(match[2].str());
+                    this->setInt(index, val);
                 }
             }
         } else {  // Invalid file format

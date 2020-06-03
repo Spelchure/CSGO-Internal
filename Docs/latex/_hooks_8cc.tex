@@ -1,0 +1,88 @@
+\hypertarget{_hooks_8cc}{}\doxysection{C\+S\+G\+O\+Internal/\+Hooks/\+Hooks.cc File Reference}
+\label{_hooks_8cc}\index{CSGOInternal/Hooks/Hooks.cc@{CSGOInternal/Hooks/Hooks.cc}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include $<$Windows.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Hooks.\+hpp\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_hooks_8cc_aafcfca63c1c970eb09d534d96d605149}{hooks\+Detour}} (byte\+\_\+t $\ast$src, byte\+\_\+t $\ast$dst, const size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Classic detour hook aka jmp hook. \end{DoxyCompactList}\item 
+byte\+\_\+t $\ast$ \mbox{\hyperlink{_hooks_8cc_a60adc122e4cca089a025dacf24e85044}{hooks\+Trampoline}} (byte\+\_\+t $\ast$src, byte\+\_\+t $\ast$dst, const size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Trampoline(\+Gateway) hook. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+A\+L\+P\+E\+R\+EN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2020
+\end{DoxyDate}
+~\newline
+ This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details.
+
+You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_hooks_8cc_aafcfca63c1c970eb09d534d96d605149}\label{_hooks_8cc_aafcfca63c1c970eb09d534d96d605149}} 
+\index{Hooks.cc@{Hooks.cc}!hooksDetour@{hooksDetour}}
+\index{hooksDetour@{hooksDetour}!Hooks.cc@{Hooks.cc}}
+\doxysubsubsection{\texorpdfstring{hooksDetour()}{hooksDetour()}}
+{\footnotesize\ttfamily bool hooks\+Detour (\begin{DoxyParamCaption}\item[{byte\+\_\+t $\ast$}]{src,  }\item[{byte\+\_\+t $\ast$}]{dst,  }\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Classic detour hook aka jmp hook. 
+
+$<$\+Detailed description goes here$>$
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source address to hook \\
+\hline
+{\em dst} & Destination address to jmp \\
+\hline
+{\em size} & size in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success 
+
+False on invalid paramater 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_hooks_8cc_a60adc122e4cca089a025dacf24e85044}\label{_hooks_8cc_a60adc122e4cca089a025dacf24e85044}} 
+\index{Hooks.cc@{Hooks.cc}!hooksTrampoline@{hooksTrampoline}}
+\index{hooksTrampoline@{hooksTrampoline}!Hooks.cc@{Hooks.cc}}
+\doxysubsubsection{\texorpdfstring{hooksTrampoline()}{hooksTrampoline()}}
+{\footnotesize\ttfamily byte\+\_\+t$\ast$ hooks\+Trampoline (\begin{DoxyParamCaption}\item[{byte\+\_\+t $\ast$}]{src,  }\item[{byte\+\_\+t $\ast$}]{dst,  }\item[{const size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Trampoline(\+Gateway) hook. 
+
+$<$\+Detailed\+Description\+Goes\+Here$>$
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source address to hook ~\newline
+ \\
+\hline
+{\em dst} & Destination address to jmp \\
+\hline
+{\em size} & size in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Address of gateway function , nullptr if failure 
+\end{DoxyReturn}

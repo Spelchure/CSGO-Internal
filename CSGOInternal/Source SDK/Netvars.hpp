@@ -26,9 +26,17 @@
 
 enum NetvarNames {
     m_iHealth,
-    m_iVecOrigin
+    m_iTeamNum,
+    m_vecOrigin,
+    m_vecVelocity,
+    m_vecViewOffset,
+    m_viewPunchAngle,
+    m_hMyWeapons,
+    m_flFlashDuration,
+    m_bIsDefusing,
+    m_dwBoneMatrix
 };
-constexpr auto netvarOffsetsLength = 2;
+constexpr auto netvarOffsetsLength = 10;
 
 class RecvTable;
 
@@ -78,4 +86,4 @@ public:
 //uintptr_t _GetOffset(RecvTable* table, const char* tableName, const char* netvarName);
 uintptr_t _GetNetVarOffset(const char* tableName, const char* netvarName, ClientClass* clientClass);
 bool ReadyNetvarOffsets(void);
-inline uintptr_t GetNetvarOffset(NetvarNames netVar);
+bool ReadySignatures(void);

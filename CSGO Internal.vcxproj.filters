@@ -500,6 +500,7 @@
     <Text Include="LICENSE" />
     <Text Include="CSGOInternal\ImGui\LICENSE.txt" />
     <Text Include="HACKING.txt" />
+    <Text Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSGOInternal\DllMain.cc">
@@ -545,6 +546,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CSGOInternal\Settings\Settings.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGOInternal\Source SDK\Vectors.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -820,6 +824,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CSGOInternal\Settings\Settings.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\Source SDK\EntityPlayer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\Source SDK\Vectors.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\Source SDK\Signatures.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

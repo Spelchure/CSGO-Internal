@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['hooks_2ecc_12',['Hooks.cc',['../_hooks_8cc.html',1,'']]],
-  ['hooks_2ehpp_13',['Hooks.hpp',['../_hooks_8hpp.html',1,'']]],
-  ['hooksdetour_14',['hooksDetour',['../_hooks_8cc.html#aafcfca63c1c970eb09d534d96d605149',1,'hooksDetour(byte_t *src, byte_t *dst, const size_t size):&#160;Hooks.cc'],['../_hooks_8hpp.html#aafcfca63c1c970eb09d534d96d605149',1,'hooksDetour(byte_t *src, byte_t *dst, const size_t size):&#160;Hooks.cc']]],
-  ['hookstrampoline_15',['hooksTrampoline',['../_hooks_8cc.html#a60adc122e4cca089a025dacf24e85044',1,'hooksTrampoline(byte_t *src, byte_t *dst, const size_t size):&#160;Hooks.cc'],['../_hooks_8hpp.html#a60adc122e4cca089a025dacf24e85044',1,'hooksTrampoline(byte_t *src, byte_t *dst, const size_t size):&#160;Hooks.cc']]]
+  ['gateway_2ecc_15',['Gateway.cc',['../_gateway_8cc.html',1,'']]],
+  ['getd3d9device_16',['GetD3D9Device',['../_dummy_device_8cc.html#af3409dac5ff2d13bc9b2c5e11af74de2',1,'GetD3D9Device(HWND hWind, void **pTable, size_t size):&#160;DummyDevice.cc'],['../_dummy_device_8hpp.html#af3409dac5ff2d13bc9b2c5e11af74de2',1,'GetD3D9Device(HWND hWind, void **pTable, size_t size):&#160;DummyDevice.cc']]],
+  ['getinterface_17',['GetInterface',['../_interfaces_8cpp.html#a555d28e195931005853df3abe7a3233b',1,'GetInterface(const char *dllName, const char *interfaceName):&#160;Interfaces.cpp'],['../_interfaces_8hpp.html#a555d28e195931005853df3abe7a3233b',1,'GetInterface(const char *dllName, const char *interfaceName):&#160;Interfaces.cpp']]]
 ];

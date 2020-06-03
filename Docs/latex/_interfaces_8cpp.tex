@@ -1,0 +1,98 @@
+\hypertarget{_interfaces_8cpp}{}\doxysection{C\+S\+G\+O\+Internal/\+Source S\+D\+K/\+Interfaces.cpp File Reference}
+\label{_interfaces_8cpp}\index{CSGOInternal/Source SDK/Interfaces.cpp@{CSGOInternal/Source SDK/Interfaces.cpp}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include \char`\"{}Interfaces.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Windows.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{_interfaces_8cpp_a555d28e195931005853df3abe7a3233b}{Get\+Interface}} (const char $\ast$dll\+Name, const char $\ast$interface\+Name)
+\item 
+bool \mbox{\hyperlink{_interfaces_8cpp_a3066543a503a10116b6522a964b972b2}{S\+D\+K\+\_\+init\+Interfaces}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i_base_client_d_l_l}{I\+Base\+Client\+D\+LL}} $\ast$ \mbox{\hyperlink{_interfaces_8cpp_a5092c45a5794de672e65a6ba1048a0fe}{i\+Client\+Dll}}
+\begin{DoxyCompactList}\small\item\em Interface definitions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_interfaces_8cpp_afecccc2949cc878e2f9cf11da1473924}\label{_interfaces_8cpp_afecccc2949cc878e2f9cf11da1473924}} 
+\mbox{\hyperlink{class_i_client_entity_list}{I\+Client\+Entity\+List}} $\ast$ {\bfseries i\+Entity\+List}
+\item 
+\mbox{\Hypertarget{_interfaces_8cpp_ae7d3c51861fd3eef546b086972256b86}\label{_interfaces_8cpp_ae7d3c51861fd3eef546b086972256b86}} 
+\mbox{\hyperlink{class_i_v_engine_client013}{I\+V\+Engine\+Client013}} $\ast$ {\bfseries i\+Engine\+Client13}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+A\+L\+P\+E\+R\+EN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2020
+\end{DoxyDate}
+~\newline
+ This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details.
+
+You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_interfaces_8cpp_a555d28e195931005853df3abe7a3233b}\label{_interfaces_8cpp_a555d28e195931005853df3abe7a3233b}} 
+\index{Interfaces.cpp@{Interfaces.cpp}!GetInterface@{GetInterface}}
+\index{GetInterface@{GetInterface}!Interfaces.cpp@{Interfaces.cpp}}
+\doxysubsubsection{\texorpdfstring{GetInterface()}{GetInterface()}}
+{\footnotesize\ttfamily void$\ast$ Get\+Interface (\begin{DoxyParamCaption}\item[{const char $\ast$}]{dll\+Name,  }\item[{const char $\ast$}]{interface\+Name }\end{DoxyParamCaption})}
+
+Calls cs\+:go Create\+Interface function
+
+
+\begin{DoxyParams}{Parameters}
+{\em dll\+Name} & Name of dll (client or engine) \\
+\hline
+{\em interface\+Name} & Name of the interface \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_strings_8hpp}{Strings.\+hpp}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Created interface or nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_interfaces_8cpp_a3066543a503a10116b6522a964b972b2}\label{_interfaces_8cpp_a3066543a503a10116b6522a964b972b2}} 
+\index{Interfaces.cpp@{Interfaces.cpp}!SDK\_initInterfaces@{SDK\_initInterfaces}}
+\index{SDK\_initInterfaces@{SDK\_initInterfaces}!Interfaces.cpp@{Interfaces.cpp}}
+\doxysubsubsection{\texorpdfstring{SDK\_initInterfaces()}{SDK\_initInterfaces()}}
+{\footnotesize\ttfamily bool S\+D\+K\+\_\+init\+Interfaces (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Gets S\+DK interfaces using \mbox{\hyperlink{_interfaces_8cpp_a555d28e195931005853df3abe7a3233b}{Get\+Interface()}} ~\newline
+
+
+\begin{DoxyReturn}{Returns}
+True on success 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_interfaces_8cpp_a5092c45a5794de672e65a6ba1048a0fe}\label{_interfaces_8cpp_a5092c45a5794de672e65a6ba1048a0fe}} 
+\index{Interfaces.cpp@{Interfaces.cpp}!iClientDll@{iClientDll}}
+\index{iClientDll@{iClientDll}!Interfaces.cpp@{Interfaces.cpp}}
+\doxysubsubsection{\texorpdfstring{iClientDll}{iClientDll}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i_base_client_d_l_l}{I\+Base\+Client\+D\+LL}}$\ast$ i\+Client\+Dll}
+
+
+
+Interface definitions. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_interfaces_8cpp_a3066543a503a10116b6522a964b972b2}{S\+D\+K\+\_\+init\+Interfaces()}} 
+\end{DoxySeeAlso}

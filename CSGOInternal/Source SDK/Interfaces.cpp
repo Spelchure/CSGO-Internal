@@ -20,9 +20,17 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
 #include "Interfaces.hpp"
+#include "Strings.hpp"
 #include <Windows.h>
 
- /**
+/**
+ * \brief Interface definitions \sa SDK_initInterfaces()
+ */
+IBaseClientDLL * iClientDll; 
+IClientEntityList* iEntityList;
+IVEngineClient013* iEngineClient13;
+
+/**
  * Calls cs:go CreateInterface function
  * 
  * \param dllName Name of dll (client or engine)
@@ -46,3 +54,24 @@ GetInterface(const char* dllName, const char* interfaceName)
 
     return addy;
 }
+
+/**
+ * Gets SDK interfaces using GetInterface()  
+ * 
+ * \return True on success 
+ */
+bool 
+SDK_initInterfaces(void)
+{
+    iEntityList = reinterpret_cast<IClientEntityList*>(GetInterface(DLL_CLIENT, VCLIENTENTITYLIST_INTERFACE_VERSION));
+    if (nullptr == iEntityList)
+        return false;
+
+    iEngineClient13 = reinterpret_cast<IVEngineClient013*>(GetInterface(DLL_ENGINE, VENGINE_CLIENT_INTERFACE_VERSION));
+    if (nullptr == iEngineClient13)
+        return false;
+
+    return true;
+}
+
+

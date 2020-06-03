@@ -29,5 +29,24 @@ constexpr auto VALVE_WINDOW_CLASS = "Valve001";
 constexpr auto DLL_CLIENT = "client_panorama.dll";
 constexpr auto DLL_ENGINE = "engine.dll";
 
-constexpr auto VCLIENTENTITYLIST_INTERFACE_VERSION = "VClientEntityList003";
+constexpr auto VCLIENTENTITYLIST_INTERFACE_VERSION = "VClientEntityList003"; 
 constexpr auto CLIENT_DLL_INTERFACE_VERSION = "VClient018";
+constexpr auto VENGINE_CLIENT_INTERFACE_VERSION = "VEngineClient014";
+constexpr auto VENGINE_CLIENT_INTERFACE_VERSION_13 = "VEngineClient013";
+
+constexpr const char *PATTERN_CLIENTSTATE[] = {
+    "\xA1\x90\x90\x90\x90\x33\xD2\x6A\x00\x6A\x00\x33\xC9\x89\xB0",
+    "x????xxxxxxxxxx"
+};
+constexpr const char* PATTERN_CLIENTSTATE_MAXPLAYERS[] = {
+    "\xA1\x90\x90\x90\x90\x8B\x80\x90\x90\x90\x90\xC3\xCC\xCC\xCC\xCC\x55\x8B\xEC\x8A\x45\x08",
+    "x????xx????xxxxxxxxxxx",
+};
+constexpr const char* PATTERN_CLIENTSTATE_VIEWANGLES[] = {
+    "\xF3\x0F\x11\x80\x90\x90\x90\x90\xD9\x46\x04\xD9\x05",
+    "xxxx????xxxxx"
+};
+constexpr const char* PATTERN_BDORMANT[] = {
+    "\x8A\x81\x90\x90\x90\x90\xC3\x32\xC0",
+    "xx????xxx"
+};

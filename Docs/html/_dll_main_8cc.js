@@ -5,5 +5,7 @@ var _dll_main_8cc =
     [ "GatewayFunction", "_dll_main_8cc.html#af0aecb24730dcfcc8c8dba031ec4d090", null ],
     [ "MainThread", "_dll_main_8cc.html#a61bf3b4c8ca971214709dfa5346b78f0", null ],
     [ "pMidHook", "_dll_main_8cc.html#a92ea3b36ac03fac3a151282e9aa2c9e8", null ],
+    [ "pSettings", "_dll_main_8cc.html#affb21de73b1ed38e9f8d796196218b90", null ],
+    [ "SETTINGS_FILE_NAME", "_dll_main_8cc.html#a0556300864824f6acef9f3fbcddb62d8", null ],
     [ "vTable", "_dll_main_8cc.html#add22de488065e9690c20674b136766d1", null ]
 ];

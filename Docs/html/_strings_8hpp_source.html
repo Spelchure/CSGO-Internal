@@ -93,6 +93,31 @@ $(document).ready(function(){initNavTree('_strings_8hpp_source.html',''); initRe
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/* Constants for SDK */</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;constexpr <span class="keyword">auto</span> VALVE_WINDOW_CLASS = <span class="stringliteral">&quot;Valve001&quot;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;constexpr <span class="keyword">auto</span> DLL_CLIENT = <span class="stringliteral">&quot;client_panorama.dll&quot;</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;constexpr <span class="keyword">auto</span> DLL_ENGINE = <span class="stringliteral">&quot;engine.dll&quot;</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;constexpr <span class="keyword">auto</span> VCLIENTENTITYLIST_INTERFACE_VERSION = <span class="stringliteral">&quot;VClientEntityList003&quot;</span>; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;constexpr <span class="keyword">auto</span> CLIENT_DLL_INTERFACE_VERSION = <span class="stringliteral">&quot;VClient018&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;constexpr <span class="keyword">auto</span> VENGINE_CLIENT_INTERFACE_VERSION = <span class="stringliteral">&quot;VEngineClient014&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;constexpr <span class="keyword">auto</span> VENGINE_CLIENT_INTERFACE_VERSION_13 = <span class="stringliteral">&quot;VEngineClient013&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span> *PATTERN_CLIENTSTATE[] = {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="stringliteral">&quot;\xA1\x90\x90\x90\x90\x33\xD2\x6A\x00\x6A\x00\x33\xC9\x89\xB0&quot;</span>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="stringliteral">&quot;x????xxxxxxxxxx&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* PATTERN_CLIENTSTATE_MAXPLAYERS[] = {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="stringliteral">&quot;\xA1\x90\x90\x90\x90\x8B\x80\x90\x90\x90\x90\xC3\xCC\xCC\xCC\xCC\x55\x8B\xEC\x8A\x45\x08&quot;</span>,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="stringliteral">&quot;x????xx????xxxxxxxxxxx&quot;</span>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* PATTERN_CLIENTSTATE_VIEWANGLES[] = {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="stringliteral">&quot;\xF3\x0F\x11\x80\x90\x90\x90\x90\xD9\x46\x04\xD9\x05&quot;</span>,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="stringliteral">&quot;xxxx????xxxxx&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* PATTERN_BDORMANT[] = {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="stringliteral">&quot;\x8A\x81\x90\x90\x90\x90\xC3\x32\xC0&quot;</span>,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="stringliteral">&quot;xx????xxx&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

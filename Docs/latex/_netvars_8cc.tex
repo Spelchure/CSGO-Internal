@@ -1,0 +1,76 @@
+\hypertarget{_netvars_8cc}{}\doxysection{C\+S\+G\+O\+Internal/\+Source S\+D\+K/\+Netvars.cc File Reference}
+\label{_netvars_8cc}\index{CSGOInternal/Source SDK/Netvars.cc@{CSGOInternal/Source SDK/Netvars.cc}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include \char`\"{}Netvars.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Interfaces.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Hooks/\+Memory.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Strings.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$Windows.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_netvars_8cc_a1bf14a31832ac60538563eea60ea187c}\label{_netvars_8cc_a1bf14a31832ac60538563eea60ea187c}} 
+uintptr\+\_\+t {\bfseries \+\_\+\+Get\+Net\+Var\+Offset} (const char $\ast$table\+Name, const char $\ast$netvar\+Name, \mbox{\hyperlink{class_client_class}{Client\+Class}} $\ast$client\+Class)
+\item 
+bool \mbox{\hyperlink{_netvars_8cc_a6265f7483fc4df347b28b762b3702f48}{Ready\+Netvar\+Offsets}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize netvars. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_netvars_8cc_a0e374fab9c8b1af152d2d96ecb850ce2}\label{_netvars_8cc_a0e374fab9c8b1af152d2d96ecb850ce2}} 
+{\footnotesize template$<$typename T $>$ }\\T {\bfseries read\+\_\+protected\+\_\+memory} (byte\+\_\+t $\ast$v)
+\item 
+\mbox{\Hypertarget{_netvars_8cc_a839442f71abcb92e8dde3fada9161c78}\label{_netvars_8cc_a839442f71abcb92e8dde3fada9161c78}} 
+bool {\bfseries Ready\+Signatures} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_netvars_8cc_a9a8965698c3b95723a0c3b15318dc760}\label{_netvars_8cc_a9a8965698c3b95723a0c3b15318dc760}} 
+uintptr\+\_\+t {\bfseries \+\_\+netvar\+Offsets} \mbox{[}netvar\+Offsets\+Length\mbox{]} = \{ 0 \}
+\item 
+\mbox{\Hypertarget{_netvars_8cc_acac5d9c4cc0a3ed373f20e56ac7cc18c}\label{_netvars_8cc_acac5d9c4cc0a3ed373f20e56ac7cc18c}} 
+uintptr\+\_\+t {\bfseries sig\+\_\+dw\+Client\+State} = 0
+\item 
+\mbox{\Hypertarget{_netvars_8cc_ac691844f033854ac28232fb795e353f8}\label{_netvars_8cc_ac691844f033854ac28232fb795e353f8}} 
+uint16\+\_\+t {\bfseries sig\+\_\+dw\+Client\+State\+\_\+\+Max\+Players} = 0
+\item 
+\mbox{\Hypertarget{_netvars_8cc_a487bb7caf160b89df231deb65e6f4220}\label{_netvars_8cc_a487bb7caf160b89df231deb65e6f4220}} 
+uint16\+\_\+t {\bfseries sig\+\_\+dw\+Client\+State\+\_\+\+View\+Angles} = 0
+\item 
+\mbox{\Hypertarget{_netvars_8cc_a580e3de6b3e3641d2960bed302ddeaa1}\label{_netvars_8cc_a580e3de6b3e3641d2960bed302ddeaa1}} 
+uint16\+\_\+t {\bfseries sig\+\_\+b\+Dormant} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+A\+L\+P\+E\+R\+EN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2020
+\end{DoxyDate}
+~\newline
+ This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details.
+
+You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_netvars_8cc_a6265f7483fc4df347b28b762b3702f48}\label{_netvars_8cc_a6265f7483fc4df347b28b762b3702f48}} 
+\index{Netvars.cc@{Netvars.cc}!ReadyNetvarOffsets@{ReadyNetvarOffsets}}
+\index{ReadyNetvarOffsets@{ReadyNetvarOffsets}!Netvars.cc@{Netvars.cc}}
+\doxysubsubsection{\texorpdfstring{ReadyNetvarOffsets()}{ReadyNetvarOffsets()}}
+{\footnotesize\ttfamily bool Ready\+Netvar\+Offsets (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize netvars. 
+

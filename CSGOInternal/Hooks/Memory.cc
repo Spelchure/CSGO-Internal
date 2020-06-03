@@ -20,6 +20,7 @@
  *********************************************************************/
 #include "Memory.hpp"
 #include <Windows.h>
+#include <Psapi.h>
 
 /**
  * \brief Patch memory
@@ -55,4 +56,48 @@ memFillWithNopes(byte_t *dst, size_t size)
     memset(dst, 0x90, size);
     VirtualProtect(dst, size, dwOldProtect, &dwOldProtect);
 
+}
+
+static 
+MODULEINFO
+memGetModuleInfo(const char* sModule)
+{
+    MODULEINFO modInfo = { 0 };
+    HMODULE hModule = GetModuleHandleA(sModule);
+
+    if (nullptr == hModule)
+        return modInfo;
+
+    GetModuleInformation(GetCurrentProcess(), hModule, &modInfo, sizeof(MODULEINFO));
+    return modInfo;
+}
+
+/**
+ * \brief Search pattern in specified module 
+ * \param szModule Name of module 
+ * \param pattern Pattern to find 
+ * \param mask Mask of pattern 
+ * 
+ * \return Address of pattern if found otherwise 0
+ */
+uintptr_t 
+memFindPattern(const char* sModule, const char* pattern, const char* mask)
+{
+    MODULEINFO modInf = memGetModuleInfo(sModule);
+    if (modInf.SizeOfImage <= 0)
+        return 0;
+
+    uintptr_t base = (uintptr_t)modInf.lpBaseOfDll;
+    uintptr_t size = (uintptr_t)modInf.SizeOfImage;
+    int mask_size = strlen(mask);
+
+    for (uint32_t i = 0; i < size - mask_size; i++)
+    {
+        bool found = true;
+        for(int j = 0; j < mask_size; j++) 
+			found &= mask[j] == '?' || pattern[j] == *(char*)(base + i + j);
+        if (found)
+            return base + i;
+    }
+    return 0;
 }
