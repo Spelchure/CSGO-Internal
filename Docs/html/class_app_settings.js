@@ -15,5 +15,6 @@ var class_app_settings =
     [ "saveSettings", "class_app_settings.html#a8bfed060a612eb43200b00192c1915c3", null ],
     [ "setBool", "class_app_settings.html#af6ac7b633e9ca8f903a79f71988da7d2", null ],
     [ "setDefault", "class_app_settings.html#ae41719525e8f299b23440e3523bad3f6", null ],
-    [ "setInt", "class_app_settings.html#a02d782766f481c746334ebea6c38e861", null ]
+    [ "setInt", "class_app_settings.html#a02d782766f481c746334ebea6c38e861", null ],
+    [ "toggleBool", "class_app_settings.html#ab6e532233d3ac1e9d6f35e7839244a18", null ]
 ];

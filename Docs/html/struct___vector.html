@@ -91,6 +91,15 @@ $(document).ready(function(){initNavTree('struct___vector.html',''); initResizab
 <div class="title">_Vector Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for _Vector:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct___vector.png" usemap="#_5FVector_map" alt=""/>
+  <map id="_5FVector_map" name="_5FVector_map">
+<area href="class_vector_aligned.html" alt="VectorAligned" shape="rect" coords="0,56,93,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -100,12 +109,33 @@ struct&#160;</td><td class="memItemRight" valign="bottom"><b>_Vector</b> (float 
 <tr class="memitem:add87615700dd1dc6e0fa6183ae936fde"><td class="memItemLeft" align="right" valign="top"><a id="add87615700dd1dc6e0fa6183ae936fde"></a>
 const struct <a class="el" href="struct___vector.html">_Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (struct <a class="el" href="struct___vector.html">_Vector</a> another)</td></tr>
 <tr class="separator:add87615700dd1dc6e0fa6183ae936fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603867d7af913e36706a7408a2c18ab6"><td class="memItemLeft" align="right" valign="top"><a id="a603867d7af913e36706a7408a2c18ab6"></a>
+struct <a class="el" href="struct___vector.html">_Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator-</b> (const struct <a class="el" href="struct___vector.html">_Vector</a> &amp;v) const</td></tr>
+<tr class="separator:a603867d7af913e36706a7408a2c18ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c0957c26e14318477e3ff6c221f97f9"><td class="memItemLeft" align="right" valign="top"><a id="a2c0957c26e14318477e3ff6c221f97f9"></a>
 const struct <a class="el" href="struct___vector.html">_Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (struct <a class="el" href="struct___vector.html">_Vector</a> another)</td></tr>
 <tr class="separator:a2c0957c26e14318477e3ff6c221f97f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e9ee191dff297807ed783310158883"><td class="memItemLeft" align="right" valign="top"><a id="ad1e9ee191dff297807ed783310158883"></a>
+struct <a class="el" href="struct___vector.html">_Vector</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const struct <a class="el" href="struct___vector.html">_Vector</a> &amp;v) const</td></tr>
+<tr class="separator:ad1e9ee191dff297807ed783310158883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fc4611b6941af1c1993d87db84e4d73"><td class="memItemLeft" align="right" valign="top"><a id="a2fc4611b6941af1c1993d87db84e4d73"></a>
+struct <a class="el" href="struct___vector.html">_Vector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*=</b> (const struct <a class="el" href="struct___vector.html">_Vector</a> &amp;v)</td></tr>
+<tr class="separator:a2fc4611b6941af1c1993d87db84e4d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cbb2d84949db5067346e7ff45793f91"><td class="memItemLeft" align="right" valign="top"><a id="a6cbb2d84949db5067346e7ff45793f91"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>magnitude</b> ()</td></tr>
 <tr class="separator:a6cbb2d84949db5067346e7ff45793f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cb7680ea289c3e114a9a1189414cc7"><td class="memItemLeft" align="right" valign="top"><a id="a08cb7680ea289c3e114a9a1189414cc7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> (float ix=0.0f, float iy=0.0f, float iz=0.0f)</td></tr>
+<tr class="separator:a08cb7680ea289c3e114a9a1189414cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f53a1dcd5d13187655a7b195370978"><td class="memItemLeft" align="right" valign="top"><a id="ab8f53a1dcd5d13187655a7b195370978"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>LengthSqr</b> (void) const</td></tr>
+<tr class="separator:ab8f53a1dcd5d13187655a7b195370978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30850f7b0c62cefac18329c62d70b068"><td class="memItemLeft" align="right" valign="top"><a id="a30850f7b0c62cefac18329c62d70b068"></a>
+float &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (int i)</td></tr>
+<tr class="separator:a30850f7b0c62cefac18329c62d70b068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0393fb8ebc8123341e559c57d53aad05"><td class="memItemLeft" align="right" valign="top"><a id="a0393fb8ebc8123341e559c57d53aad05"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (int i) const</td></tr>
+<tr class="separator:a0393fb8ebc8123341e559c57d53aad05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>

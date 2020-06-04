@@ -8,5 +8,9 @@ var dir_652ee0fff7656cf5bea923779d35b27f =
     [ "DllMain.cc", "_dll_main_8cc.html", "_dll_main_8cc" ],
     [ "Gateway.cc", "_gateway_8cc.html", "_gateway_8cc" ],
     [ "Keys.hpp", "_keys_8hpp.html", "_keys_8hpp" ],
-    [ "MainLoop.cc", "_main_loop_8cc.html", "_main_loop_8cc" ]
+    [ "MainLoop.cc", "_main_loop_8cc.html", "_main_loop_8cc" ],
+    [ "MainMenu.cc", "_main_menu_8cc.html", "_main_menu_8cc" ],
+    [ "MainMenu.hpp", "_main_menu_8hpp.html", [
+      [ "MainMenu", "class_main_menu.html", "class_main_menu" ]
+    ] ]
 ];

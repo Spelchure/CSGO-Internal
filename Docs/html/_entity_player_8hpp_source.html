@@ -133,18 +133,21 @@ $(document).ready(function(){initNavTree('_entity_player_8hpp_source.html',''); 
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        bonePos.z = *(<span class="keywordtype">float</span>*)(boneMatrix + 0x30 * boneID + 0x2C);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> &amp;bonePos;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> GetViewAngles(<a class="code" href="struct___vector.html">Vector</a> &amp;ang) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="struct___vector.html">Vector</a> vecOrigin = *this-&gt;GetVecOrigin();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        ang = vecOrigin + *this-&gt;GetViewOffset();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="struct___vector2.html">Vector2</a> * GetAimPunchAngles()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="struct___vector2.html">Vector2</a>*)((uintptr_t)<span class="keyword">this</span> + netvar(m_aimPunchAngle));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> GetViewAngles(<a class="code" href="struct___vector.html">Vector</a> &amp;ang) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="struct___vector.html">Vector</a> vecOrigin = *this-&gt;GetVecOrigin();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        ang = vecOrigin + *this-&gt;GetViewOffset();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_netvars_8hpp_html"><div class="ttname"><a href="_netvars_8hpp.html">Netvars.hpp</a></div></div>
 <div class="ttc" id="a_vectors_8hpp_html"><div class="ttname"><a href="_vectors_8hpp.html">Vectors.hpp</a></div></div>
 <div class="ttc" id="aclass_c_entity_player_html"><div class="ttname"><a href="class_c_entity_player.html">CEntityPlayer</a></div><div class="ttdef"><b>Definition:</b> EntityPlayer.hpp:42</div></div>
-<div class="ttc" id="astruct___vector_html"><div class="ttname"><a href="struct___vector.html">_Vector</a></div><div class="ttdef"><b>Definition:</b> Vectors.hpp:25</div></div>
+<div class="ttc" id="astruct___vector_html"><div class="ttname"><a href="struct___vector.html">_Vector</a></div><div class="ttdef"><b>Definition:</b> Vectors.hpp:29</div></div>
+<div class="ttc" id="astruct___vector2_html"><div class="ttname"><a href="struct___vector2.html">_Vector2</a></div><div class="ttdef"><b>Definition:</b> Vectors.hpp:87</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

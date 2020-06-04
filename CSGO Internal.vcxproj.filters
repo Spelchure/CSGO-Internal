@@ -495,6 +495,152 @@
     <None Include="Docs\html\search\functions_3.js" />
     <None Include="Docs\html\search\functions_2.js" />
     <None Include="CSGOInternal\Settings\SimpleSettings.cfg" />
+    <None Include="Docs\Documentation.html" />
+    <None Include="Docs\html\search\all_10.html" />
+    <None Include="Docs\html\search\all_11.html" />
+    <None Include="Docs\html\search\all_b.html" />
+    <None Include="Docs\html\search\all_c.html" />
+    <None Include="Docs\html\search\all_d.html" />
+    <None Include="Docs\html\search\all_e.html" />
+    <None Include="Docs\html\search\all_f.html" />
+    <None Include="Docs\html\search\classes_5.html" />
+    <None Include="Docs\html\search\classes_6.html" />
+    <None Include="Docs\html\search\classes_7.html" />
+    <None Include="Docs\html\search\classes_8.html" />
+    <None Include="Docs\html\search\files_6.html" />
+    <None Include="Docs\html\search\files_7.html" />
+    <None Include="Docs\html\search\files_8.html" />
+    <None Include="Docs\html\search\files_9.html" />
+    <None Include="Docs\html\search\files_a.html" />
+    <None Include="Docs\html\search\functions_6.html" />
+    <None Include="Docs\html\search\functions_7.html" />
+    <None Include="Docs\html\search\functions_8.html" />
+    <None Include="Docs\html\search\functions_9.html" />
+    <None Include="Docs\html\search\functions_a.html" />
+    <None Include="Docs\html\search\variables_0.html" />
+    <None Include="Docs\html\_entity_player_8hpp.html" />
+    <None Include="Docs\html\_entity_player_8hpp_source.html" />
+    <None Include="Docs\html\_interfaces_8cpp.html" />
+    <None Include="Docs\html\_interfaces_8hpp.html" />
+    <None Include="Docs\html\_interfaces_8hpp_source.html" />
+    <None Include="Docs\html\_main_loop_8cc.html" />
+    <None Include="Docs\html\_main_menu_8cc.html" />
+    <None Include="Docs\html\_main_menu_8hpp.html" />
+    <None Include="Docs\html\_main_menu_8hpp_source.html" />
+    <None Include="Docs\html\_netvars_8cc.html" />
+    <None Include="Docs\html\_netvars_8hpp.html" />
+    <None Include="Docs\html\_netvars_8hpp_source.html" />
+    <None Include="Docs\html\_settings_8cc.html" />
+    <None Include="Docs\html\_settings_8hpp.html" />
+    <None Include="Docs\html\_settings_8hpp_source.html" />
+    <None Include="Docs\html\_signatures_8hpp.html" />
+    <None Include="Docs\html\_signatures_8hpp_source.html" />
+    <None Include="Docs\html\_trace_ray_8hpp.html" />
+    <None Include="Docs\html\_trace_ray_8hpp_source.html" />
+    <None Include="Docs\html\_vectors_8cc.html" />
+    <None Include="Docs\html\_vectors_8hpp.html" />
+    <None Include="Docs\html\_vectors_8hpp_source.html" />
+    <None Include="Docs\html\class_app_settings.html" />
+    <None Include="Docs\html\class_app_settings-members.html" />
+    <None Include="Docs\html\class_c_base_trace.html" />
+    <None Include="Docs\html\class_c_base_trace-members.html" />
+    <None Include="Docs\html\class_c_entity_player.html" />
+    <None Include="Docs\html\class_c_entity_player-members.html" />
+    <None Include="Docs\html\class_c_game_trace.html" />
+    <None Include="Docs\html\class_c_game_trace-members.html" />
+    <None Include="Docs\html\class_c_trace_filter.html" />
+    <None Include="Docs\html\class_c_trace_filter-members.html" />
+    <None Include="Docs\html\class_client_class.html" />
+    <None Include="Docs\html\class_client_class-members.html" />
+    <None Include="Docs\html\class_i_base_client_d_l_l.html" />
+    <None Include="Docs\html\class_i_base_client_d_l_l-members.html" />
+    <None Include="Docs\html\class_i_client_entity_list.html" />
+    <None Include="Docs\html\class_i_client_entity_list-members.html" />
+    <None Include="Docs\html\class_i_engine_trace.html" />
+    <None Include="Docs\html\class_i_engine_trace-members.html" />
+    <None Include="Docs\html\class_i_trace_filter.html" />
+    <None Include="Docs\html\class_i_trace_filter-members.html" />
+    <None Include="Docs\html\class_i_v_engine_client013.html" />
+    <None Include="Docs\html\class_i_v_engine_client013-members.html" />
+    <None Include="Docs\html\class_main_menu.html" />
+    <None Include="Docs\html\class_main_menu-members.html" />
+    <None Include="Docs\html\class_recv_prop.html" />
+    <None Include="Docs\html\class_recv_prop-members.html" />
+    <None Include="Docs\html\class_recv_table.html" />
+    <None Include="Docs\html\class_recv_table-members.html" />
+    <None Include="Docs\html\class_vector_aligned.html" />
+    <None Include="Docs\html\class_vector_aligned-members.html" />
+    <None Include="Docs\html\dir_edcc182c5cf7b1ffa67adc89a7b2f593.html" />
+    <None Include="Docs\html\globals_vars.html" />
+    <None Include="Docs\html\hierarchy.html" />
+    <None Include="Docs\html\struct___vector.html" />
+    <None Include="Docs\html\struct___vector2.html" />
+    <None Include="Docs\html\struct___vector2-members.html" />
+    <None Include="Docs\html\struct___vector-members.html" />
+    <None Include="Docs\html\struct_ray__t.html" />
+    <None Include="Docs\html\struct_ray__t-members.html" />
+    <None Include="Docs\html\structcplane__t.html" />
+    <None Include="Docs\html\structcplane__t-members.html" />
+    <None Include="Docs\html\structsurface__t.html" />
+    <None Include="Docs\html\structsurface__t-members.html" />
+    <None Include="Docs\html\_entity_player_8hpp.js" />
+    <None Include="Docs\html\_interfaces_8cpp.js" />
+    <None Include="Docs\html\_interfaces_8hpp.js" />
+    <None Include="Docs\html\_main_loop_8cc.js" />
+    <None Include="Docs\html\_main_menu_8cc.js" />
+    <None Include="Docs\html\_netvars_8cc.js" />
+    <None Include="Docs\html\_netvars_8hpp.js" />
+    <None Include="Docs\html\_settings_8hpp.js" />
+    <None Include="Docs\html\_signatures_8hpp.js" />
+    <None Include="Docs\html\_trace_ray_8hpp.js" />
+    <None Include="Docs\html\_vectors_8cc.js" />
+    <None Include="Docs\html\_vectors_8hpp.js" />
+    <None Include="Docs\html\class_app_settings.js" />
+    <None Include="Docs\html\class_c_base_trace.js" />
+    <None Include="Docs\html\class_c_game_trace.js" />
+    <None Include="Docs\html\class_c_entity_player.js" />
+    <None Include="Docs\html\class_c_trace_filter.js" />
+    <None Include="Docs\html\class_client_class.js" />
+    <None Include="Docs\html\class_i_base_client_d_l_l.js" />
+    <None Include="Docs\html\class_i_client_entity_list.js" />
+    <None Include="Docs\html\class_i_engine_trace.js" />
+    <None Include="Docs\html\class_i_trace_filter.js" />
+    <None Include="Docs\html\class_i_v_engine_client013.js" />
+    <None Include="Docs\html\class_main_menu.js" />
+    <None Include="Docs\html\class_recv_prop.js" />
+    <None Include="Docs\html\class_recv_table.js" />
+    <None Include="Docs\html\class_vector_aligned.js" />
+    <None Include="Docs\html\dir_edcc182c5cf7b1ffa67adc89a7b2f593.js" />
+    <None Include="Docs\html\hierarchy.js" />
+    <None Include="Docs\html\navtreeindex7.js" />
+    <None Include="Docs\html\navtreeindex6.js" />
+    <None Include="Docs\html\struct___vector2.js" />
+    <None Include="Docs\html\struct___vector.js" />
+    <None Include="Docs\html\structcplane__t.js" />
+    <None Include="Docs\html\structsurface__t.js" />
+    <None Include="Docs\html\search\all_10.js" />
+    <None Include="Docs\html\search\all_11.js" />
+    <None Include="Docs\html\search\all_b.js" />
+    <None Include="Docs\html\search\all_c.js" />
+    <None Include="Docs\html\search\all_d.js" />
+    <None Include="Docs\html\search\all_e.js" />
+    <None Include="Docs\html\search\all_f.js" />
+    <None Include="Docs\html\search\classes_5.js" />
+    <None Include="Docs\html\search\classes_6.js" />
+    <None Include="Docs\html\search\classes_8.js" />
+    <None Include="Docs\html\search\classes_7.js" />
+    <None Include="Docs\html\search\files_3.js" />
+    <None Include="Docs\html\search\files_6.js" />
+    <None Include="Docs\html\search\files_7.js" />
+    <None Include="Docs\html\search\files_8.js" />
+    <None Include="Docs\html\search\files_9.js" />
+    <None Include="Docs\html\search\files_a.js" />
+    <None Include="Docs\html\search\functions_7.js" />
+    <None Include="Docs\html\search\functions_6.js" />
+    <None Include="Docs\html\search\functions_8.js" />
+    <None Include="Docs\html\search\functions_9.js" />
+    <None Include="Docs\html\search\functions_a.js" />
+    <None Include="Docs\html\search\variables_0.js" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="LICENSE" />
@@ -913,6 +1059,24 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Docs\html\search\close.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\class_c_base_trace.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\class_c_game_trace.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\class_c_trace_filter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\class_i_trace_filter.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\class_vector_aligned.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Docs\html\struct___vector.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

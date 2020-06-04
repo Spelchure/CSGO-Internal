@@ -102,11 +102,14 @@ Variables</h2></td></tr>
 constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>VALVE_WINDOW_CLASS</b> = &quot;Valve001&quot;</td></tr>
 <tr class="separator:ab0227ef227825b162801e8feaab8444a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97441c393886405a16a7942e43e6a75e"><td class="memItemLeft" align="right" valign="top"><a id="a97441c393886405a16a7942e43e6a75e"></a>
-constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>DLL_CLIENT</b> = &quot;client_panorama.dll&quot;</td></tr>
+constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>DLL_CLIENT</b> = &quot;client.dll&quot;</td></tr>
 <tr class="separator:a97441c393886405a16a7942e43e6a75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d2cf040baa79bfcc750dd896f6a658b"><td class="memItemLeft" align="right" valign="top"><a id="a6d2cf040baa79bfcc750dd896f6a658b"></a>
 constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>DLL_ENGINE</b> = &quot;engine.dll&quot;</td></tr>
 <tr class="separator:a6d2cf040baa79bfcc750dd896f6a658b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dc09097c4c58209817f5f60458d8a05"><td class="memItemLeft" align="right" valign="top"><a id="a8dc09097c4c58209817f5f60458d8a05"></a>
+constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>DLL_SHADERAPI</b> = &quot;shaderapidx9.dll&quot;</td></tr>
+<tr class="separator:a8dc09097c4c58209817f5f60458d8a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae776c1f67d34a8a562ff4ac4971ab2f"><td class="memItemLeft" align="right" valign="top"><a id="aae776c1f67d34a8a562ff4ac4971ab2f"></a>
 constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>VCLIENTENTITYLIST_INTERFACE_VERSION</b> = &quot;VClientEntityList003&quot;</td></tr>
 <tr class="separator:aae776c1f67d34a8a562ff4ac4971ab2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +122,9 @@ constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>VENGINE_CLI
 <tr class="memitem:a73530705e2383ef61ac2e9c6e40bc09b"><td class="memItemLeft" align="right" valign="top"><a id="a73530705e2383ef61ac2e9c6e40bc09b"></a>
 constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>VENGINE_CLIENT_INTERFACE_VERSION_13</b> = &quot;VEngineClient013&quot;</td></tr>
 <tr class="separator:a73530705e2383ef61ac2e9c6e40bc09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f499a6742f98d1e99c9752d05cc7de7"><td class="memItemLeft" align="right" valign="top"><a id="a8f499a6742f98d1e99c9752d05cc7de7"></a>
+constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>ENGINE_TRACE_CLIENT_VERSION</b> = &quot;EngineTraceClient004&quot;</td></tr>
+<tr class="separator:a8f499a6742f98d1e99c9752d05cc7de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c1589d2731d28db08dc98aee4b665c6"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><b>PATTERN_CLIENTSTATE</b> []</td></tr>
 <tr class="separator:a5c1589d2731d28db08dc98aee4b665c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5130b8190f3ddd36f1de6ee8a7a085ec"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><b>PATTERN_CLIENTSTATE_MAXPLAYERS</b> []</td></tr>
@@ -127,6 +133,8 @@ constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>VENGINE_CLI
 <tr class="separator:a116a58a8556f6be1971d3a5e2898aeb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6531e045b01139266a31edab656b9f8d"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><b>PATTERN_BDORMANT</b> []</td></tr>
 <tr class="separator:a6531e045b01139266a31edab656b9f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42634a1d3aac91082c9a75136ed63d54"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><b>PATTERN_PTRD3DDEV</b> []</td></tr>
+<tr class="separator:a42634a1d3aac91082c9a75136ed63d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><br  />
@@ -238,6 +246,32 @@ constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>VENGINE_CLI
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    <span class="stringliteral">&quot;\xF3\x0F\x11\x80\x90\x90\x90\x90\xD9\x46\x04\xD9\x05&quot;</span>,</div>
 <div class="line">    <span class="stringliteral">&quot;xxxx????xxxxx&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a42634a1d3aac91082c9a75136ed63d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42634a1d3aac91082c9a75136ed63d54">&#9670;&nbsp;</a></span>PATTERN_PTRD3DDEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char* PATTERN_PTRD3DDEV[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="stringliteral">&quot;\xA1\x90\x90\x90\x90\x50\x8B\x08\xFF\x51\x0C&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;x????xxxxxx&quot;</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>

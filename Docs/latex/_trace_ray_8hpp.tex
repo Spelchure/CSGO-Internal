@@ -1,0 +1,115 @@
+\hypertarget{_trace_ray_8hpp}{}\doxysection{C\+S\+G\+O\+Internal/\+Source S\+D\+K/\+Trace\+Ray.hpp File Reference}
+\label{_trace_ray_8hpp}\index{CSGOInternal/Source SDK/TraceRay.hpp@{CSGOInternal/Source SDK/TraceRay.hpp}}
+
+
+~\newline
+  
+
+
+{\ttfamily \#include \char`\"{}Vectors.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cfloat$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcplane__t}{cplane\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structsurface__t}{surface\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_ray__t}{Ray\+\_\+t}}
+\item 
+class \mbox{\hyperlink{class_i_trace_filter}{I\+Trace\+Filter}}
+\item 
+class \mbox{\hyperlink{class_c_trace_filter}{C\+Trace\+Filter}}
+\item 
+class \mbox{\hyperlink{class_c_base_trace}{C\+Base\+Trace}}
+\item 
+class \mbox{\hyperlink{class_c_game_trace}{C\+Game\+Trace}}
+\item 
+class \mbox{\hyperlink{class_i_engine_trace}{I\+Engine\+Trace}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a9b61ab90973e8137f342425ab3191cbe}\label{_trace_ray_8hpp_a9b61ab90973e8137f342425ab3191cbe}} 
+\#define {\bfseries C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+S\+O\+L\+ID}~0x1
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_adb39e424ac96c8cb51eb785b5db156f6}\label{_trace_ray_8hpp_adb39e424ac96c8cb51eb785b5db156f6}} 
+\#define {\bfseries C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+W\+I\+N\+D\+OW}~0x2
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a2b2ab58fb9c4e1beb8d62f68a85a9fe1}\label{_trace_ray_8hpp_a2b2ab58fb9c4e1beb8d62f68a85a9fe1}} 
+\#define {\bfseries C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+G\+R\+A\+TE}~0x8
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a0f9f1da12a5d72427edf4c2a586f5431}\label{_trace_ray_8hpp_a0f9f1da12a5d72427edf4c2a586f5431}} 
+\#define {\bfseries C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+M\+O\+V\+E\+A\+B\+LE}~0x4000
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a5b50e9d63b8d1f16a6482dffa645289a}\label{_trace_ray_8hpp_a5b50e9d63b8d1f16a6482dffa645289a}} 
+\#define {\bfseries C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+M\+O\+N\+S\+T\+ER}~0x2000000
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_ab5dbbb0f6a60af03e34dc0267ca03d7a}\label{_trace_ray_8hpp_ab5dbbb0f6a60af03e34dc0267ca03d7a}} 
+\#define {\bfseries C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+M\+O\+N\+S\+T\+E\+R\+C\+L\+IP}~0x20000
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a3740e9abc65e572298efd07ad4ef9551}\label{_trace_ray_8hpp_a3740e9abc65e572298efd07ad4ef9551}} 
+\#define {\bfseries C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+D\+E\+B\+R\+IS}~0x4000000
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_adb8c059c9b3881b5d2e0f96eb5e853ec}\label{_trace_ray_8hpp_adb8c059c9b3881b5d2e0f96eb5e853ec}} 
+\#define {\bfseries C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+H\+I\+T\+B\+OX}~0x40000000
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a3f2d51484009a7ca30f8ff5a20719891}\label{_trace_ray_8hpp_a3f2d51484009a7ca30f8ff5a20719891}} 
+\#define {\bfseries M\+A\+S\+K\+\_\+\+N\+P\+C\+W\+O\+R\+L\+D\+S\+T\+A\+T\+IC}~( C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+S\+O\+L\+ID $\vert$ C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+W\+I\+N\+D\+OW $\vert$ C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+M\+O\+N\+S\+T\+E\+R\+C\+L\+IP $\vert$ C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+G\+R\+A\+TE )
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_afd4cb3f0c880a2af1d06a7971daad45e}\label{_trace_ray_8hpp_afd4cb3f0c880a2af1d06a7971daad45e}} 
+\#define {\bfseries S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+T\+R\+A\+C\+E\+\_\+\+M\+A\+SK}~( M\+A\+S\+K\+\_\+\+N\+P\+C\+W\+O\+R\+L\+D\+S\+T\+A\+T\+IC $\vert$ C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+M\+O\+V\+E\+A\+B\+LE $\vert$ C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+M\+O\+N\+S\+T\+ER $\vert$ C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+D\+E\+B\+R\+IS $\vert$ C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+H\+I\+T\+B\+OX )
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a152afa839729071d8727c34ed9059137}\label{_trace_ray_8hpp_a152afa839729071d8727c34ed9059137}} 
+\#define {\bfseries M\+A\+S\+K\+\_\+\+S\+H\+OT}~(C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+S\+O\+L\+ID$\vert$C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+M\+O\+V\+E\+A\+B\+LE$\vert$C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+M\+O\+N\+S\+T\+ER$\vert$C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+W\+I\+N\+D\+OW$\vert$C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+D\+E\+B\+R\+IS$\vert$C\+O\+N\+T\+E\+N\+T\+S\+\_\+\+H\+I\+T\+B\+OX)
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a677930211dc6363fa7abda226e395a7a}\label{_trace_ray_8hpp_a677930211dc6363fa7abda226e395a7a}} 
+\#define {\bfseries D\+I\+S\+P\+S\+U\+R\+F\+\_\+\+F\+L\+A\+G\+\_\+\+S\+U\+R\+F\+A\+CE}~(1$<$$<$0)
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a4c5197f2758f830e5ee1112907cff93a}\label{_trace_ray_8hpp_a4c5197f2758f830e5ee1112907cff93a}} 
+\#define {\bfseries D\+I\+S\+P\+S\+U\+R\+F\+\_\+\+F\+L\+A\+G\+\_\+\+W\+A\+L\+K\+A\+B\+LE}~(1$<$$<$1)
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a3f9a30b36d1cc5f32e5be3b0eb9d30c9}\label{_trace_ray_8hpp_a3f9a30b36d1cc5f32e5be3b0eb9d30c9}} 
+\#define {\bfseries D\+I\+S\+P\+S\+U\+R\+F\+\_\+\+F\+L\+A\+G\+\_\+\+B\+U\+I\+L\+D\+A\+B\+LE}~(1$<$$<$2)
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a6116c5b53cd8cc62c662580abf890800}\label{_trace_ray_8hpp_a6116c5b53cd8cc62c662580abf890800}} 
+\#define {\bfseries D\+I\+S\+P\+S\+U\+R\+F\+\_\+\+F\+L\+A\+G\+\_\+\+S\+U\+R\+F\+P\+R\+O\+P1}~(1$<$$<$3)
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a1e92bb2974433da7789fac867c0d19e5}\label{_trace_ray_8hpp_a1e92bb2974433da7789fac867c0d19e5}} 
+\#define {\bfseries D\+I\+S\+P\+S\+U\+R\+F\+\_\+\+F\+L\+A\+G\+\_\+\+S\+U\+R\+F\+P\+R\+O\+P2}~(1$<$$<$4)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a4fb07579e300924705bed313c68aca4f}\label{_trace_ray_8hpp_a4fb07579e300924705bed313c68aca4f}} 
+typedef void(\+\_\+\+\_\+fastcall $\ast$ {\bfseries t\+Trace\+Ray}) (void $\ast$thisptr, void $\ast$not\+\_\+edx, \mbox{\hyperlink{struct_ray__t}{Ray\+\_\+t}} \&ray, unsigned int f\+Mask, \mbox{\hyperlink{class_c_trace_filter}{C\+Trace\+Filter}} $\ast$p\+Trace\+Filter, \mbox{\hyperlink{class_c_game_trace}{C\+Game\+Trace}} $\ast$p\+Trace)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_trace_ray_8hpp_a4d993d14a84a1fe1147cfb37d9ac7bce}\label{_trace_ray_8hpp_a4d993d14a84a1fe1147cfb37d9ac7bce}} 
+enum {\bfseries Trace\+Type} \{ {\bfseries T\+R\+A\+C\+E\+\_\+\+E\+V\+E\+R\+Y\+T\+H\+I\+NG} = 0, 
+{\bfseries T\+R\+A\+C\+E\+\_\+\+W\+O\+R\+L\+D\+\_\+\+O\+N\+LY}, 
+{\bfseries T\+R\+A\+C\+E\+\_\+\+E\+N\+T\+I\+T\+I\+E\+S\+\_\+\+O\+N\+LY}, 
+{\bfseries T\+R\+A\+C\+E\+\_\+\+E\+V\+E\+R\+Y\+T\+H\+I\+N\+G\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+P\+R\+O\+PS}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\begin{DoxyAuthor}{Author}
+A\+L\+P\+E\+R\+EN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2020
+\end{DoxyDate}
+~\newline
+ This program is free software\+: you can redistribute it and/or modify it under the terms of the G\+NU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU General Public License for more details.
+
+You should have received a copy of the G\+NU General Public License along with this program. If not, see \href{https://www.gnu.org/licenses/}{\texttt{ https\+://www.\+gnu.\+org/licenses/}}. 

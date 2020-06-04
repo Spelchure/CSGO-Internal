@@ -1,15 +1,21 @@
 var annotated_dup =
 [
     [ "_Vector", "struct___vector.html", "struct___vector" ],
+    [ "_Vector2", "struct___vector2.html", "struct___vector2" ],
     [ "AppSettings", "class_app_settings.html", "class_app_settings" ],
+    [ "CBaseTrace", "class_c_base_trace.html", "class_c_base_trace" ],
     [ "CEntityPlayer", "class_c_entity_player.html", "class_c_entity_player" ],
+    [ "CGameTrace", "class_c_game_trace.html", "class_c_game_trace" ],
     [ "ClientClass", "class_client_class.html", "class_client_class" ],
+    [ "cplane_t", "structcplane__t.html", "structcplane__t" ],
+    [ "CTraceFilter", "class_c_trace_filter.html", "class_c_trace_filter" ],
     [ "CUSTOMVERTEX", "struct_c_u_s_t_o_m_v_e_r_t_e_x.html", "struct_c_u_s_t_o_m_v_e_r_t_e_x" ],
     [ "ExampleAppConsole", "struct_example_app_console.html", "struct_example_app_console" ],
     [ "ExampleAppDocuments", "struct_example_app_documents.html", "struct_example_app_documents" ],
     [ "ExampleAppLog", "struct_example_app_log.html", "struct_example_app_log" ],
     [ "IBaseClientDLL", "class_i_base_client_d_l_l.html", "class_i_base_client_d_l_l" ],
     [ "IClientEntityList", "class_i_client_entity_list.html", "class_i_client_entity_list" ],
+    [ "IEngineTrace", "class_i_engine_trace.html", "class_i_engine_trace" ],
     [ "ImBitVector", "struct_im_bit_vector.html", "struct_im_bit_vector" ],
     [ "ImChunkStream", "struct_im_chunk_stream.html", "struct_im_chunk_stream" ],
     [ "ImColor", "struct_im_color.html", "struct_im_color" ],
@@ -72,9 +78,12 @@ var annotated_dup =
     [ "ImVec2ih", "struct_im_vec2ih.html", "struct_im_vec2ih" ],
     [ "ImVec4", "struct_im_vec4.html", "struct_im_vec4" ],
     [ "ImVector", "struct_im_vector.html", "struct_im_vector" ],
+    [ "ITraceFilter", "class_i_trace_filter.html", "class_i_trace_filter" ],
     [ "IVEngineClient013", "class_i_v_engine_client013.html", "class_i_v_engine_client013" ],
+    [ "MainMenu", "class_main_menu.html", "class_main_menu" ],
     [ "MidFunctionHook", "class_mid_function_hook.html", "class_mid_function_hook" ],
     [ "MyDocument", "struct_my_document.html", "struct_my_document" ],
+    [ "Ray_t", "struct_ray__t.html", "struct_ray__t" ],
     [ "RecvProp", "class_recv_prop.html", "class_recv_prop" ],
     [ "RecvTable", "class_recv_table.html", "class_recv_table" ],
     [ "STB_TexteditState", "struct_s_t_b___textedit_state.html", "struct_s_t_b___textedit_state" ],
@@ -92,5 +101,7 @@ var annotated_dup =
     [ "stbtt_packedchar", "structstbtt__packedchar.html", "structstbtt__packedchar" ],
     [ "stbtt_vertex", "structstbtt__vertex.html", "structstbtt__vertex" ],
     [ "StbUndoRecord", "struct_stb_undo_record.html", "struct_stb_undo_record" ],
-    [ "StbUndoState", "struct_stb_undo_state.html", "struct_stb_undo_state" ]
+    [ "StbUndoState", "struct_stb_undo_state.html", "struct_stb_undo_state" ],
+    [ "surface_t", "structsurface__t.html", "structsurface__t" ],
+    [ "VectorAligned", "class_vector_aligned.html", "class_vector_aligned" ]
 ];

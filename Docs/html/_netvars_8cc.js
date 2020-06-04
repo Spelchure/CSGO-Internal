@@ -8,5 +8,6 @@ var _netvars_8cc =
     [ "sig_bDormant", "_netvars_8cc.html#a580e3de6b3e3641d2960bed302ddeaa1", null ],
     [ "sig_dwClientState", "_netvars_8cc.html#acac5d9c4cc0a3ed373f20e56ac7cc18c", null ],
     [ "sig_dwClientState_MaxPlayers", "_netvars_8cc.html#ac691844f033854ac28232fb795e353f8", null ],
-    [ "sig_dwClientState_ViewAngles", "_netvars_8cc.html#a487bb7caf160b89df231deb65e6f4220", null ]
+    [ "sig_dwClientState_ViewAngles", "_netvars_8cc.html#a487bb7caf160b89df231deb65e6f4220", null ],
+    [ "sig_dwppDirect3DDevice9", "_netvars_8cc.html#a2834904801d2973b4d74ae4f79f6dbf6", null ]
 ];

@@ -26,8 +26,9 @@
 
 constexpr auto VALVE_WINDOW_CLASS = "Valve001";
 
-constexpr auto DLL_CLIENT = "client.dll"; // Old client_panorama.dll
+constexpr auto DLL_CLIENT = "client.dll"; // new game update
 constexpr auto DLL_ENGINE = "engine.dll";
+constexpr auto DLL_SHADERAPI = "shaderapidx9.dll";
 
 constexpr auto VCLIENTENTITYLIST_INTERFACE_VERSION = "VClientEntityList003"; 
 constexpr auto CLIENT_DLL_INTERFACE_VERSION = "VClient018";
@@ -51,4 +52,8 @@ constexpr const char* PATTERN_CLIENTSTATE_VIEWANGLES[] = {
 constexpr const char* PATTERN_BDORMANT[] = {
     "\x8A\x81\x90\x90\x90\x90\xC3\x32\xC0",
     "xx????xxx"
+};
+constexpr const char* PATTERN_PTRD3DDEV[] = {
+    "\xA1\x90\x90\x90\x90\x50\x8B\x08\xFF\x51\x0C",
+    "x????xxxxxx"
 };

@@ -29,9 +29,11 @@
 
 uintptr_t _netvarOffsets[netvarOffsetsLength] = { 0 };
 uintptr_t sig_dwClientState = 0;
+uintptr_t sig_dwppDirect3DDevice9 = 0;
 uint16_t sig_dwClientState_MaxPlayers = 0;
 uint16_t sig_dwClientState_ViewAngles = 0;
 uint16_t sig_bDormant = 0;
+
 
 /**
  * \brief Returns network variable offset
@@ -157,6 +159,11 @@ ReadySignatures(void)
     mem += 2;
     sig_bDormant = read_protected_memory<uint16_t>(mem);
     sig_bDormant += 8;
+
+    mem = (byte_t*)memFindPattern(DLL_SHADERAPI, PATTERN_PTRD3DDEV[0], PATTERN_PTRD3DDEV[1]);
+    if (!mem)
+        return false;
+    sig_dwppDirect3DDevice9 = read_protected_memory<uintptr_t>(++mem);
 
     return true;
 }

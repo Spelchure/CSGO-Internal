@@ -28,6 +28,7 @@ var NAVTREE =
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ]
@@ -47,12 +48,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_dll_main_8cc.html",
-"class_i_v_engine_client013.html#a8285f4164b2c86a8e3831f8abca9f407",
-"struct_im_draw_list_splitter.html#ac6865e5a2f180419fa282b681bf08c9c",
-"struct_im_gui_context.html#a4134d419bad1e87ca359381b7cfbcd87",
-"struct_im_gui_input_text_state.html#a730a350758ad428d845d895f85770b7f",
-"struct_im_gui_tab_item.html#ac09eeb85bebba09f18ac959bc32b5cef",
-"struct_im_vector.html#a0d795963a9fd9d15833fdf87ba292438"
+"class_app_settings.html#ae41719525e8f299b23440e3523bad3f6",
+"struct_im_draw_cmd.html#a4f3b5985ece9ca6b71e7a8e7d85a82e5",
+"struct_im_font_config.html#a9365265cc52098a8ecf89ff47f6106f2",
+"struct_im_gui_group_data.html#ae5220218236b037bce2e0775ab017f4a",
+"struct_im_gui_size_callback_data.html",
+"struct_im_gui_window_temp_data.html#a122b8e79d681562436251472d8e15ff4",
+"structstbtt____buf.html#ac047fda650726920531272c28aa354fb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

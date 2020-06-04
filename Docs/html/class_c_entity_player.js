@@ -1,5 +1,6 @@
 var class_c_entity_player =
 [
+    [ "GetAimPunchAngles", "class_c_entity_player.html#ac4629aaed4f117cb8edb43b9304e0f58", null ],
     [ "GetBonePos", "class_c_entity_player.html#ad576b5f4524b3dcec9c74428ca6c4f3d", null ],
     [ "GetDormant", "class_c_entity_player.html#accae75f4c3068209c14752a8992f93a9", null ],
     [ "GetHealth", "class_c_entity_player.html#a15bde0c0d58ee4b0f7d8ec50574b3d95", null ],

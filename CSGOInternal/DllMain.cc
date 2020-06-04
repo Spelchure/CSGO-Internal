@@ -48,6 +48,8 @@ AppSettings* pSettings;
 MainMenu* pMenu;
 void* vTable[119];
 
+extern uintptr_t sig_dwppDirect3DDevice9;
+
 /**
  * \brief Application main thread
  * 
@@ -131,9 +133,15 @@ MainThread(HMODULE hDll)
         FreeLibraryAndExitThread(hDll, 1);
         return FALSE;
     }
-    /*
-    LPDIRECT3DDEVICE9 pDev =
-        reinterpret_cast<LPDIRECT3DDEVICE9>((uintptr_t*)*vTable);
+    
+    LPDIRECT3DDEVICE9 pDev = reinterpret_cast<LPDIRECT3DDEVICE9>(*(uintptr_t*)sig_dwppDirect3DDevice9);
+    if(nullptr == pDev) {
+        delete pMenu;
+        delete pMidHook;
+        delete pSettings;
+        FreeLibraryAndExitThread(hDll, 1);
+        return FALSE;
+    }
     if (!pMenu->InitMenu(pDev, hValveWindow)) {
         delete pMenu;
         delete pMidHook;
@@ -141,7 +149,7 @@ MainThread(HMODULE hDll)
         FreeLibraryAndExitThread(hDll, 1);
         return FALSE;
     }
-*/
+    
     // HOOK! GatewayFunction:Gateway.cc
     pMidHook->BeginHook((reinterpret_cast<uintptr_t>(vTable[42])+0xF), (uintptr_t)GatewayFunction, 5);
     
