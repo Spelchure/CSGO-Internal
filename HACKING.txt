@@ -18,7 +18,18 @@ Important functions
 
 Some Examples
 ==============
+
 1.Adding new setting
+====================
+	file: CSGOInternal/Settings/Settings.hpp ~ Settings.cc
+
+	Add your <type> setting in enumaration in class AppSettings
+	Increase/dec constants beginning of file Settings.hpp (numberOfIntSettings etc.)
+	You can add new type.
+	Maybe edit parseFile() in Settings.cc
+	Edit setDefault() in Settings.hpp
+	
+	You can change settings file name in DllMain.cc SETTINGS_FILE_NAME constant.
 
 2.Editing default virtual keys:
 =================================

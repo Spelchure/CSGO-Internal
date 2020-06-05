@@ -877,6 +877,7 @@
     <ClInclude Include="Dependencies\DirectX9SDK\Include\XInput.h" />
     <ClInclude Include="Dependencies\DirectX9SDK\Include\xma2defs.h" />
     <ClInclude Include="Dependencies\DirectX9SDK\Include\xnamath.h" />
+    <ClInclude Include="CSGOInternal\StrLang.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Docs\html\bc_s.png" />

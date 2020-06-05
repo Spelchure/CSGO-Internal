@@ -990,6 +990,9 @@
     <ClInclude Include="CSGOInternal\MainMenu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CSGOInternal\StrLang.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Docs\html\folderclosed.png">

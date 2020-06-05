@@ -22,6 +22,8 @@
  *********************************************************************/
 #include "MainMenu.hpp"
 #include "Settings/Settings.hpp"
+#include "StrLang.hpp"
+
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 WNDPROC oriWndProc = 0x0;
@@ -39,7 +41,9 @@ MainMenu::InitMenu(LPDIRECT3DDEVICE9 pD3Ddev, HWND hValveWindow)
 {
     if (pD3Ddev == nullptr)
         return false;
+
     this->pDevice = pD3Ddev;
+    this->hValveWindow = hValveWindow;
 
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -59,6 +63,8 @@ MainMenu::InitMenu(LPDIRECT3DDEVICE9 pD3Ddev, HWND hValveWindow)
 void 
 MainMenu::ReleaseMenu()
 {
+    // Set original window proc
+    SetWindowLongPtr(hValveWindow, GWL_WNDPROC, (LONG)(LONG_PTR)oriWndProc);
     ImGui_ImplDX9_Shutdown();
     ImGui_ImplWin32_Shutdown();
     ImGui::DestroyContext();
@@ -80,7 +86,26 @@ MainMenu::PrintMenu()
     flags |= ImGuiWindowFlags_NoTitleBar;
    
     ImGui::Begin("CSGO", 0,flags);
-    ImGui::Text("Testing..");
+//    ImGui::ShowDemoWindow(0);
+    if(ImGui::BeginTabBar("TB1")) {
+        if(ImGui::BeginTabItem("Aimbot")) {
+            ImGui::Checkbox(Lang::StringActive, &pSettings->boolSettings[pSettings->bAimbot]);
+            ImGui::SameLine();
+            ImGui::Checkbox(Lang::StringFOVact, &pSettings->boolSettings[pSettings->bAimbot_FOV]);
+            ImGui::SameLine();
+            ImGui::Checkbox(Lang::StringAimAutoAttack, &pSettings->boolSettings[pSettings->bAimbot_AutoAttack]);
+
+            if(pSettings->getBool(pSettings->bAimbot_FOV)) 
+                ImGui::SliderFloat(Lang::StringFOV, &pSettings->floatSettings[pSettings->fAimFOV], 1.000f, 80.000f, "%.3f", 1.0f);
+                
+            ImGui::SliderFloat(Lang::StringSmooth, &pSettings->floatSettings[pSettings->fAimSmooth], 1.000f, 25.000f, "%.3f", 1.0f);
+            ImGui::EndTabItem();
+        }
+
+        ImGui::EndTabBar();
+    }
+
+
     ImGui::End();
 
     // Render

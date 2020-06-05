@@ -33,7 +33,7 @@ uintptr_t sig_dwppDirect3DDevice9 = 0;
 uint16_t sig_dwClientState_MaxPlayers = 0;
 uint16_t sig_dwClientState_ViewAngles = 0;
 uint16_t sig_bDormant = 0;
-
+uintptr_t sig_dwForceAttack = 0;
 
 /**
  * \brief Returns network variable offset
@@ -165,5 +165,13 @@ ReadySignatures(void)
         return false;
     sig_dwppDirect3DDevice9 = read_protected_memory<uintptr_t>(++mem);
 
+    
+    // Not required don't crash !!
+    mem = (byte_t*)memFindPattern(DLL_CLIENT, PATTERN_FORCEATTACK[0], PATTERN_FORCEATTACK[1]);
+    if (mem)
+    {
+        mem += 2;
+        sig_dwForceAttack = read_protected_memory<uintptr_t>(mem);
+    }
     return true;
 }

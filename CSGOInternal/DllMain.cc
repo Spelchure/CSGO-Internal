@@ -165,6 +165,8 @@ MainThread(HMODULE hDll)
 
     if (nullptr != pMidHook) 
         delete pMidHook; // Runs dehook 
+    
+    Sleep(1000);
 
     if (nullptr != pSettings)
         delete pSettings;

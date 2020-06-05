@@ -1,11 +1,11 @@
 /*****************************************************************//**
- * \file   MainMenu.hpp
- * \brief  
+ * \file   StrLang.hpp
+ * \brief  Language specific strings
  * 
  * 
  * \author ALPEREN
  * \date   June 2020
- *  
+ * 
  *  <br>
  *  This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,20 +21,22 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
 #pragma once
-#include "ImGui/imgui.h"
-#include "ImGui/imgui_impl_dx9.h"
-#include "ImGui/imgui_impl_win32.h"
-#include <d3d9.h>
 
-class MainMenu {
-    LPDIRECT3DDEVICE9 pDevice;
-    HWND hValveWindow;
-public:
-    bool InitMenu(LPDIRECT3DDEVICE9 pD3Ddev, HWND hValveWindow);
-    void ReleaseMenu(void);
-    void PrintMenu(void);
+#define LANG_EN_US
+//#define LANG_TR_TR
 
-    MainMenu() : pDevice(nullptr), hValveWindow(0) {}
-    ~MainMenu() { if(nullptr != pDevice) ReleaseMenu(); }
-};
 
+namespace Lang {
+#ifdef LANG_EN_US
+    constexpr auto StringActive = "Active";
+    constexpr auto StringFOVact = "FOV Active";
+    constexpr auto StringFOV = "FOV";
+    constexpr auto StringSmooth = "Aim smooth";
+    constexpr auto StringAimAutoAttack = "Aim auto attack";
+#elif defined(LANG_TR_TR)
+    constexpr auto StringActive = "Aktif";
+    constexpr auto StringFOVact = "FOV Aktif";
+    constexpr auto StringFOV = "FOV";
+    constexpr auto StringSmooth = "Aim hýzý";
+#endif
+}

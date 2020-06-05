@@ -23,9 +23,9 @@
 #pragma once
 #include <string>
 
-constexpr auto numberOfBoolSettings = 1;
-constexpr auto numberOfFloatSettings = 0;
+constexpr auto numberOfBoolSettings = 4;
 constexpr auto numberOfIntSettings = 1;
+constexpr auto numberOfFloatSettings = 2;
 
 /* Default settings 
 bMenuShowing = false;
@@ -33,23 +33,31 @@ bAimbot = false;
 */
 
 class AppSettings {
-    bool* boolSettings;
-    int* intSettings;
-    
     std::string *filePath;
 public:
+    /* Required in ImGui menu ... */
+    bool* boolSettings;
+    int* intSettings;
+    float* floatSettings;
+   
     enum BoolSettings {
         bMenuShowing,
         bAimbot, // Is aimbot open
+        bAimbot_FOV, // Fov enabled
+        bAimbot_AutoAttack // Aim and Shoot !
     };
     enum IntSettings {
         iAimbotKey 
+    };
+    enum FloatSettings {
+        fAimSmooth,
+        fAimFOV
     };
     //Set default settings 
     AppSettings() {
         boolSettings = new bool[numberOfBoolSettings];
         intSettings = new int[numberOfIntSettings];
-
+        floatSettings = new float[numberOfFloatSettings];
         filePath = nullptr; // Allocated in  parseFile
     }
 
@@ -58,12 +66,19 @@ public:
             delete[] boolSettings;
         if (nullptr != intSettings)
             delete[] intSettings;
+        if (nullptr != floatSettings)
+            delete[] floatSettings;
         if (nullptr != filePath)
             delete filePath;
     }
     void setDefault(void) {
         boolSettings[bMenuShowing] = false;
+        boolSettings[bAimbot] = false;
+        boolSettings[bAimbot_FOV] = true;
+        boolSettings[bAimbot_AutoAttack] = false;
         intSettings[iAimbotKey] = (int)'C';
+        floatSettings[fAimFOV] = 40.0f;
+        floatSettings[fAimSmooth] = 2.000001f;
     }
     bool parseFile(const char* path);
     void saveSettings(void);
@@ -93,6 +108,19 @@ public:
     {
         if (ind < numberOfIntSettings)
             return intSettings[ind]; 
+        return 0;
+    }
+        
+    void setFloat(int ind, float v)
+    {
+        if (ind < numberOfFloatSettings)
+            floatSettings[ind] = v;
+    }
+    float getFloat(int ind)
+    {
+        if (ind < numberOfFloatSettings)
+            return floatSettings[ind];
+        return 0.f;
     }
 };
 

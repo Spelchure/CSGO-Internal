@@ -37,6 +37,12 @@ typedef struct _Vector {
         this->z -= another.z;
         return *this;
     }
+   /* struct _Vector & operator =(struct _Vector &v) {
+        x = v.x;
+        y = v.y;
+        z = v.z;
+        return *this;
+    }*/
     struct _Vector operator-(const struct _Vector &v) const {
         return struct _Vector(x - v.x, y - v.y, z - v.z);
     }
@@ -50,13 +56,63 @@ typedef struct _Vector {
     struct _Vector operator+(const struct _Vector &v) const {
         return struct _Vector(x + v.x, y + v.y, z + v.z);
     }
+    struct _Vector & operator -=(const struct _Vector & v) {
+        x -= v.x;
+        y -= v.y;
+        z -= v.z;
+        return *this;
+    }
     struct _Vector & operator *=(const struct _Vector &v) {
         x *= v.x;
         y *= v.y;
         z *= v.z;
         return *this;
     }
+    struct _Vector operator /(float f) {
+        float nx, ny, nz;
+        nx = x / f; ny = y / f; nz = z / f;
+        return struct _Vector(nx, ny, nz);
+    }
 
+    struct _Vector Unit()
+    {
+        float nx, ny, nz;
+        float ln = this->magnitude();
+    
+        nx = this->x / ln;
+        ny = this->y / ln;
+        nz = this->z / ln;
+      
+        return struct _Vector(nx, ny, nz);
+    }
+    void Clamp()
+    {
+        if (x > 89.0f && x <= 180.0f)
+            x = 89.0f;
+        if (x > 180.0f)
+            x = x - 360.0f;
+        if (x < -89.0f)
+            x = -89.0f;
+        if (y > 180.0f)
+            y = y - 360.0f;
+        if (y < -180.0f)
+            y = y + 360.0f;
+   
+    }
+    void Normalize()
+    {
+        while(this->x > 180.0f) 
+            this->x -= 360.0f;
+        while (this->x < -180.0f)
+            this->x += 360.0f;
+        while(this->y > 180.0f) 
+            this->y -= 360.0f;
+        while (this->y < -180.0f)
+            this->y += 360.0f;
+        
+        this->z = 0;
+    }
+        
     float magnitude() {
         return sqrtf(this->x * this->x + this->y * this->y + this->z * this->z);
     }

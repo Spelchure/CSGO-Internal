@@ -41,7 +41,7 @@ AppSettings::parseFile(const char* path)
 
     const char* regex_[] = {
         "([0-9]+)\\s*=\\s*([01]);", // Match boolean
-        "([0-9]+)\\s*=\\s*([0-9\\.]+);", // Match float
+        "([0-9]+)\\s*=\\s*([0-9]+\\.[0-9]+);", // Match float
         "([0-9]+)\\s*=\\s*([0-9]+);" // Match integer
     };
     int ind = 0;
@@ -71,7 +71,8 @@ AppSettings::parseFile(const char* path)
                     this->setBool(index, val != 0);
                 }
                 else if (ind == 1) { // Float 
-                    //TODO 
+                    float val = std::stof(match[2].str());
+                    this->setFloat(index, val);
                 }
                 else if (ind == 2) { // Integer
                     int val = std::stoi(match[2].str());
@@ -104,11 +105,13 @@ AppSettings::saveSettings(void)
     // Write Boolean settings
     fStream << "[bool]\n";
     for (int i = 0; i < numberOfBoolSettings; i++) // Boolean settings
-    {
         fStream << std::to_string(i) << " = " << (boolSettings[i] ? "1;" : "0;") << std::endl;
-    }
 
-    //Write others
+    fStream << "[float]\n";
+    for (int i = 0; i < numberOfFloatSettings; i++)
+        fStream << std::to_string(i) << " = " << std::to_string(floatSettings[i]) << ";" << std::endl;
+    
+
     fStream.close();
     
 }

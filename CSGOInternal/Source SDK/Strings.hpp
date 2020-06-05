@@ -57,3 +57,7 @@ constexpr const char* PATTERN_PTRD3DDEV[] = {
     "\xA1\x90\x90\x90\x90\x50\x8B\x08\xFF\x51\x0C",
     "x????xxxxxx"
 };
+constexpr const char* PATTERN_FORCEATTACK[] = {
+    "\x89\x0D\x90\x90\x90\x90\x8B\x0D\x90\x90\x90\x90\x8B\xF2\x8B\xC1\x83\xCE\x04",
+    "xx????xx????xxxxxxx"
+};

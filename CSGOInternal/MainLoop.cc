@@ -30,6 +30,7 @@ extern IVEngineClient013* iEngineClient13;
 extern IClientEntityList* iEntityList;
 extern IEngineTrace* iTrace;
 
+extern uintptr_t sig_dwForceAttack;
 extern uintptr_t sig_dwClientState;
 extern uint16_t sig_dwClientState_ViewAngles;
 CEntityPlayer* localPlayer;
@@ -92,20 +93,25 @@ MainLoop(void)
         if (ent == localPlayer) // Skip local player
             continue;
     
-
-        if (*ent->GetHealth() > 0 && *ent->GetTeam() != *localPlayer->GetTeam() && !(*ent->GetDormant()) &&  
-            enemyIsVisible(ent) // Visible for us
-            ) { // VALID ENEMY
-            if (true) { // IsAimbot open ? 
+        if(pSettings->getBool(pSettings->bAimbot)) {
+            if (*ent->GetHealth() > 0 && *ent->GetTeam() != *localPlayer->GetTeam() && !(*ent->GetDormant()) &&
+                enemyIsVisible(ent) // Visible for us
+                ) { // VALID ENEMY
                 Vector myPos;
                 Vector angles;
-
+                Vector* viewAngles = (Vector*)(clientState + sig_dwClientState_ViewAngles);
                 localPlayer->GetViewAngles(myPos);
                 angles = vecCalcAngles(myPos, *ent->GetBonePos(8));
-            
-                float dist = vecGet3DDistance(angles, *ent->GetBonePos(8));
-                if (dist < distmax)
-                    bestEnemy = i;
+                float dist = vecGet3DDistance(*viewAngles, angles);
+                if (dist < distmax) {
+                    distmax = dist;
+                    if (pSettings->getBool(pSettings->bAimbot_FOV)) {
+                        if (dist <= pSettings->getFloat(pSettings->fAimFOV)) // Aim fov
+                            bestEnemy = i;
+                    }
+                    else
+                        bestEnemy = i;
+                }
             }
         }
     }
@@ -117,22 +123,40 @@ MainLoop(void)
             CEntityPlayer* enemy = (CEntityPlayer*)iEntityList->GetClientEntity(bestEnemy);
             if (nullptr != enemy)
             {
-                
                 if(clientState) {
-                    localPlayer->GetViewAngles(myPos);
+                    localPlayer->GetViewAngles(myPos); // Get eye pos
                     angles = vecCalcAngles(myPos, *enemy->GetBonePos(8));
+                   
                     Vector2* aimPunchAngle = localPlayer->GetAimPunchAngles();
-                    
+                   
                     angles.x -= aimPunchAngle->x * 2.f;
                     angles.y -= aimPunchAngle->y * 2.f; 
-                                      
-                    if(angles.x >= -89.0f && angles.x <= 89.0f && angles.y >= -180.0f && angles.y <= 180.0f) {
-                        Vector* viewAngles = (Vector*)(clientState + sig_dwClientState_ViewAngles);
-                        //Set my angles...
-                        viewAngles->x = angles.x;
-                        viewAngles->y = angles.y;
-                    }
+                   
+                    Vector* viewAngles = (Vector*)(clientState + sig_dwClientState_ViewAngles);
+                   
+                    Vector relativeAngles;
+                    relativeAngles.x = angles.x - viewAngles->x;
+                    relativeAngles.y = angles.y - viewAngles->y;
                     
+                    relativeAngles.Normalize();
+                    relativeAngles.Clamp();
+
+                    angles.x = viewAngles->x;
+                    angles.y = viewAngles->y;
+
+                    angles.x += relativeAngles.x / pSettings->getFloat(pSettings->fAimSmooth);
+                    angles.y += relativeAngles.y / pSettings->getFloat(pSettings->fAimSmooth);
+
+                    angles.Normalize(); angles.Clamp();
+
+                    viewAngles->x = angles.x;
+                    viewAngles->y = angles.y;
+
+                    if(pSettings->getBool(pSettings->bAimbot_AutoAttack) && sig_dwForceAttack) {
+                        *(uintptr_t*)(sig_dwForceAttack) = 5;
+                        Sleep(50);
+                        *(uintptr_t*)(sig_dwForceAttack) = 4;
+                    }
                 }
             }
         }
