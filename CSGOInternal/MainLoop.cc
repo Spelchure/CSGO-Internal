@@ -23,6 +23,9 @@
 #include "Settings/Settings.hpp"
 #include "Source SDK/SDK.hpp"
 
+
+#define IS_VALID_ENT(ent) (((*(ent)->GetHealth()) > 0   && !(*(ent)->GetDormant())))
+
 constexpr auto ENTITY_MAX_PLAYERS = 32;
 
 extern AppSettings* pSettings;
@@ -33,6 +36,8 @@ extern IEngineTrace* iTrace;
 extern uintptr_t sig_dwForceAttack;
 extern uintptr_t sig_dwClientState;
 extern uint16_t sig_dwClientState_ViewAngles;
+extern uintptr_t sig_dwViewMatrix;
+extern uintptr_t sig_dwForceJump;
 CEntityPlayer* localPlayer;
 
 /**
@@ -72,6 +77,10 @@ enemyIsVisible(CEntityPlayer* enemy)
 void 
 MainLoop(void)
 {
+
+    if (!iEngineClient13->IsInGame()) // Player not in game
+        return;
+
     localPlayer = iEntityList->GetClientEntity(iEngineClient13->GetLocalPlayer());
     float distmax = FLT_MAX;
     int bestEnemy = -1;
@@ -82,7 +91,12 @@ MainLoop(void)
 
     if (sig_dwClientState)
         clientState = *(uintptr_t*)sig_dwClientState;
-  
+ 
+    // Copy view matrix
+    float viewMatrixCopy[16] = { 0 };
+    memcpy(&viewMatrixCopy, (PBYTE)sig_dwViewMatrix, sizeof(viewMatrixCopy));
+
+
     // Loop in entity list
     for(int i = 0; i < ENTITY_MAX_PLAYERS; i++) {
         CEntityPlayer* ent = iEntityList->GetClientEntity(i);
@@ -93,7 +107,7 @@ MainLoop(void)
         if (ent == localPlayer) // Skip local player
             continue;
     
-        if(pSettings->getBool(pSettings->bAimbot)) {
+        if(pSettings->getBool(pSettings->bAimbot)) { // check this.
             if (*ent->GetHealth() > 0 && *ent->GetTeam() != *localPlayer->GetTeam() && !(*ent->GetDormant()) &&
                 enemyIsVisible(ent) // Visible for us
                 ) { // VALID ENEMY
@@ -113,6 +127,57 @@ MainLoop(void)
                         bestEnemy = i;
                 }
             }
+        }
+  
+        
+        if (!IS_VALID_ENT(ent))
+            continue;
+
+        /* Drawing Stuff */
+        int my_team = *localPlayer->GetTeam();
+        int en_team = *ent->GetTeam();
+        if (my_team == en_team) // teammate
+        {
+            if (pSettings->getBool(pSettings->bESP_mate))
+            {
+                //mate esp
+                ent->DrawESP(viewMatrixCopy, D3DCOLOR_ARGB(255, 0, 255, 0));
+            }
+            if (pSettings->getBool(pSettings->bSnaplines_mate))
+            {
+                //snaplines mate
+                ent->DrawSnapline(viewMatrixCopy, 2, D3DCOLOR_ARGB(255, 0, 255, 0));
+            }
+            //mybe glow
+        }
+        else // enemy 
+        {
+            if (pSettings->getBool(pSettings->bESP))
+            {
+                //enemy esp
+                ent->DrawESP(viewMatrixCopy, D3DCOLOR_ARGB(255, 255,0, 0));
+            }
+            if (pSettings->getBool(pSettings->bSnaplines)) 
+            {
+                //enemy snaplines     
+                ent->DrawSnapline(viewMatrixCopy, 2, D3DCOLOR_ARGB(255, 255, 0, 0));
+            }
+        }
+        
+
+    }
+
+    if (pSettings->getBool(pSettings->bAntiflash) && *localPlayer->GetFlashDuration() > 0) // antiflash
+        *localPlayer->GetFlashDuration() = 0;
+
+    // assuming sig_dwForceJump accessible
+    if (pSettings->getBool(pSettings->bBunnyhop)) // bunnyhop
+    {
+        if(GetAsyncKeyState(VK_SPACE)) {
+            if (localPlayer->GetFlags() & (1 << 0)) // on ground 
+                *(uintptr_t*)sig_dwForceJump = 5;
+            else // on air
+                *(uintptr_t*)sig_dwForceJump = 4;
         }
     }
 

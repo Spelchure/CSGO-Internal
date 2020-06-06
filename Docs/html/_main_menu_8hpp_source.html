@@ -96,20 +96,21 @@ $(document).ready(function(){initNavTree('_main_menu_8hpp_source.html',''); init
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_main_menu.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_menu.html">MainMenu</a> {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    LPDIRECT3DDEVICE9 pDevice;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_main_menu.html#aacbc4357731c077605c26cae855349be">InitMenu</a>(LPDIRECT3DDEVICE9 pD3Ddev, HWND hValveWindow);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> ReleaseMenu(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_menu.html#ae4f40cbb6ce4fbf68f64499587bd44f3">PrintMenu</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_main_menu.html">MainMenu</a>() : pDevice(<span class="keyword">nullptr</span>) {}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    ~<a class="code" href="class_main_menu.html">MainMenu</a>() { <span class="keywordflow">if</span>(<span class="keyword">nullptr</span> != pDevice) ReleaseMenu(); }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    HWND hValveWindow;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_main_menu.html#aacbc4357731c077605c26cae855349be">InitMenu</a>(LPDIRECT3DDEVICE9 pD3Ddev, HWND hValveWindow);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> ReleaseMenu(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_menu.html#ae4f40cbb6ce4fbf68f64499587bd44f3">PrintMenu</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_main_menu.html">MainMenu</a>() : pDevice(<span class="keyword">nullptr</span>), hValveWindow(0) {}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    ~<a class="code" href="class_main_menu.html">MainMenu</a>() { <span class="keywordflow">if</span>(<span class="keyword">nullptr</span> != pDevice) ReleaseMenu(); }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_main_menu_html"><div class="ttname"><a href="class_main_menu.html">MainMenu</a></div><div class="ttdef"><b>Definition:</b> MainMenu.hpp:29</div></div>
-<div class="ttc" id="aclass_main_menu_html_aacbc4357731c077605c26cae855349be"><div class="ttname"><a href="class_main_menu.html#aacbc4357731c077605c26cae855349be">MainMenu::InitMenu</a></div><div class="ttdeci">bool InitMenu(LPDIRECT3DDEVICE9 pD3Ddev, HWND hValveWindow)</div><div class="ttdoc">Init ImGui menu.</div><div class="ttdef"><b>Definition:</b> MainMenu.cc:38</div></div>
-<div class="ttc" id="aclass_main_menu_html_ae4f40cbb6ce4fbf68f64499587bd44f3"><div class="ttname"><a href="class_main_menu.html#ae4f40cbb6ce4fbf68f64499587bd44f3">MainMenu::PrintMenu</a></div><div class="ttdeci">void PrintMenu(void)</div><div class="ttdoc">Prints menu to screen.</div><div class="ttdef"><b>Definition:</b> MainMenu.cc:72</div></div>
+<div class="ttc" id="aclass_main_menu_html_aacbc4357731c077605c26cae855349be"><div class="ttname"><a href="class_main_menu.html#aacbc4357731c077605c26cae855349be">MainMenu::InitMenu</a></div><div class="ttdeci">bool InitMenu(LPDIRECT3DDEVICE9 pD3Ddev, HWND hValveWindow)</div><div class="ttdoc">Init ImGui menu.</div><div class="ttdef"><b>Definition:</b> MainMenu.cc:40</div></div>
+<div class="ttc" id="aclass_main_menu_html_ae4f40cbb6ce4fbf68f64499587bd44f3"><div class="ttname"><a href="class_main_menu.html#ae4f40cbb6ce4fbf68f64499587bd44f3">MainMenu::PrintMenu</a></div><div class="ttdeci">void PrintMenu(void)</div><div class="ttdoc">Prints menu to screen.</div><div class="ttdef"><b>Definition:</b> MainMenu.cc:78</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

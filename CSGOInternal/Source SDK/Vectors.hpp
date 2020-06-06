@@ -149,6 +149,13 @@ typedef struct _Vector2
 
 }Vector2;
 
+typedef struct _Vector4
+{
+    float x, y, z, w;
+    struct _Vector4(float x = 0, float y = 0, float z = 0, float w = 0) : x(x), y(y), z(z), w(w) {}
+
+}Vector4;
+
 class ALIGN16 VectorAligned : public Vector
 {
 public:

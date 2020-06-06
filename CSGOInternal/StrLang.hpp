@@ -29,14 +29,29 @@
 namespace Lang {
 #ifdef LANG_EN_US
     constexpr auto StringActive = "Active";
-    constexpr auto StringFOVact = "FOV Active";
+    constexpr auto StringFOVact = "FOV active";
     constexpr auto StringFOV = "FOV";
     constexpr auto StringSmooth = "Aim smooth";
     constexpr auto StringAimAutoAttack = "Aim auto attack";
+
+    /** ESP */
+    constexpr auto sESP_color_mate = "ESP (mate) color";
+    constexpr auto sESP_color = "ESP (enemy) color";
+    constexpr auto sESP_active = "ESP (enemy) active ";
+    constexpr auto sESP_active_mate = "ESP (mate) active ";
+
+    /**  Snaplines */
+    constexpr auto sSnap_active = "Snaplines (enemy) active";
+    constexpr auto sSnap_active_Mate = "Snaplines (mate) active";
+    constexpr auto sSnap_color = "Snaplines (enemy) color";
+    constexpr auto sSnap_color_mate = "Snaplines (mate) color";
+
 #elif defined(LANG_TR_TR)
     constexpr auto StringActive = "Aktif";
     constexpr auto StringFOVact = "FOV Aktif";
     constexpr auto StringFOV = "FOV";
     constexpr auto StringSmooth = "Aim hýzý";
+    constexpr auto StringAimAutoAttack = "Aim otomatik atýþ";
+    constexpr auto sESP_color_mate = "ESP (takým) renk";
 #endif
 }

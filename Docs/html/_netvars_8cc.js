@@ -9,5 +9,8 @@ var _netvars_8cc =
     [ "sig_dwClientState", "_netvars_8cc.html#acac5d9c4cc0a3ed373f20e56ac7cc18c", null ],
     [ "sig_dwClientState_MaxPlayers", "_netvars_8cc.html#ac691844f033854ac28232fb795e353f8", null ],
     [ "sig_dwClientState_ViewAngles", "_netvars_8cc.html#a487bb7caf160b89df231deb65e6f4220", null ],
-    [ "sig_dwppDirect3DDevice9", "_netvars_8cc.html#a2834904801d2973b4d74ae4f79f6dbf6", null ]
+    [ "sig_dwForceAttack", "_netvars_8cc.html#a47df9949f9dcba30706ca0ea83b35f45", null ],
+    [ "sig_dwForceJump", "_netvars_8cc.html#af10d94d64b21dd7dd7a5ea0dcafc4dcf", null ],
+    [ "sig_dwppDirect3DDevice9", "_netvars_8cc.html#a2834904801d2973b4d74ae4f79f6dbf6", null ],
+    [ "sig_dwViewMatrix", "_netvars_8cc.html#ae5b27ec1f88ce7b3837fac42868e998b", null ]
 ];

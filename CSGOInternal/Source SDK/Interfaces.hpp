@@ -29,6 +29,11 @@ typedef void* CBaseHandle;
 typedef void* INetChannel;
 typedef void* IServer;
 typedef void* CGlobalVarsBase;
+typedef void* model_t;
+typedef void* CSentence;
+typedef float* QAngle;
+typedef void* CAudioSource; 
+typedef void* ButtonCode_t;
 typedef int player_info_t;
 typedef char client_textmessage_t;
 
@@ -150,6 +155,45 @@ public:
 
     // Get the entity index of the local player
     virtual int					GetLocalPlayer(void) = 0;
+
+    virtual const model_t* LoadModel(const char* pName, bool bProp = false) = 0;
+
+    // Get accurate, sub-frame clock ( profiling use )
+    virtual float				Time(void) = 0;
+
+    // Get the exact server timesstamp ( server time ) from the last message received from the server
+    virtual float				GetLastTimeStamp(void) = 0;
+
+    // Given a CAudioSource (opaque pointer), retrieve the underlying CSentence object ( stores the words, phonemes, and close
+    //  captioning data )
+    virtual CSentence* GetSentence(CAudioSource* pAudioSource) = 0;
+    // Given a CAudioSource, determines the length of the underlying audio file (.wav, .mp3, etc.)
+    virtual float				GetSentenceLength(CAudioSource* pAudioSource) = 0;
+    // Returns true if the sound is streaming off of the hard disk (instead of being memory resident)
+    virtual bool				IsStreaming(CAudioSource* pAudioSource) const = 0;
+
+    // Copy current view orientation into va
+    virtual void				GetViewAngles(QAngle& va) = 0;
+    // Set current view orientation from va
+    virtual void				SetViewAngles(QAngle& va) = 0;
+
+    // Retrieve the current game's maxclients setting
+    virtual int					GetMaxClients(void) = 0;
+
+    // Given the string pBinding which may be bound to a key, 
+    //  returns the string name of the key to which this string is bound. Returns NULL if no such binding exists
+    virtual	const char* Key_LookupBinding(const char* pBinding) = 0;
+
+    // Given the name of the key "mouse1", "e", "tab", etc., return the string it is bound to "+jump", "impulse 50", etc.
+    virtual const char* Key_BindingForKey(ButtonCode_t code) = 0;
+
+    // key trapping (for binding keys)
+    virtual void				StartKeyTrapMode(void) = 0;
+    virtual bool				CheckDoneKeyTrapping(ButtonCode_t& code) = 0;
+
+    // Returns true if the player is fully connected and active in game (i.e, not still loading)
+    virtual bool				IsInGame(void) = 0;
+
 };
 
 void* GetInterface(const char *dllName, const char* interfaceName);

@@ -21,11 +21,13 @@
  *********************************************************************/
 #pragma once
 #include "Netvars.hpp"
-#include "Vectors.hpp"
+#include "../D3D9/Drawing.hpp"
+
+#pragma warning (disable : 4244)
 
 extern uintptr_t _netvarOffsets[netvarOffsetsLength];
 extern uint16_t sig_bDormant;
-
+extern D3D9Drawing* pDrawing;
 
 /*
  * \brief Returns netvar offset
@@ -50,6 +52,12 @@ public:
     bool *GetDormant() {
         return (bool*)((uintptr_t)this + sig_bDormant);
     }
+    int8_t GetFlags() {
+        return *(int8_t*)((uintptr_t)this + netvar(m_fFlags));
+    }
+    int *GetFlashDuration() {
+        return (int*)((uintptr_t)this + netvar(m_flFlashDuration));
+    }
     Vector * GetVecOrigin() {
         return (Vector*)((uintptr_t)this + netvar(m_vecOrigin));
     }
@@ -71,4 +79,30 @@ public:
         Vector vecOrigin = *this->GetVecOrigin();
         ang = vecOrigin + *this->GetViewOffset();
     }
+    /* DRAWING */
+
+    void DrawESP(float* v, D3DCOLOR color)
+    {
+        Vector vHead = *this->GetBonePos(8);
+        vHead.z += 8;
+        Vector vOrigin = *this->GetVecOrigin();
+        Vector2 vScreen, vHead2;
+        
+        if(pDrawing->World2Screen(v,vOrigin, vScreen)) {
+            if(pDrawing->World2Screen(v,vHead,vHead2)) {
+                pDrawing->DrawEspBox(vScreen, vHead2, 2, color);
+            }
+        }
+    }
+
+    void DrawSnapline(float* v, int thick, D3DCOLOR color)
+    {
+        Vector vOrigin = *this->GetVecOrigin();
+        Vector2 entPos;
+
+        if(pDrawing->World2Screen(v,vOrigin,entPos)) 
+            pDrawing->DrawLine(entPos.x, entPos.y, pDrawing->screen_w / 2, pDrawing->screen_h , thick, color);
+        
+    }
+
 };

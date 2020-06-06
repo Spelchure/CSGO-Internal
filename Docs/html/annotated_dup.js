@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "_Vector", "struct___vector.html", "struct___vector" ],
     [ "_Vector2", "struct___vector2.html", "struct___vector2" ],
+    [ "_Vector4", "struct___vector4.html", "struct___vector4" ],
     [ "AppSettings", "class_app_settings.html", "class_app_settings" ],
     [ "CBaseTrace", "class_c_base_trace.html", "class_c_base_trace" ],
     [ "CEntityPlayer", "class_c_entity_player.html", "class_c_entity_player" ],
@@ -10,6 +11,7 @@ var annotated_dup =
     [ "cplane_t", "structcplane__t.html", "structcplane__t" ],
     [ "CTraceFilter", "class_c_trace_filter.html", "class_c_trace_filter" ],
     [ "CUSTOMVERTEX", "struct_c_u_s_t_o_m_v_e_r_t_e_x.html", "struct_c_u_s_t_o_m_v_e_r_t_e_x" ],
+    [ "D3D9Drawing", "class_d3_d9_drawing.html", "class_d3_d9_drawing" ],
     [ "ExampleAppConsole", "struct_example_app_console.html", "struct_example_app_console" ],
     [ "ExampleAppDocuments", "struct_example_app_documents.html", "struct_example_app_documents" ],
     [ "ExampleAppLog", "struct_example_app_log.html", "struct_example_app_log" ],

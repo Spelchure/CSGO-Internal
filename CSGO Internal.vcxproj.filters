@@ -641,12 +641,31 @@
     <None Include="Docs\html\search\functions_9.js" />
     <None Include="Docs\html\search\functions_a.js" />
     <None Include="Docs\html\search\variables_0.js" />
+    <None Include="Docs\html\search\classes_9.html" />
+    <None Include="Docs\html\search\variables_1.html" />
+    <None Include="Docs\html\_drawing_8cc.html" />
+    <None Include="Docs\html\_drawing_8hpp.html" />
+    <None Include="Docs\html\_drawing_8hpp_source.html" />
+    <None Include="Docs\html\_str_lang_8hpp.html" />
+    <None Include="Docs\html\_str_lang_8hpp_source.html" />
+    <None Include="Docs\html\class_d3_d9_drawing.html" />
+    <None Include="Docs\html\class_d3_d9_drawing-members.html" />
+    <None Include="Docs\html\struct___vector4.html" />
+    <None Include="Docs\html\struct___vector4-members.html" />
+    <None Include="Docs\html\_drawing_8cc.js" />
+    <None Include="Docs\html\_str_lang_8hpp.js" />
+    <None Include="Docs\html\class_d3_d9_drawing.js" />
+    <None Include="Docs\html\struct___vector4.js" />
+    <None Include="Docs\html\struct_ray__t.js" />
+    <None Include="Docs\html\search\classes_9.js" />
+    <None Include="Docs\html\search\variables_1.js" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="LICENSE" />
     <Text Include="CSGOInternal\ImGui\LICENSE.txt" />
     <Text Include="HACKING.txt" />
     <Text Include="TODO.txt" />
+    <Text Include="Changelog.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSGOInternal\DllMain.cc">
@@ -698,6 +717,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CSGOInternal\MainMenu.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CSGOInternal\D3D9\Drawing.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -981,9 +1003,6 @@
     <ClInclude Include="CSGOInternal\Source SDK\Vectors.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CSGOInternal\Source SDK\Signatures.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CSGOInternal\Source SDK\TraceRay.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -991,6 +1010,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CSGOInternal\StrLang.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CSGOInternal\D3D9\Drawing.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

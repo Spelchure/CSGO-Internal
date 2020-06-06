@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('class_app_settings.html',''); initResi
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_app_settings-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AppSettings Class Reference</div>  </div>
@@ -94,13 +95,35 @@ $(document).ready(function(){initNavTree('class_app_settings.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a6382c1214c1124b02c402b0d86029653"><td class="memItemLeft" align="right" valign="top"><a id="a6382c1214c1124b02c402b0d86029653"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>BoolSettings</b> { <b>bMenuShowing</b>, 
-<b>bAimbot</b>
+<tr class="memitem:a010643be0a0ce72b757d70e4f00c2d88"><td class="memItemLeft" align="right" valign="top"><a id="a010643be0a0ce72b757d70e4f00c2d88"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>ColorSelect</b> { <b>cESP</b>, 
+<b>cESP_mate</b>, 
+<b>cSnaplines</b>, 
+<b>cSnaplines_mate</b>
+ }</td></tr>
+<tr class="separator:a010643be0a0ce72b757d70e4f00c2d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6382c1214c1124b02c402b0d86029653"><td class="memItemLeft" align="right" valign="top"><a id="a6382c1214c1124b02c402b0d86029653"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>BoolSettings</b> { <br />
+&#160;&#160;<b>bMenuShowing</b>, 
+<b>bAimbot</b>, 
+<b>bAimbot_FOV</b>, 
+<b>bAimbot_AutoAttack</b>, 
+<br />
+&#160;&#160;<b>bESP</b>, 
+<b>bESP_mate</b>, 
+<b>bSnaplines</b>, 
+<b>bSnaplines_mate</b>, 
+<br />
+&#160;&#160;<b>bBunnyhop</b>, 
+<b>bAntiflash</b>
+<br />
  }</td></tr>
 <tr class="separator:a6382c1214c1124b02c402b0d86029653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcbe401ef6dd0556f2471a88767dce0f"><td class="memItemLeft" align="right" valign="top"><a id="adcbe401ef6dd0556f2471a88767dce0f"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>IntSettings</b> { <b>iAimbotKey</b>
  }</td></tr>
 <tr class="separator:adcbe401ef6dd0556f2471a88767dce0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b0382bb814816af5b2fef1db2d3c76"><td class="memItemLeft" align="right" valign="top"><a id="ad7b0382bb814816af5b2fef1db2d3c76"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>FloatSettings</b> { <b>fAimSmooth</b>, 
+<b>fAimFOV</b>
+ }</td></tr>
+<tr class="separator:ad7b0382bb814816af5b2fef1db2d3c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -128,6 +151,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setInt</b> (int ind, 
 <tr class="memitem:a7185e76776fd08ce3614d44e0cdfc93c"><td class="memItemLeft" align="right" valign="top"><a id="a7185e76776fd08ce3614d44e0cdfc93c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>getInt</b> (int ind)</td></tr>
 <tr class="separator:a7185e76776fd08ce3614d44e0cdfc93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaabbf6b1befc674a8209c10953d870fb"><td class="memItemLeft" align="right" valign="top"><a id="aaabbf6b1befc674a8209c10953d870fb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setFloat</b> (int ind, float v)</td></tr>
+<tr class="separator:aaabbf6b1befc674a8209c10953d870fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accb1027b759656776de4abbeaf6dc7bb"><td class="memItemLeft" align="right" valign="top"><a id="accb1027b759656776de4abbeaf6dc7bb"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>getFloat</b> (int ind)</td></tr>
+<tr class="separator:accb1027b759656776de4abbeaf6dc7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4e1f3b9bc9aae6305acc3cfee98ea605"><td class="memItemLeft" align="right" valign="top"><a id="a4e1f3b9bc9aae6305acc3cfee98ea605"></a>
+bool *&#160;</td><td class="memItemRight" valign="bottom"><b>boolSettings</b></td></tr>
+<tr class="separator:a4e1f3b9bc9aae6305acc3cfee98ea605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8931899b921e7ac77684ef618cd22a09"><td class="memItemLeft" align="right" valign="top"><a id="a8931899b921e7ac77684ef618cd22a09"></a>
+int *&#160;</td><td class="memItemRight" valign="bottom"><b>intSettings</b></td></tr>
+<tr class="separator:a8931899b921e7ac77684ef618cd22a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade36278e61ed3f45f4b85037f8b5f445"><td class="memItemLeft" align="right" valign="top"><a id="ade36278e61ed3f45f4b85037f8b5f445"></a>
+float *&#160;</td><td class="memItemRight" valign="bottom"><b>floatSettings</b></td></tr>
+<tr class="separator:ade36278e61ed3f45f4b85037f8b5f445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>CSGOInternal/Settings/<a class="el" href="_settings_8hpp_source.html">Settings.hpp</a></li>

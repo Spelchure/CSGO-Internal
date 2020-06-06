@@ -14,7 +14,8 @@ var _netvars_8hpp =
       [ "m_flFlashDuration", "_netvars_8hpp.html#a8d0a28f7dfbcf80bde8c54057271eac9a42af4acdf18db109dc15670ff0844520", null ],
       [ "m_bIsDefusing", "_netvars_8hpp.html#a8d0a28f7dfbcf80bde8c54057271eac9a70c34b40c6fddb56f50e94e4b738acf7", null ],
       [ "m_dwBoneMatrix", "_netvars_8hpp.html#a8d0a28f7dfbcf80bde8c54057271eac9a5049406f3ef89b76f839ec063133dd80", null ],
-      [ "m_aimPunchAngle", "_netvars_8hpp.html#a8d0a28f7dfbcf80bde8c54057271eac9af6b2b1b4e188595e4dae5c9839087de7", null ]
+      [ "m_aimPunchAngle", "_netvars_8hpp.html#a8d0a28f7dfbcf80bde8c54057271eac9af6b2b1b4e188595e4dae5c9839087de7", null ],
+      [ "m_fFlags", "_netvars_8hpp.html#a8d0a28f7dfbcf80bde8c54057271eac9af540d90d79f1513a5b3cd66c13a8f63b", null ]
     ] ],
     [ "_GetNetVarOffset", "_netvars_8hpp.html#a1bf14a31832ac60538563eea60ea187c", null ],
     [ "ReadyNetvarOffsets", "_netvars_8hpp.html#a6265f7483fc4df347b28b762b3702f48", null ],

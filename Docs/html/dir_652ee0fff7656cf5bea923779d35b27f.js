@@ -12,5 +12,6 @@ var dir_652ee0fff7656cf5bea923779d35b27f =
     [ "MainMenu.cc", "_main_menu_8cc.html", "_main_menu_8cc" ],
     [ "MainMenu.hpp", "_main_menu_8hpp.html", [
       [ "MainMenu", "class_main_menu.html", "class_main_menu" ]
-    ] ]
+    ] ],
+    [ "StrLang.hpp", "_str_lang_8hpp.html", "_str_lang_8hpp" ]
 ];

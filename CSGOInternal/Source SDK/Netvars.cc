@@ -34,6 +34,9 @@ uint16_t sig_dwClientState_MaxPlayers = 0;
 uint16_t sig_dwClientState_ViewAngles = 0;
 uint16_t sig_bDormant = 0;
 uintptr_t sig_dwForceAttack = 0;
+uintptr_t sig_dwForceJump = 0;
+uintptr_t sig_dwViewMatrix = 0;
+
 
 /**
  * \brief Returns network variable offset
@@ -106,6 +109,7 @@ ReadyNetvarOffsets(void)
     _netvarOffsets[NetvarNames::m_flFlashDuration] = _GetNetVarOffset("DT_CSPlayer", "m_flFlashDuration", allClass);
     _netvarOffsets[NetvarNames::m_bIsDefusing] = _GetNetVarOffset("DT_CSPlayer", "m_bIsDefusing", allClass);
     _netvarOffsets[NetvarNames::m_aimPunchAngle] = _GetNetVarOffset("DT_BasePlayer", "m_aimPunchAngle", allClass);
+    _netvarOffsets[NetvarNames::m_fFlags] = _GetNetVarOffset("DT_CSPlayer", "m_fFlags", allClass);
     _netvarOffsets[NetvarNames::m_dwBoneMatrix] = _GetNetVarOffset("DT_BaseAnimating", "m_nForceBone", allClass); 
     _netvarOffsets[NetvarNames::m_dwBoneMatrix] += 28;
 
@@ -165,7 +169,20 @@ ReadySignatures(void)
         return false;
     sig_dwppDirect3DDevice9 = read_protected_memory<uintptr_t>(++mem);
 
-    
+    mem = (byte_t*)memFindPattern(DLL_CLIENT, PATTERN_VIEWMATRIX[0], PATTERN_VIEWMATRIX[1]);
+    if (!mem)
+        return false;
+    mem += 3;
+    sig_dwViewMatrix = read_protected_memory<uintptr_t>(mem);
+    sig_dwViewMatrix += 0xB0;
+   
+
+    mem = (byte_t*)memFindPattern(DLL_CLIENT, PATTERN_FORCEJUMP[0], PATTERN_FORCEJUMP[1]);
+    if (!mem)
+        return false;
+    mem += 2;
+    sig_dwForceJump = read_protected_memory<uintptr_t>(mem);
+
     // Not required don't crash !!
     mem = (byte_t*)memFindPattern(DLL_CLIENT, PATTERN_FORCEATTACK[0], PATTERN_FORCEATTACK[1]);
     if (mem)
@@ -173,5 +190,6 @@ ReadySignatures(void)
         mem += 2;
         sig_dwForceAttack = read_protected_memory<uintptr_t>(mem);
     }
+   
     return true;
 }

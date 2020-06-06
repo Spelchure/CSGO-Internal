@@ -23,7 +23,7 @@
 #pragma once
 #include <string>
 
-constexpr auto numberOfBoolSettings = 4;
+constexpr auto numberOfBoolSettings = 10;
 constexpr auto numberOfIntSettings = 1;
 constexpr auto numberOfFloatSettings = 2;
 
@@ -39,12 +39,25 @@ public:
     bool* boolSettings;
     int* intSettings;
     float* floatSettings;
+
+    enum ColorSelect {
+        cESP,
+        cESP_mate,
+        cSnaplines,
+        cSnaplines_mate
+    };
    
     enum BoolSettings {
         bMenuShowing,
         bAimbot, // Is aimbot open
         bAimbot_FOV, // Fov enabled
-        bAimbot_AutoAttack // Aim and Shoot !
+        bAimbot_AutoAttack, // Aim and Shoot !
+        bESP,
+        bESP_mate,
+        bSnaplines,
+        bSnaplines_mate,
+        bBunnyhop,
+        bAntiflash
     };
     enum IntSettings {
         iAimbotKey 
@@ -72,13 +85,14 @@ public:
             delete filePath;
     }
     void setDefault(void) {
-        boolSettings[bMenuShowing] = false;
-        boolSettings[bAimbot] = false;
-        boolSettings[bAimbot_FOV] = true;
-        boolSettings[bAimbot_AutoAttack] = false;
+        for (int i = 0; i < numberOfBoolSettings; i++)
+            boolSettings[i] = false;
+
         intSettings[iAimbotKey] = (int)'C';
+
         floatSettings[fAimFOV] = 40.0f;
         floatSettings[fAimSmooth] = 2.000001f;
+
     }
     bool parseFile(const char* path);
     void saveSettings(void);

@@ -9,6 +9,12 @@
 {\ttfamily \#include $<$Windows.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}Settings/\+Settings.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Source S\+D\+K/\+S\+D\+K.\+hpp\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_main_loop_8cc_a0bc1c6e890cf16ad838611b7d7ae5bd2}\label{_main_loop_8cc_a0bc1c6e890cf16ad838611b7d7ae5bd2}} 
+\#define {\bfseries I\+S\+\_\+\+V\+A\+L\+I\+D\+\_\+\+E\+NT}(ent)~((($\ast$(ent)-\/$>$Get\+Health()) $>$ 0   \&\& !($\ast$(ent)-\/$>$Get\+Dormant())))
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,11 +39,20 @@ constexpr auto {\bfseries E\+N\+T\+I\+T\+Y\+\_\+\+M\+A\+X\+\_\+\+P\+L\+A\+Y\+E\+
 \mbox{\Hypertarget{_main_loop_8cc_a9a114737fd7e8b6e2f54fee0199a25f3}\label{_main_loop_8cc_a9a114737fd7e8b6e2f54fee0199a25f3}} 
 \mbox{\hyperlink{class_i_engine_trace}{I\+Engine\+Trace}} $\ast$ {\bfseries i\+Trace}
 \item 
+\mbox{\Hypertarget{_main_loop_8cc_a47df9949f9dcba30706ca0ea83b35f45}\label{_main_loop_8cc_a47df9949f9dcba30706ca0ea83b35f45}} 
+uintptr\+\_\+t {\bfseries sig\+\_\+dw\+Force\+Attack}
+\item 
 \mbox{\Hypertarget{_main_loop_8cc_acac5d9c4cc0a3ed373f20e56ac7cc18c}\label{_main_loop_8cc_acac5d9c4cc0a3ed373f20e56ac7cc18c}} 
 uintptr\+\_\+t {\bfseries sig\+\_\+dw\+Client\+State}
 \item 
 \mbox{\Hypertarget{_main_loop_8cc_a487bb7caf160b89df231deb65e6f4220}\label{_main_loop_8cc_a487bb7caf160b89df231deb65e6f4220}} 
 uint16\+\_\+t {\bfseries sig\+\_\+dw\+Client\+State\+\_\+\+View\+Angles}
+\item 
+\mbox{\Hypertarget{_main_loop_8cc_ae5b27ec1f88ce7b3837fac42868e998b}\label{_main_loop_8cc_ae5b27ec1f88ce7b3837fac42868e998b}} 
+uintptr\+\_\+t {\bfseries sig\+\_\+dw\+View\+Matrix}
+\item 
+\mbox{\Hypertarget{_main_loop_8cc_af10d94d64b21dd7dd7a5ea0dcafc4dcf}\label{_main_loop_8cc_af10d94d64b21dd7dd7a5ea0dcafc4dcf}} 
+uintptr\+\_\+t {\bfseries sig\+\_\+dw\+Force\+Jump}
 \item 
 \mbox{\Hypertarget{_main_loop_8cc_a0e0f94186f06fa9abc96bdbdaa5bb397}\label{_main_loop_8cc_a0e0f94186f06fa9abc96bdbdaa5bb397}} 
 \mbox{\hyperlink{class_c_entity_player}{C\+Entity\+Player}} $\ast$ {\bfseries local\+Player}

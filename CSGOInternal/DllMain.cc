@@ -18,6 +18,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *********************************************************************/
+
 #include <Windows.h>
 #include <Shlwapi.h>
 #include <iostream>
@@ -27,6 +28,7 @@
 #include "MainMenu.hpp"
 #include "Settings/Settings.hpp"
 #include "Hooks/Hooks.hpp"
+#include "D3D9/Drawing.hpp"
 #include "D3D9/DummyDevice.hpp"
 #include "Source SDK/SDK.hpp"
 
@@ -46,7 +48,11 @@ constexpr auto SETTINGS_FILE_NAME = "SimpleSettings.cfg";
 MidFunctionHook* pMidHook;
 AppSettings* pSettings;
 MainMenu* pMenu;
+D3D9Drawing* pDrawing;
+
 void* vTable[119];
+LPDIRECT3DDEVICE9 pDev;
+int screen_x, screen_y; // Screen dimensions
 
 extern uintptr_t sig_dwppDirect3DDevice9;
 
@@ -63,6 +69,9 @@ MainThread(HMODULE hDll)
     pMidHook = new MidFunctionHook();
     pSettings = new AppSettings();
     pMenu = new MainMenu();
+    pDrawing = new D3D9Drawing(nullptr);
+    screen_x = screen_y = 0;
+    pDev = nullptr;
 
     // Find CS:GO Window
     HWND hValveWindow = FindWindowA(VALVE_WINDOW_CLASS, 0);
@@ -91,6 +100,7 @@ MainThread(HMODULE hDll)
    
     if (dllPath)
         delete[] dllPath;
+
 
 
     // Get d3d9 device for address of EndScene
@@ -133,8 +143,8 @@ MainThread(HMODULE hDll)
         FreeLibraryAndExitThread(hDll, 1);
         return FALSE;
     }
-    
-    LPDIRECT3DDEVICE9 pDev = reinterpret_cast<LPDIRECT3DDEVICE9>(*(uintptr_t*)sig_dwppDirect3DDevice9);
+
+    pDev = reinterpret_cast<LPDIRECT3DDEVICE9>(*(uintptr_t*)sig_dwppDirect3DDevice9);
     if(nullptr == pDev) {
         delete pMenu;
         delete pMidHook;
@@ -142,6 +152,12 @@ MainThread(HMODULE hDll)
         FreeLibraryAndExitThread(hDll, 1);
         return FALSE;
     }
+    
+   
+    pDrawing->SetDevice(pDev);
+    pDrawing->GetReady();
+    
+    
     if (!pMenu->InitMenu(pDev, hValveWindow)) {
         delete pMenu;
         delete pMidHook;

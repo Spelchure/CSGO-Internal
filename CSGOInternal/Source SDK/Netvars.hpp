@@ -35,9 +35,10 @@ enum NetvarNames {
     m_flFlashDuration,
     m_bIsDefusing,
     m_dwBoneMatrix,
-    m_aimPunchAngle
+    m_aimPunchAngle,
+    m_fFlags
 };
-constexpr auto netvarOffsetsLength = 11;
+constexpr auto netvarOffsetsLength = 12;
 
 class RecvTable;
 

@@ -48,13 +48,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_dll_main_8cc.html",
-"class_app_settings.html#ae41719525e8f299b23440e3523bad3f6",
-"struct_im_draw_cmd.html#a4f3b5985ece9ca6b71e7a8e7d85a82e5",
-"struct_im_font_config.html#a9365265cc52098a8ecf89ff47f6106f2",
-"struct_im_gui_group_data.html#ae5220218236b037bce2e0775ab017f4a",
-"struct_im_gui_size_callback_data.html",
-"struct_im_gui_window_temp_data.html#a122b8e79d681562436251472d8e15ff4",
-"structstbtt____buf.html#ac047fda650726920531272c28aa354fb"
+"class_app_settings.html#ad7b0382bb814816af5b2fef1db2d3c76a58ecdca3f412fda716730f255c5dfbcf",
+"struct_example_app_documents.html",
+"struct_im_font_atlas.html#adec0df140eb1dc01c2a22a5253d62820",
+"struct_im_gui_context.html#ac4edb09cdef0590e8dc265a8265417c9",
+"struct_im_gui_payload.html#a341c0039af838af0308a7449f8c1308b",
+"struct_im_gui_window.html#a8e81d730c3a39a71e6b6ca4654451c53",
+"struct_stb_undo_record.html#a39c1e6f00368b5120114256a17b859cd"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

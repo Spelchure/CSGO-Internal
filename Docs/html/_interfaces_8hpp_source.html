@@ -98,138 +98,182 @@ $(document).ready(function(){initNavTree('_interfaces_8hpp_source.html',''); ini
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span>* INetChannel;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span>* IServer;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span>* CGlobalVarsBase;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> player_info_t;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">char</span> client_textmessage_t;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">class </span><a class="code" href="class_client_class.html">ClientClass</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span>* model_t;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span>* CSentence;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">float</span>* QAngle;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span>* CAudioSource; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span>* ButtonCode_t;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">int</span> player_info_t;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">char</span> client_textmessage_t;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_i_base_client_d_l_l.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_base_client_d_l_l.html">IBaseClientDLL</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Called once when the client DLL is loaded</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>             Init(tCreateInterface appSystemFactory,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        tCreateInterface physicsFactory,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        CGlobalVarsBase* pGlobals) = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            PostInit() = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Called once when the client DLL is being unloaded</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            Shutdown(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">class </span><a class="code" href="class_client_class.html">ClientClass</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_i_base_client_d_l_l.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_base_client_d_l_l.html">IBaseClientDLL</a></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Called once when the client DLL is loaded</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>             Init(tCreateInterface appSystemFactory,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        tCreateInterface physicsFactory,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        CGlobalVarsBase* pGlobals) = 0;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Called once the client is initialized to setup client-side replay interface pointers</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>            ReplayInit(tCreateInterface replayFactory) = 0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>            ReplayPostInit() = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Called at the start of each level change</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            LevelInitPreEntity(<span class="keywordtype">char</span> <span class="keyword">const</span>* pMapName) = 0;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Called at the start of a new level, after the entities have been received and created</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            LevelInitPostEntity() = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Called at the end of a level</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            LevelShutdown(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Request a pointer to the list of client datatable classes</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_client_class.html">ClientClass</a>* GetAllClasses(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Called once per level to re-initialize any hud element drawing stuff</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>             HudVidInit(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Called by the engine when gathering user input</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            HudProcessInput(<span class="keywordtype">bool</span> bActive) = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Called oncer per frame to allow the hud elements to think</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            HudUpdate(<span class="keywordtype">bool</span> bActive) = 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Reset the hud elements to their initial states</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            HudReset(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Display a hud text message</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            HudText(<span class="keyword">const</span> <span class="keywordtype">char</span>* message) = 0;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Mouse Input Interfaces</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Activate the mouse (hides the cursor and locks it to the center of the screen)</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            IN_ActivateMouse(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Deactivates the mouse (shows the cursor and unlocks it)</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            IN_DeactivateMouse(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_i_client_entity_list.html">   88</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_client_entity_list.html">IClientEntityList</a></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Get IClientNetworkable interface for specified entity</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* GetClientNetworkable(<span class="keywordtype">int</span> entnum) = 0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* GetClientNetworkableFromHandle(CBaseHandle hEnt) = 0;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* GetClientUnknownFromHandle(CBaseHandle hEnt) = 0;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// NOTE: This function is only a convenience wrapper.</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// It returns GetClientNetworkable( entnum )-&gt;GetIClientEntity().</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_c_entity_player.html">CEntityPlayer</a>* GetClientEntity(<span class="keywordtype">int</span> entnum) = 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_c_entity_player.html">CEntityPlayer</a>* GetClientEntityFromHandle(CBaseHandle hEnt) = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            PostInit() = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Called once when the client DLL is being unloaded</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            Shutdown(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Called once the client is initialized to setup client-side replay interface pointers</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>            ReplayInit(tCreateInterface replayFactory) = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>            ReplayPostInit() = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Called at the start of each level change</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            LevelInitPreEntity(<span class="keywordtype">char</span> <span class="keyword">const</span>* pMapName) = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Called at the start of a new level, after the entities have been received and created</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            LevelInitPostEntity() = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Called at the end of a level</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            LevelShutdown(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Request a pointer to the list of client datatable classes</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_client_class.html">ClientClass</a>* GetAllClasses(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Called once per level to re-initialize any hud element drawing stuff</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>             HudVidInit(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Called by the engine when gathering user input</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            HudProcessInput(<span class="keywordtype">bool</span> bActive) = 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Called oncer per frame to allow the hud elements to think</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            HudUpdate(<span class="keywordtype">bool</span> bActive) = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Reset the hud elements to their initial states</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            HudReset(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Display a hud text message</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            HudText(<span class="keyword">const</span> <span class="keywordtype">char</span>* message) = 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Mouse Input Interfaces</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Activate the mouse (hides the cursor and locks it to the center of the screen)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            IN_ActivateMouse(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Deactivates the mouse (shows the cursor and unlocks it)</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>            IN_DeactivateMouse(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_i_client_entity_list.html">   93</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_client_entity_list.html">IClientEntityList</a></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Get IClientNetworkable interface for specified entity</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* GetClientNetworkable(<span class="keywordtype">int</span> entnum) = 0;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* GetClientNetworkableFromHandle(CBaseHandle hEnt) = 0;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* GetClientUnknownFromHandle(CBaseHandle hEnt) = 0;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Returns number of entities currently in use</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 NumberOfEntities(<span class="keywordtype">bool</span> bIncludeNonNetworkable) = 0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// Returns highest index actually used</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetHighestEntityIndex(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Sizes entity list to specified size</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                SetMaxEntities(<span class="keywordtype">int</span> maxents) = 0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetMaxEntities() = 0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// NOTE: This function is only a convenience wrapper.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// It returns GetClientNetworkable( entnum )-&gt;GetIClientEntity().</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_c_entity_player.html">CEntityPlayer</a>* GetClientEntity(<span class="keywordtype">int</span> entnum) = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_c_entity_player.html">CEntityPlayer</a>* GetClientEntityFromHandle(CBaseHandle hEnt) = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// Returns number of entities currently in use</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 NumberOfEntities(<span class="keywordtype">bool</span> bIncludeNonNetworkable) = 0;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Returns highest index actually used</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetHighestEntityIndex(<span class="keywordtype">void</span>) = 0;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_i_v_engine_client013.html">  112</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_v_engine_client013.html">IVEngineClient013</a></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Find the model&#39;s surfaces that intersect the given sphere.</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// Returns the number of surfaces filled in.</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> fn0(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Get the lighting intensivty for a specified point</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// If bClamp is specified, the resulting Vector is restricted to the 0.0 to 1.0 for each element</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> fn1(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// Traces the line and reports the material impacted as well as the lighting information for the impact point</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> fn2(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// Given an input text buffer data pointer, parses a single token into the variable token and returns the new</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">//  reading position</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>*         ParseFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">char</span>* token, <span class="keywordtype">int</span> maxlen) = 0;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                CopyLocalFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* source, <span class="keyword">const</span> <span class="keywordtype">char</span>* destination) = 0;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Gets the dimensions of the game window</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                GetScreenSize(<span class="keywordtype">int</span>&amp; width, <span class="keywordtype">int</span>&amp; height) = 0;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// Forwards szCmdString to the server, sent reliably if bReliable is set</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                ServerCmd(<span class="keyword">const</span> <span class="keywordtype">char</span>* szCmdString, <span class="keywordtype">bool</span> bReliable = <span class="keyword">true</span>) = 0;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// Inserts szCmdString into the command buffer as if it was typed by the client to his/her console.</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// Note: Calls to this are checked against FCVAR_CLIENTCMD_CAN_EXECUTE (if that bit is not set, then this function can&#39;t change it).</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">//       Call ClientCmd_Unrestricted to have access to FCVAR_CLIENTCMD_CAN_EXECUTE vars.</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                ClientCmd(<span class="keyword">const</span> <span class="keywordtype">char</span>* szCmdString) = 0;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">// Fill in the player info structure for the specified player index (name, model, etc.)</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                GetPlayerInfo(<span class="keywordtype">int</span> ent_num, player_info_t* pinfo) = 0;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// Retrieve the player entity number for a specified userID</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetPlayerForUserID(<span class="keywordtype">int</span> userID) = 0;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Retrieves text message system information for the specified message by name</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">virtual</span> client_textmessage_t* TextMessageGet(<span class="keyword">const</span> <span class="keywordtype">char</span>* pName) = 0;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// Returns true if the console is visible</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                Con_IsVisible(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// Get the entity index of the local player</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetLocalPlayer(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;};</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="_interfaces_8hpp.html#a555d28e195931005853df3abe7a3233b">GetInterface</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dllName, <span class="keyword">const</span> <span class="keywordtype">char</span>* interfaceName);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_interfaces_8hpp.html#a3066543a503a10116b6522a964b972b2">SDK_initInterfaces</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Sizes entity list to specified size</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                SetMaxEntities(<span class="keywordtype">int</span> maxents) = 0;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetMaxEntities() = 0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_i_v_engine_client013.html">  117</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_v_engine_client013.html">IVEngineClient013</a></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// Find the model&#39;s surfaces that intersect the given sphere.</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// Returns the number of surfaces filled in.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> fn0(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// Get the lighting intensivty for a specified point</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// If bClamp is specified, the resulting Vector is restricted to the 0.0 to 1.0 for each element</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> fn1(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// Traces the line and reports the material impacted as well as the lighting information for the impact point</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> fn2(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Given an input text buffer data pointer, parses a single token into the variable token and returns the new</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">//  reading position</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>*         ParseFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">char</span>* token, <span class="keywordtype">int</span> maxlen) = 0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                CopyLocalFile(<span class="keyword">const</span> <span class="keywordtype">char</span>* source, <span class="keyword">const</span> <span class="keywordtype">char</span>* destination) = 0;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// Gets the dimensions of the game window</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                GetScreenSize(<span class="keywordtype">int</span>&amp; width, <span class="keywordtype">int</span>&amp; height) = 0;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// Forwards szCmdString to the server, sent reliably if bReliable is set</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                ServerCmd(<span class="keyword">const</span> <span class="keywordtype">char</span>* szCmdString, <span class="keywordtype">bool</span> bReliable = <span class="keyword">true</span>) = 0;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">// Inserts szCmdString into the command buffer as if it was typed by the client to his/her console.</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// Note: Calls to this are checked against FCVAR_CLIENTCMD_CAN_EXECUTE (if that bit is not set, then this function can&#39;t change it).</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">//       Call ClientCmd_Unrestricted to have access to FCVAR_CLIENTCMD_CAN_EXECUTE vars.</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                ClientCmd(<span class="keyword">const</span> <span class="keywordtype">char</span>* szCmdString) = 0;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// Fill in the player info structure for the specified player index (name, model, etc.)</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                GetPlayerInfo(<span class="keywordtype">int</span> ent_num, player_info_t* pinfo) = 0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// Retrieve the player entity number for a specified userID</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetPlayerForUserID(<span class="keywordtype">int</span> userID) = 0;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">// Retrieves text message system information for the specified message by name</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keyword">virtual</span> client_textmessage_t* TextMessageGet(<span class="keyword">const</span> <span class="keywordtype">char</span>* pName) = 0;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// Returns true if the console is visible</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                Con_IsVisible(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">// Get the entity index of the local player</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetLocalPlayer(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> model_t* LoadModel(<span class="keyword">const</span> <span class="keywordtype">char</span>* pName, <span class="keywordtype">bool</span> bProp = <span class="keyword">false</span>) = 0;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Get accurate, sub-frame clock ( profiling use )</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span>               Time(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">// Get the exact server timesstamp ( server time ) from the last message received from the server</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span>               GetLastTimeStamp(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// Given a CAudioSource (opaque pointer), retrieve the underlying CSentence object ( stores the words, phonemes, and close</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">//  captioning data )</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keyword">virtual</span> CSentence* GetSentence(CAudioSource* pAudioSource) = 0;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">// Given a CAudioSource, determines the length of the underlying audio file (.wav, .mp3, etc.)</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">float</span>               GetSentenceLength(CAudioSource* pAudioSource) = 0;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">// Returns true if the sound is streaming off of the hard disk (instead of being memory resident)</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                IsStreaming(CAudioSource* pAudioSource) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// Copy current view orientation into va</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                GetViewAngles(QAngle&amp; va) = 0;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// Set current view orientation from va</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                SetViewAngles(QAngle&amp; va) = 0;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// Retrieve the current game&#39;s maxclients setting</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>                 GetMaxClients(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// Given the string pBinding which may be bound to a key, </span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">//  returns the string name of the key to which this string is bound. Returns NULL if no such binding exists</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* Key_LookupBinding(<span class="keyword">const</span> <span class="keywordtype">char</span>* pBinding) = 0;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">// Given the name of the key &quot;mouse1&quot;, &quot;e&quot;, &quot;tab&quot;, etc., return the string it is bound to &quot;+jump&quot;, &quot;impulse 50&quot;, etc.</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* Key_BindingForKey(ButtonCode_t code) = 0;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// key trapping (for binding keys)</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>                StartKeyTrapMode(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                CheckDoneKeyTrapping(ButtonCode_t&amp; code) = 0;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// Returns true if the player is fully connected and active in game (i.e, not still loading)</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span>                IsInGame(<span class="keywordtype">void</span>) = 0;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;};</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keywordtype">void</span>* <a class="code" href="_interfaces_8hpp.html#a555d28e195931005853df3abe7a3233b">GetInterface</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *dllName, <span class="keyword">const</span> <span class="keywordtype">char</span>* interfaceName);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_interfaces_8hpp.html#a3066543a503a10116b6522a964b972b2">SDK_initInterfaces</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_i_client_entity_list_html"><div class="ttname"><a href="class_i_client_entity_list.html">IClientEntityList</a></div><div class="ttdef"><b>Definition:</b> Interfaces.hpp:89</div></div>
+<div class="ttc" id="aclass_i_client_entity_list_html"><div class="ttname"><a href="class_i_client_entity_list.html">IClientEntityList</a></div><div class="ttdef"><b>Definition:</b> Interfaces.hpp:94</div></div>
 <div class="ttc" id="a_interfaces_8hpp_html_a555d28e195931005853df3abe7a3233b"><div class="ttname"><a href="_interfaces_8hpp.html#a555d28e195931005853df3abe7a3233b">GetInterface</a></div><div class="ttdeci">void * GetInterface(const char *dllName, const char *interfaceName)</div><div class="ttdef"><b>Definition:</b> Interfaces.cpp:44</div></div>
-<div class="ttc" id="aclass_i_v_engine_client013_html"><div class="ttname"><a href="class_i_v_engine_client013.html">IVEngineClient013</a></div><div class="ttdef"><b>Definition:</b> Interfaces.hpp:113</div></div>
+<div class="ttc" id="aclass_i_v_engine_client013_html"><div class="ttname"><a href="class_i_v_engine_client013.html">IVEngineClient013</a></div><div class="ttdef"><b>Definition:</b> Interfaces.hpp:118</div></div>
 <div class="ttc" id="a_interfaces_8hpp_html_a3066543a503a10116b6522a964b972b2"><div class="ttname"><a href="_interfaces_8hpp.html#a3066543a503a10116b6522a964b972b2">SDK_initInterfaces</a></div><div class="ttdeci">bool SDK_initInterfaces(void)</div><div class="ttdef"><b>Definition:</b> Interfaces.cpp:66</div></div>
-<div class="ttc" id="aclass_i_base_client_d_l_l_html"><div class="ttname"><a href="class_i_base_client_d_l_l.html">IBaseClientDLL</a></div><div class="ttdef"><b>Definition:</b> Interfaces.hpp:41</div></div>
-<div class="ttc" id="aclass_client_class_html"><div class="ttname"><a href="class_client_class.html">ClientClass</a></div><div class="ttdef"><b>Definition:</b> Netvars.hpp:77</div></div>
-<div class="ttc" id="aclass_c_entity_player_html"><div class="ttname"><a href="class_c_entity_player.html">CEntityPlayer</a></div><div class="ttdef"><b>Definition:</b> EntityPlayer.hpp:42</div></div>
+<div class="ttc" id="aclass_i_base_client_d_l_l_html"><div class="ttname"><a href="class_i_base_client_d_l_l.html">IBaseClientDLL</a></div><div class="ttdef"><b>Definition:</b> Interfaces.hpp:46</div></div>
+<div class="ttc" id="aclass_client_class_html"><div class="ttname"><a href="class_client_class.html">ClientClass</a></div><div class="ttdef"><b>Definition:</b> Netvars.hpp:78</div></div>
+<div class="ttc" id="aclass_c_entity_player_html"><div class="ttname"><a href="class_c_entity_player.html">CEntityPlayer</a></div><div class="ttdef"><b>Definition:</b> EntityPlayer.hpp:44</div></div>
 <div class="ttc" id="a_entity_player_8hpp_html"><div class="ttname"><a href="_entity_player_8hpp.html">EntityPlayer.hpp</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

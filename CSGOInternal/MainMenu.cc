@@ -101,7 +101,31 @@ MainMenu::PrintMenu()
             ImGui::SliderFloat(Lang::StringSmooth, &pSettings->floatSettings[pSettings->fAimSmooth], 1.000f, 25.000f, "%.3f", 1.0f);
             ImGui::EndTabItem();
         }
+        if (ImGui::BeginTabItem("ESP"))
+        {
+            ImGui::Checkbox(Lang::sESP_active, &pSettings->boolSettings[pSettings->bESP]);
+            ImGui::SameLine();
+            ImGui::Checkbox(Lang::sESP_active_mate, &pSettings->boolSettings[pSettings->bESP_mate]);
+            
+            ImGui::Checkbox(Lang::sSnap_active, &pSettings->boolSettings[pSettings->bSnaplines]);
+            ImGui::SameLine();
+            ImGui::Checkbox(Lang::sSnap_active_Mate, &pSettings->boolSettings[pSettings->bSnaplines_mate]);
 
+            ImGui::EndTabItem();
+        }
+        if (ImGui::BeginTabItem("Crosshair"))
+        {
+            //TODO
+            ImGui::Text("todo");
+            ImGui::EndTabItem();
+        }
+        if (ImGui::BeginTabItem("Misc"))
+        {
+            ImGui::Checkbox("Bunnyhop", &pSettings->boolSettings[pSettings->bBunnyhop]);
+            ImGui::Checkbox("Antiflash", &pSettings->boolSettings[pSettings->bAntiflash]);
+
+            ImGui::EndTabItem();
+        }
         ImGui::EndTabBar();
     }
 

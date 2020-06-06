@@ -135,6 +135,12 @@ constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>ENGINE_TRAC
 <tr class="separator:a6531e045b01139266a31edab656b9f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42634a1d3aac91082c9a75136ed63d54"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><b>PATTERN_PTRD3DDEV</b> []</td></tr>
 <tr class="separator:a42634a1d3aac91082c9a75136ed63d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00348a989af543f34097622bb4a4adc0"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><b>PATTERN_FORCEATTACK</b> []</td></tr>
+<tr class="separator:a00348a989af543f34097622bb4a4adc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44a10e78b73e2814f9adb87315ae9094"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><b>PATTERN_VIEWMATRIX</b> []</td></tr>
+<tr class="separator:a44a10e78b73e2814f9adb87315ae9094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc1decfd21949c123a32cff1d42ff60"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><b>PATTERN_FORCEJUMP</b> []</td></tr>
+<tr class="separator:aedc1decfd21949c123a32cff1d42ff60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><br  />
@@ -250,6 +256,58 @@ constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>ENGINE_TRAC
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a00348a989af543f34097622bb4a4adc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00348a989af543f34097622bb4a4adc0">&#9670;&nbsp;</a></span>PATTERN_FORCEATTACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char* PATTERN_FORCEATTACK[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="stringliteral">&quot;\x89\x0D\x90\x90\x90\x90\x8B\x0D\x90\x90\x90\x90\x8B\xF2\x8B\xC1\x83\xCE\x04&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;xx????xx????xxxxxxx&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aedc1decfd21949c123a32cff1d42ff60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc1decfd21949c123a32cff1d42ff60">&#9670;&nbsp;</a></span>PATTERN_FORCEJUMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char* PATTERN_FORCEJUMP[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="stringliteral">&quot;\x8B\x0D\x90\x90\x90\x90\x8B\xD6\x8B\xC1\x83\xCA\x02&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;xx????xxxxxxx&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a42634a1d3aac91082c9a75136ed63d54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42634a1d3aac91082c9a75136ed63d54">&#9670;&nbsp;</a></span>PATTERN_PTRD3DDEV</h2>
 
@@ -272,6 +330,32 @@ constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>ENGINE_TRAC
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    <span class="stringliteral">&quot;\xA1\x90\x90\x90\x90\x50\x8B\x08\xFF\x51\x0C&quot;</span>,</div>
 <div class="line">    <span class="stringliteral">&quot;x????xxxxxx&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a44a10e78b73e2814f9adb87315ae9094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44a10e78b73e2814f9adb87315ae9094">&#9670;&nbsp;</a></span>PATTERN_VIEWMATRIX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const char* PATTERN_VIEWMATRIX[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <span class="stringliteral">&quot;\x0F\x10\x05\x90\x90\x90\x90\x8D\x85\x90\x90\x90\x90\xB9&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;xxx????xx????x&quot;</span></div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>

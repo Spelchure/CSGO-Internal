@@ -132,6 +132,48 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Con_IsVisible
 <tr class="memitem:a12388674ec65477eaeda060c5f9671bb"><td class="memItemLeft" align="right" valign="top"><a id="a12388674ec65477eaeda060c5f9671bb"></a>
 virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>GetLocalPlayer</b> (void)=0</td></tr>
 <tr class="separator:a12388674ec65477eaeda060c5f9671bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7781343fdd52ba33a78812a8e6e4ba20"><td class="memItemLeft" align="right" valign="top"><a id="a7781343fdd52ba33a78812a8e6e4ba20"></a>
+virtual const model_t *&#160;</td><td class="memItemRight" valign="bottom"><b>LoadModel</b> (const char *pName, bool bProp=false)=0</td></tr>
+<tr class="separator:a7781343fdd52ba33a78812a8e6e4ba20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b5ba09b163fdf7b206154eb2747019"><td class="memItemLeft" align="right" valign="top"><a id="ab0b5ba09b163fdf7b206154eb2747019"></a>
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>Time</b> (void)=0</td></tr>
+<tr class="separator:ab0b5ba09b163fdf7b206154eb2747019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a694bcf6dc7fba2817d8159424879d310"><td class="memItemLeft" align="right" valign="top"><a id="a694bcf6dc7fba2817d8159424879d310"></a>
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetLastTimeStamp</b> (void)=0</td></tr>
+<tr class="separator:a694bcf6dc7fba2817d8159424879d310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8f62251510ad3ee2355f71d5ecea89"><td class="memItemLeft" align="right" valign="top"><a id="a5d8f62251510ad3ee2355f71d5ecea89"></a>
+virtual CSentence *&#160;</td><td class="memItemRight" valign="bottom"><b>GetSentence</b> (CAudioSource *pAudioSource)=0</td></tr>
+<tr class="separator:a5d8f62251510ad3ee2355f71d5ecea89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735e69927131618f0e4e1929e9609581"><td class="memItemLeft" align="right" valign="top"><a id="a735e69927131618f0e4e1929e9609581"></a>
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetSentenceLength</b> (CAudioSource *pAudioSource)=0</td></tr>
+<tr class="separator:a735e69927131618f0e4e1929e9609581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6617ed4a12be59234c408f2a7ca7e0"><td class="memItemLeft" align="right" valign="top"><a id="abe6617ed4a12be59234c408f2a7ca7e0"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsStreaming</b> (CAudioSource *pAudioSource) const =0</td></tr>
+<tr class="separator:abe6617ed4a12be59234c408f2a7ca7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67504da78cf1b28f23b1b3859d178558"><td class="memItemLeft" align="right" valign="top"><a id="a67504da78cf1b28f23b1b3859d178558"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>GetViewAngles</b> (QAngle &amp;va)=0</td></tr>
+<tr class="separator:a67504da78cf1b28f23b1b3859d178558"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d793b4c5665ff9b6c28767cf832aa18"><td class="memItemLeft" align="right" valign="top"><a id="a5d793b4c5665ff9b6c28767cf832aa18"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetViewAngles</b> (QAngle &amp;va)=0</td></tr>
+<tr class="separator:a5d793b4c5665ff9b6c28767cf832aa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaba76304d3a8a84d689b5679fd49e642"><td class="memItemLeft" align="right" valign="top"><a id="aaba76304d3a8a84d689b5679fd49e642"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>GetMaxClients</b> (void)=0</td></tr>
+<tr class="separator:aaba76304d3a8a84d689b5679fd49e642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10ff98b185cb42b0f0601e6aad893438"><td class="memItemLeft" align="right" valign="top"><a id="a10ff98b185cb42b0f0601e6aad893438"></a>
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>Key_LookupBinding</b> (const char *pBinding)=0</td></tr>
+<tr class="separator:a10ff98b185cb42b0f0601e6aad893438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1652a1812281e27255a916f427e992ee"><td class="memItemLeft" align="right" valign="top"><a id="a1652a1812281e27255a916f427e992ee"></a>
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><b>Key_BindingForKey</b> (ButtonCode_t code)=0</td></tr>
+<tr class="separator:a1652a1812281e27255a916f427e992ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b5700da88023306e6d0a05d868a6bfe"><td class="memItemLeft" align="right" valign="top"><a id="a5b5700da88023306e6d0a05d868a6bfe"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>StartKeyTrapMode</b> (void)=0</td></tr>
+<tr class="separator:a5b5700da88023306e6d0a05d868a6bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56f8a419c5e49e7223d2264e42efe5af"><td class="memItemLeft" align="right" valign="top"><a id="a56f8a419c5e49e7223d2264e42efe5af"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>CheckDoneKeyTrapping</b> (ButtonCode_t &amp;code)=0</td></tr>
+<tr class="separator:a56f8a419c5e49e7223d2264e42efe5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac707e6602201555205bc82ac03f957fd"><td class="memItemLeft" align="right" valign="top"><a id="ac707e6602201555205bc82ac03f957fd"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsInGame</b> (void)=0</td></tr>
+<tr class="separator:ac707e6602201555205bc82ac03f957fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>CSGOInternal/Source SDK/<a class="el" href="_interfaces_8hpp_source.html">Interfaces.hpp</a></li>

@@ -32,7 +32,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -79,6 +79,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)Dependencies\DirectX9SDK\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Dependencies\DirectX9SDK\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -117,12 +119,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CSGOInternal\D3D9\Drawing.cc" />
     <ClCompile Include="CSGOInternal\D3D9\DummyDevice.cc" />
     <ClCompile Include="CSGOInternal\DllMain.cc" />
     <ClCompile Include="CSGOInternal\Gateway.cc" />
@@ -191,6 +196,9 @@
     <None Include="Docs\html\class_c_trace_filter-members.html" />
     <None Include="Docs\html\class_c_trace_filter.html" />
     <None Include="Docs\html\class_c_trace_filter.js" />
+    <None Include="Docs\html\class_d3_d9_drawing-members.html" />
+    <None Include="Docs\html\class_d3_d9_drawing.html" />
+    <None Include="Docs\html\class_d3_d9_drawing.js" />
     <None Include="Docs\html\class_i_base_client_d_l_l-members.html" />
     <None Include="Docs\html\class_i_base_client_d_l_l.html" />
     <None Include="Docs\html\class_i_base_client_d_l_l.js" />
@@ -327,6 +335,8 @@
     <None Include="Docs\html\search\classes_7.js" />
     <None Include="Docs\html\search\classes_8.html" />
     <None Include="Docs\html\search\classes_8.js" />
+    <None Include="Docs\html\search\classes_9.html" />
+    <None Include="Docs\html\search\classes_9.js" />
     <None Include="Docs\html\search\files_0.html" />
     <None Include="Docs\html\search\files_0.js" />
     <None Include="Docs\html\search\files_1.html" />
@@ -377,6 +387,8 @@
     <None Include="Docs\html\search\searchdata.js" />
     <None Include="Docs\html\search\variables_0.html" />
     <None Include="Docs\html\search\variables_0.js" />
+    <None Include="Docs\html\search\variables_1.html" />
+    <None Include="Docs\html\search\variables_1.js" />
     <None Include="Docs\html\structcplane__t-members.html" />
     <None Include="Docs\html\structcplane__t.html" />
     <None Include="Docs\html\structcplane__t.js" />
@@ -675,6 +687,7 @@
     <None Include="Docs\html\struct_my_document__coll__graph.dot" />
     <None Include="Docs\html\struct_ray__t-members.html" />
     <None Include="Docs\html\struct_ray__t.html" />
+    <None Include="Docs\html\struct_ray__t.js" />
     <None Include="Docs\html\struct_stb_textedit_row-members.html" />
     <None Include="Docs\html\struct_stb_textedit_row.html" />
     <None Include="Docs\html\struct_stb_textedit_row.js" />
@@ -695,11 +708,18 @@
     <None Include="Docs\html\struct___vector2-members.html" />
     <None Include="Docs\html\struct___vector2.html" />
     <None Include="Docs\html\struct___vector2.js" />
+    <None Include="Docs\html\struct___vector4-members.html" />
+    <None Include="Docs\html\struct___vector4.html" />
+    <None Include="Docs\html\struct___vector4.js" />
     <None Include="Docs\html\tabs.css" />
     <None Include="Docs\html\_dll_main_8cc.html" />
     <None Include="Docs\html\_dll_main_8cc.js" />
     <None Include="Docs\html\_dll_main_8cc_ae57465f54f783f35d7738032864a9926_cgraph.dot" />
     <None Include="Docs\html\_dll_main_8cc__incl.dot" />
+    <None Include="Docs\html\_drawing_8cc.html" />
+    <None Include="Docs\html\_drawing_8cc.js" />
+    <None Include="Docs\html\_drawing_8hpp.html" />
+    <None Include="Docs\html\_drawing_8hpp_source.html" />
     <None Include="Docs\html\_dummy_device_8cc.html" />
     <None Include="Docs\html\_dummy_device_8cc.js" />
     <None Include="Docs\html\_dummy_device_8cc__incl.dot" />
@@ -761,6 +781,9 @@
     <None Include="Docs\html\_strings_8hpp.html" />
     <None Include="Docs\html\_strings_8hpp.js" />
     <None Include="Docs\html\_strings_8hpp_source.html" />
+    <None Include="Docs\html\_str_lang_8hpp.html" />
+    <None Include="Docs\html\_str_lang_8hpp.js" />
+    <None Include="Docs\html\_str_lang_8hpp_source.html" />
     <None Include="Docs\html\_s_d_k_8hpp.html" />
     <None Include="Docs\html\_s_d_k_8hpp_source.html" />
     <None Include="Docs\html\_trace_ray_8hpp.html" />
@@ -775,12 +798,14 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Changelog.txt" />
     <Text Include="HACKING.txt" />
     <Text Include="CSGOInternal\ImGui\LICENSE.txt" />
     <Text Include="LICENSE" />
     <Text Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CSGOInternal\D3D9\Drawing.hpp" />
     <ClInclude Include="CSGOInternal\D3D9\DummyDevice.hpp" />
     <ClInclude Include="CSGOInternal\Hooks\Hooks.hpp" />
     <ClInclude Include="CSGOInternal\Hooks\Memory.hpp" />
@@ -799,7 +824,6 @@
     <ClInclude Include="CSGOInternal\Source SDK\Interfaces.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Netvars.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\SDK.hpp" />
-    <ClInclude Include="CSGOInternal\Source SDK\Signatures.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Strings.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\TraceRay.hpp" />
     <ClInclude Include="CSGOInternal\Source SDK\Vectors.hpp" />

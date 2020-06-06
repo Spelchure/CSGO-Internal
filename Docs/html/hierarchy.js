@@ -4,6 +4,7 @@ var hierarchy =
       [ "VectorAligned", "class_vector_aligned.html", null ]
     ] ],
     [ "_Vector2", "struct___vector2.html", null ],
+    [ "_Vector4", "struct___vector4.html", null ],
     [ "AppSettings", "class_app_settings.html", null ],
     [ "CBaseTrace", "class_c_base_trace.html", [
       [ "CGameTrace", "class_c_game_trace.html", null ]
@@ -12,6 +13,7 @@ var hierarchy =
     [ "ClientClass", "class_client_class.html", null ],
     [ "cplane_t", "structcplane__t.html", null ],
     [ "CUSTOMVERTEX", "struct_c_u_s_t_o_m_v_e_r_t_e_x.html", null ],
+    [ "D3D9Drawing", "class_d3_d9_drawing.html", null ],
     [ "ExampleAppConsole", "struct_example_app_console.html", null ],
     [ "ExampleAppDocuments", "struct_example_app_documents.html", null ],
     [ "ExampleAppLog", "struct_example_app_log.html", null ],

@@ -3,13 +3,36 @@
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_app_settings_a010643be0a0ce72b757d70e4f00c2d88}\label{class_app_settings_a010643be0a0ce72b757d70e4f00c2d88}} 
+enum {\bfseries Color\+Select} \{ {\bfseries c\+E\+SP}, 
+{\bfseries c\+E\+S\+P\+\_\+mate}, 
+{\bfseries c\+Snaplines}, 
+{\bfseries c\+Snaplines\+\_\+mate}
+ \}
+\item 
 \mbox{\Hypertarget{class_app_settings_a6382c1214c1124b02c402b0d86029653}\label{class_app_settings_a6382c1214c1124b02c402b0d86029653}} 
-enum {\bfseries Bool\+Settings} \{ {\bfseries b\+Menu\+Showing}, 
-{\bfseries b\+Aimbot}
+enum {\bfseries Bool\+Settings} \{ \newline
+{\bfseries b\+Menu\+Showing}, 
+{\bfseries b\+Aimbot}, 
+{\bfseries b\+Aimbot\+\_\+\+F\+OV}, 
+{\bfseries b\+Aimbot\+\_\+\+Auto\+Attack}, 
+\newline
+{\bfseries b\+E\+SP}, 
+{\bfseries b\+E\+S\+P\+\_\+mate}, 
+{\bfseries b\+Snaplines}, 
+{\bfseries b\+Snaplines\+\_\+mate}, 
+\newline
+{\bfseries b\+Bunnyhop}, 
+{\bfseries b\+Antiflash}
  \}
 \item 
 \mbox{\Hypertarget{class_app_settings_adcbe401ef6dd0556f2471a88767dce0f}\label{class_app_settings_adcbe401ef6dd0556f2471a88767dce0f}} 
 enum {\bfseries Int\+Settings} \{ {\bfseries i\+Aimbot\+Key}
+ \}
+\item 
+\mbox{\Hypertarget{class_app_settings_ad7b0382bb814816af5b2fef1db2d3c76}\label{class_app_settings_ad7b0382bb814816af5b2fef1db2d3c76}} 
+enum {\bfseries Float\+Settings} \{ {\bfseries f\+Aim\+Smooth}, 
+{\bfseries f\+Aim\+F\+OV}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
@@ -38,6 +61,24 @@ void {\bfseries set\+Int} (int ind, int val)
 \item 
 \mbox{\Hypertarget{class_app_settings_a7185e76776fd08ce3614d44e0cdfc93c}\label{class_app_settings_a7185e76776fd08ce3614d44e0cdfc93c}} 
 int {\bfseries get\+Int} (int ind)
+\item 
+\mbox{\Hypertarget{class_app_settings_aaabbf6b1befc674a8209c10953d870fb}\label{class_app_settings_aaabbf6b1befc674a8209c10953d870fb}} 
+void {\bfseries set\+Float} (int ind, float v)
+\item 
+\mbox{\Hypertarget{class_app_settings_accb1027b759656776de4abbeaf6dc7bb}\label{class_app_settings_accb1027b759656776de4abbeaf6dc7bb}} 
+float {\bfseries get\+Float} (int ind)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_app_settings_a4e1f3b9bc9aae6305acc3cfee98ea605}\label{class_app_settings_a4e1f3b9bc9aae6305acc3cfee98ea605}} 
+bool $\ast$ {\bfseries bool\+Settings}
+\item 
+\mbox{\Hypertarget{class_app_settings_a8931899b921e7ac77684ef618cd22a09}\label{class_app_settings_a8931899b921e7ac77684ef618cd22a09}} 
+int $\ast$ {\bfseries int\+Settings}
+\item 
+\mbox{\Hypertarget{class_app_settings_ade36278e61ed3f45f4b85037f8b5f445}\label{class_app_settings_ade36278e61ed3f45f4b85037f8b5f445}} 
+float $\ast$ {\bfseries float\+Settings}
 \end{DoxyCompactItemize}
 
 

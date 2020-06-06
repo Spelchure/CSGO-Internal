@@ -22,6 +22,8 @@
 #include <Windows.h>
 #include "Hooks.hpp"
 
+#pragma warning(disable : 4018)
+
 /**
  * \brief Middle hooking address <addy>
  * 
