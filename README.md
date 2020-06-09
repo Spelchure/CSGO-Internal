@@ -4,7 +4,11 @@ CSGO Internal is internal multi-purpose hack. Only windows supported.
 
 ### Features
 
-* <FeaturesGoesHere  
+* Aimbot
+* ESP / Snaplines
+* Bunnyhop
+* Antiflash
+ 
 
 ### Requirements for compiling
 
