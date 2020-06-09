@@ -23,6 +23,7 @@
 #include "Hooks/Hooks.hpp"
 #include "Settings/Settings.hpp"
 #include "MainMenu.hpp"
+
 extern MidFunctionHook* pMidHook;
 extern AppSettings* pSettings;
 extern MainMenu* pMenu;

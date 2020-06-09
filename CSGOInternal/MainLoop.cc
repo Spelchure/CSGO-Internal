@@ -81,7 +81,8 @@ MainLoop(void)
     if (!iEngineClient13->IsInGame()) // Player not in game
         return;
 
-    localPlayer = iEntityList->GetClientEntity(iEngineClient13->GetLocalPlayer());
+    int j = iEngineClient13->GetLocalPlayer();
+    localPlayer = (CEntityPlayer*)iEntityList->GetClientEntity(j);
     float distmax = FLT_MAX;
     int bestEnemy = -1;
     uintptr_t clientState = 0;
@@ -95,20 +96,31 @@ MainLoop(void)
     // Copy view matrix
     float viewMatrixCopy[16] = { 0 };
     memcpy(&viewMatrixCopy, (PBYTE)sig_dwViewMatrix, sizeof(viewMatrixCopy));
-
+    
+    int numberOfEntites = iEntityList->NumberOfEntities(false);
 
     // Loop in entity list
-    for(int i = 0; i < ENTITY_MAX_PLAYERS; i++) {
-        CEntityPlayer* ent = iEntityList->GetClientEntity(i);
+    for(int i = 0; i < numberOfEntites; i++) {
+        if (i == j) // Skip local
+            continue;
         
-        if (ent == nullptr) // Reached end of the list
-            break;
+        CEntityPlayer* ent = (CEntityPlayer*)iEntityList->GetClientEntity(i);
         
+        if (ent == nullptr) // Not valid entity
+            continue;
+
         if (ent == localPlayer) // Skip local player
             continue;
-    
+   
+        if (!ent->IsPlayer()) // Entity is not player
+            continue;
+
+        if (*ent->GetDormant()) // 
+            continue;
+
         if(pSettings->getBool(pSettings->bAimbot)) { // check this.
-            if (*ent->GetHealth() > 0 && *ent->GetTeam() != *localPlayer->GetTeam() && !(*ent->GetDormant()) &&
+
+            if (*ent->GetHealth() > 0 && *ent->GetTeam() != *localPlayer->GetTeam() &&
                 enemyIsVisible(ent) // Visible for us
                 ) { // VALID ENEMY
                 Vector myPos;
@@ -130,39 +142,44 @@ MainLoop(void)
         }
   
         
-        if (!IS_VALID_ENT(ent))
-            continue;
+  //      if (!IS_VALID_ENT(ent))
+   //         continue;
 
         /* Drawing Stuff */
-        int my_team = *localPlayer->GetTeam();
-        int en_team = *ent->GetTeam();
-        if (my_team == en_team) // teammate
+        if (*ent->GetHealth() > 0) // if enemys health > 0
         {
-            if (pSettings->getBool(pSettings->bESP_mate))
+            int my_team = *localPlayer->GetTeam();
+            int en_team = *ent->GetTeam();
+
+            if (my_team == en_team) // teammate
             {
-                //mate esp
-                ent->DrawESP(viewMatrixCopy, D3DCOLOR_ARGB(255, 0, 255, 0));
+                if (pSettings->getBool(pSettings->bESP_mate))
+                {
+                    //mate esp
+                    ent->DrawESP(viewMatrixCopy, D3DCOLOR_ARGB(255, 0, 255, 0));
+                }
+                if (pSettings->getBool(pSettings->bSnaplines_mate))
+                {
+                    //snaplines mate
+                    ent->DrawSnapline(viewMatrixCopy, 2, D3DCOLOR_ARGB(255, 0, 255, 0));
+                }
+                //maybe glow
             }
-            if (pSettings->getBool(pSettings->bSnaplines_mate))
+            else // enemy 
             {
-                //snaplines mate
-                ent->DrawSnapline(viewMatrixCopy, 2, D3DCOLOR_ARGB(255, 0, 255, 0));
+                if (pSettings->getBool(pSettings->bESP))
+                {
+                    //enemy esp
+                    ent->DrawESP(viewMatrixCopy, D3DCOLOR_ARGB(255, 255, 0, 0));
+                }
+                if (pSettings->getBool(pSettings->bSnaplines))
+                {
+                    //enemy snaplines     
+                    ent->DrawSnapline(viewMatrixCopy, 2, D3DCOLOR_ARGB(255, 255, 0, 0));
+                }
             }
-            //mybe glow
         }
-        else // enemy 
-        {
-            if (pSettings->getBool(pSettings->bESP))
-            {
-                //enemy esp
-                ent->DrawESP(viewMatrixCopy, D3DCOLOR_ARGB(255, 255,0, 0));
-            }
-            if (pSettings->getBool(pSettings->bSnaplines)) 
-            {
-                //enemy snaplines     
-                ent->DrawSnapline(viewMatrixCopy, 2, D3DCOLOR_ARGB(255, 255, 0, 0));
-            }
-        }
+        
         
 
     }
